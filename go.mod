@@ -5,7 +5,7 @@ go 1.21.9
 toolchain go1.22.2
 
 require (
-	github.com/go-playground/validator/v10 v10.21.0
+	github.com/go-playground/validator/v10 v10.22.0
 	github.com/gofiber/fiber/v2 v2.52.4
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.59.1
