@@ -479,8 +479,8 @@ github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9dec
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.1/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
-github.com/zeiss/fiber-authz v1.0.29 h1:j9mcOsZatOrq9gkiueJqgcaUWaELBG+vBjksNr5c+J4=
-github.com/zeiss/fiber-authz v1.0.29/go.mod h1:kpmrBtJ23crBOwT7u0LwwnNywmDYhV4ez6L6oDCWkPA=
+github.com/zeiss/fiber-authz v1.0.31 h1:tcD9zkKHZNSVN6BYgKJ2cYwpbfT5p1+FyKqX1fx+xlM=
+github.com/zeiss/fiber-authz v1.0.31/go.mod h1:kpmrBtJ23crBOwT7u0LwwnNywmDYhV4ez6L6oDCWkPA=
 github.com/zeiss/fiber-goth v1.2.4 h1:tzuS4iXhCC9elEzVNVKILB4fBMa+wkaSqe8kr6jLA4c=
 github.com/zeiss/fiber-goth v1.2.4/go.mod h1:TkapFI+7LOvbb093zF8cP/CH2PcQJSBQWQZDzgGoygE=
 gitlab.com/bosi/decorder v0.4.2 h1:qbQaV3zgwnBZ4zPMhGLW4KZe7A7NwxEhJx39R3shffo=
