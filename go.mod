@@ -7,7 +7,7 @@ toolchain go1.22.3
 require (
 	github.com/ettle/strcase v0.2.0
 	github.com/go-playground/validator/v10 v10.22.0
-	github.com/gofiber/fiber/v2 v2.52.4
+	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.59.1
 	github.com/katallaxie/pkg v0.6.5
@@ -15,6 +15,7 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.9.0
 	github.com/tdewolff/parse/v2 v2.7.15
+	github.com/valyala/fasthttp v1.54.0
 	github.com/zeiss/fiber-authz v1.0.31
 	github.com/zeiss/fiber-goth v1.2.4
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc
@@ -204,7 +205,6 @@ require (
 	github.com/ultraware/whitespace v0.1.1 // indirect
 	github.com/uudashr/gocognit v1.1.2 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttp v1.54.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/xen0n/gosmopolitan v1.2.2 // indirect
 	github.com/yagipy/maintidx v1.0.0 // indirect
