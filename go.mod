@@ -17,7 +17,7 @@ require (
 	github.com/tdewolff/parse/v2 v2.7.15
 	github.com/valyala/fasthttp v1.55.0
 	github.com/zeiss/fiber-authz v1.0.31
-	github.com/zeiss/fiber-goth v1.2.5
+	github.com/zeiss/fiber-goth v1.2.8
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc
 	gorm.io/gorm v1.25.10
 	mvdan.cc/gofumpt v0.6.0
