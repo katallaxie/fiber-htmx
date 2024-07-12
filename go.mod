@@ -20,7 +20,7 @@ require (
 	github.com/zeiss/fiber-authz v1.0.31
 	github.com/zeiss/fiber-goth v1.2.8
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc
-	gorm.io/gorm v1.25.10
+	gorm.io/gorm v1.25.11
 	mvdan.cc/gofumpt v0.6.0
 )
 
