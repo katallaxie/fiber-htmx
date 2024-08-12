@@ -19,7 +19,8 @@ require (
 	github.com/valyala/fasthttp v1.55.0
 	github.com/yuin/goldmark v1.7.4
 	github.com/zeiss/fiber-authz v1.0.33
-	github.com/zeiss/fiber-goth v1.2.8
+	github.com/zeiss/fiber-goth v1.2.11
+	github.com/zeiss/pkg v0.1.6
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc
 	gorm.io/gorm v1.25.11
 	mvdan.cc/gofumpt v0.6.0
@@ -211,7 +212,6 @@ require (
 	github.com/yagipy/maintidx v1.0.0 // indirect
 	github.com/yeya24/promlinter v0.3.0 // indirect
 	github.com/ykadowak/zerologlint v0.1.5 // indirect
-	github.com/zeiss/pkg v0.1.4 // indirect
 	gitlab.com/bosi/decorder v0.4.2 // indirect
 	go-simpler.org/musttag v0.12.2 // indirect
 	go-simpler.org/sloglint v0.7.1 // indirect
