@@ -488,8 +488,8 @@ github.com/zeiss/fiber-authz v1.0.33 h1:KZnVTxG+VoQLowoCqoMwam/5H4PVu89rn9ZJ2AGO
 github.com/zeiss/fiber-authz v1.0.33/go.mod h1:oVkhY0X9/xFa0Pu3BuEU8ubE7pAQmIjFMUwUGD2pQqc=
 github.com/zeiss/fiber-goth v1.2.11 h1:24EiIKF1iPrmlspbW/BylcqVyj4Ltwzmx9DM7pRs6R4=
 github.com/zeiss/fiber-goth v1.2.11/go.mod h1:9NuXxIeKZgmk3dfl7HWbZK/eAfukvjMCHHacGo0m84Y=
-github.com/zeiss/pkg v0.1.6 h1:VTbzKg+Yj54swWgTevnNgR7tmEqw5gGwsSsxeSIfwE0=
-github.com/zeiss/pkg v0.1.6/go.mod h1:soMcxMxuhfHDni3KGF/diy90dqWhRI2uLNlKHV3IxPk=
+github.com/zeiss/pkg v0.1.7 h1:P+kCMcZy/I7JgnXGWv/oidhj/47klSqk7xtF2/t02yc=
+github.com/zeiss/pkg v0.1.7/go.mod h1:XQjoOM7oJAp065CC4Cd5lD2AXZ51cL9nYrNjs7mDmI4=
 gitlab.com/bosi/decorder v0.4.2 h1:qbQaV3zgwnBZ4zPMhGLW4KZe7A7NwxEhJx39R3shffo=
 gitlab.com/bosi/decorder v0.4.2/go.mod h1:muuhHoaJkA9QLcYHq4Mj8FJUwDZ+EirSHRiaTcTf6T8=
 go-simpler.org/assert v0.9.0 h1:PfpmcSvL7yAnWyChSjOz6Sp6m9j5lyK8Ok9pEL31YkQ=
@@ -529,8 +529,8 @@ golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4/go.mod h1:jJ57K6gSWd91
 golang.org/x/mod v0.6.0/go.mod h1:4mET923SAdbXp2ki8ey+zGs1SLqsuM2Y0uvdZR/fUNI=
 golang.org/x/mod v0.7.0/go.mod h1:iBbtSCu2XBx23ZKBPSOrRkjjQPZFPuis4dIYUhu/chs=
 golang.org/x/mod v0.8.0/go.mod h1:iBbtSCu2XBx23ZKBPSOrRkjjQPZFPuis4dIYUhu/chs=
-golang.org/x/mod v0.19.0 h1:fEdghXQSo20giMthA7cd28ZC+jts4amQ3YMXiP5oMQ8=
-golang.org/x/mod v0.19.0/go.mod h1:hTbmBsO62+eylJbnUtE2MGJUyE7QWk4xUqPFrRgJ+7c=
+golang.org/x/mod v0.20.0 h1:utOm6MM3R3dnawAiJgn0y+xvuYRsm1RKM/4giyfDgV0=
+golang.org/x/mod v0.20.0/go.mod h1:hTbmBsO62+eylJbnUtE2MGJUyE7QWk4xUqPFrRgJ+7c=
 golang.org/x/net v0.0.0-20190311183353-d8887717615a/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20190620200207-3b0461eec859/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
