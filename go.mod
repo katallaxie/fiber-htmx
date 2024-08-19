@@ -22,7 +22,7 @@ require (
 	github.com/zeiss/fiber-goth v1.2.11
 	github.com/zeiss/pkg v0.1.8-0.20240815072411-0766eb97f92e
 	gorm.io/gorm v1.25.11
-	mvdan.cc/gofumpt v0.6.0
+	mvdan.cc/gofumpt v0.7.0
 )
 
 require (
