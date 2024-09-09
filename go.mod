@@ -6,7 +6,7 @@ toolchain go1.23.0
 
 require (
 	github.com/ettle/strcase v0.2.0
-	github.com/go-playground/validator/v10 v10.22.0
+	github.com/go-playground/validator/v10 v10.22.1
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.60.3
@@ -20,6 +20,7 @@ require (
 	github.com/yuin/goldmark v1.7.4
 	github.com/zeiss/fiber-authz v1.0.33
 	github.com/zeiss/fiber-goth v1.2.11
+	github.com/zeiss/fiber-reload v0.1.0
 	github.com/zeiss/pkg v0.1.8-0.20240823051228-d40ebe6703e0
 	gorm.io/gorm v1.25.11
 	mvdan.cc/gofumpt v0.7.0
@@ -213,7 +214,6 @@ require (
 	github.com/yagipy/maintidx v1.0.0 // indirect
 	github.com/yeya24/promlinter v0.3.0 // indirect
 	github.com/ykadowak/zerologlint v0.1.5 // indirect
-	github.com/zeiss/fiber-reload v0.1.0 // indirect
 	gitlab.com/bosi/decorder v0.4.2 // indirect
 	go-simpler.org/musttag v0.12.2 // indirect
 	go-simpler.org/sloglint v0.7.2 // indirect
