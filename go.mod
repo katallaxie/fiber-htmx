@@ -17,7 +17,7 @@ require (
 	github.com/valyala/fasthttp v1.56.0
 	github.com/yuin/goldmark v1.7.6
 	github.com/zeiss/fiber-authz v1.0.33
-	github.com/zeiss/fiber-goth v1.2.12
+	github.com/zeiss/fiber-goth v1.2.13
 	github.com/zeiss/fiber-reload v0.1.1
 	github.com/zeiss/pkg v0.1.11
 	gorm.io/gorm v1.25.12
