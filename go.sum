@@ -491,8 +491,8 @@ github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9dec
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.1/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
-github.com/yuin/goldmark v1.7.6 h1:cZgJxVh5mL5cu8KOnwxvFJy5TFB0BHUskZZyq7TYbDg=
-github.com/yuin/goldmark v1.7.6/go.mod h1:uzxRWxtg69N339t3louHJ7+O03ezfj6PlliRlaOzY1E=
+github.com/yuin/goldmark v1.7.7 h1:5m9rrB1sW3JUMToKFQfb+FGt1U7r57IHu5GrYrG2nqU=
+github.com/yuin/goldmark v1.7.7/go.mod h1:uzxRWxtg69N339t3louHJ7+O03ezfj6PlliRlaOzY1E=
 github.com/zeiss/fiber-authz v1.0.33 h1:KZnVTxG+VoQLowoCqoMwam/5H4PVu89rn9ZJ2AGOtCE=
 github.com/zeiss/fiber-authz v1.0.33/go.mod h1:oVkhY0X9/xFa0Pu3BuEU8ubE7pAQmIjFMUwUGD2pQqc=
 github.com/zeiss/fiber-goth v1.2.13 h1:/DQe5VtEJONUiJo8ZF7ZDqdYcPZYYklqrpN184/cDwY=
