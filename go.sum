@@ -93,8 +93,8 @@ github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 h1:RWengNIwukTxcDr9
 github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826/go.mod h1:TaXosZuwdSHYgviHp1DAtfrULt5eUgsSMsZf+YrPgl8=
 github.com/oapi-codegen/fiber-middleware v1.0.2 h1:f4KPdjyRTYh2GyAv9wsDP+Q9akOND17wuMSbmMwDkJI=
 github.com/oapi-codegen/fiber-middleware v1.0.2/go.mod h1:+lGj+802Ajp/+fQG9d8t1SuYP8r7lnOc6wnOwwRArYg=
-github.com/openfga/go-sdk v0.6.1 h1:AlCjX4auM7X9sktHLx9YvFjvU+FoMGuvQ8QkJD627Lo=
-github.com/openfga/go-sdk v0.6.1/go.mod h1:zui7pHE3eLAYh2fFmEMrWg9XbxYns2WW5Xr/GEgili4=
+github.com/openfga/go-sdk v0.6.3 h1:FO3uDYeV+1y844iVvD7MJYKtmIEP1r4mis7kWCaDG2A=
+github.com/openfga/go-sdk v0.6.3/go.mod h1:zui7pHE3eLAYh2fFmEMrWg9XbxYns2WW5Xr/GEgili4=
 github.com/perimeterx/marshmallow v1.1.5 h1:a2LALqQ1BlHM8PZblsDdidgv1mWi1DgC2UmX50IvK2s=
 github.com/perimeterx/marshmallow v1.1.5/go.mod h1:dsXbUu8CRzfYP5a87xpp0xq9S3u0Vchtcl8we9tYaXw=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
@@ -139,8 +139,8 @@ github.com/zeiss/fiber-goth v1.2.13 h1:/DQe5VtEJONUiJo8ZF7ZDqdYcPZYYklqrpN184/cD
 github.com/zeiss/fiber-goth v1.2.13/go.mod h1:W/2sDRAoA+1Cijksb4syHKiWvSNupW2hhAfcEWtitX0=
 github.com/zeiss/fiber-reload v0.1.1 h1:ozSpAjXfCkHa4x2y+lY4cqBWiQ9ORbECMBsMruMexo0=
 github.com/zeiss/fiber-reload v0.1.1/go.mod h1:n8KLvNS6qbfcmQhgHhUNrOfEkiQWxscweIvBBsHy2XI=
-github.com/zeiss/pkg v0.1.12 h1:3fydksqtda+rH5EIFZvVhdriBN2SCTVUwFq6t4khaQk=
-github.com/zeiss/pkg v0.1.12/go.mod h1:a/VpZ+rOSIet4wPu3MZVQ/H4h2JXV6hNe8xGUh91+6c=
+github.com/zeiss/pkg v0.1.17 h1:rDvBtaRUSD1ypeu66R3UHMtEphPSBaZ52484BQtPEVI=
+github.com/zeiss/pkg v0.1.17/go.mod h1:2k/MCcM0p8KiHJMdUG3Rnx90pE7UfzaGd0GIXm6V7/8=
 go.opentelemetry.io/otel v1.29.0 h1:PdomN/Al4q/lN6iBJEN3AwPvUiHPMlt93c8bqTG5Llw=
 go.opentelemetry.io/otel v1.29.0/go.mod h1:N/WtXPs1CNCUEx+Agz5uouwCba+i+bJGFicT8SR4NP8=
 go.opentelemetry.io/otel/metric v1.29.0 h1:vPf/HFWTNkPu1aYeIsc98l4ktOQaL6LeSoeV2g+8YLc=
