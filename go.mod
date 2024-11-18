@@ -4,7 +4,7 @@ go 1.23
 
 require (
 	github.com/ettle/strcase v0.2.0
-	github.com/go-playground/validator/v10 v10.22.1
+	github.com/go-playground/validator/v10 v10.23.0
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/google/uuid v1.6.0
 	github.com/katallaxie/pkg v0.6.6
