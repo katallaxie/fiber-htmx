@@ -10,7 +10,7 @@ require (
 	github.com/katallaxie/pkg v0.6.6
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	github.com/tdewolff/parse/v2 v2.7.19
 	github.com/valyala/fasthttp v1.57.0
 	github.com/yuin/goldmark v1.7.8
