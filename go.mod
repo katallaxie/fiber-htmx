@@ -17,7 +17,7 @@ require (
 	github.com/zeiss/fiber-authz v1.0.33
 	github.com/zeiss/fiber-goth v1.2.15
 	github.com/zeiss/fiber-reload v0.1.1
-	github.com/zeiss/pkg v0.1.18
+	github.com/zeiss/pkg v0.1.19
 	gorm.io/gorm v1.25.12
 )
 

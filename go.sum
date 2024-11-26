@@ -141,8 +141,8 @@ github.com/zeiss/fiber-goth v1.2.15 h1:5imQDAf6lG8xKAzjjsaab25TAYdc5QtyaaqaCwEUb
 github.com/zeiss/fiber-goth v1.2.15/go.mod h1:nBus53MvxBZwPIul1TJVwg4bDOvoIoqs9Bj86YFUkoo=
 github.com/zeiss/fiber-reload v0.1.1 h1:ozSpAjXfCkHa4x2y+lY4cqBWiQ9ORbECMBsMruMexo0=
 github.com/zeiss/fiber-reload v0.1.1/go.mod h1:n8KLvNS6qbfcmQhgHhUNrOfEkiQWxscweIvBBsHy2XI=
-github.com/zeiss/pkg v0.1.18 h1:RaEfv+dIi/MbZUgapia8tIW5ajt/1RFQweQKTiqEL+A=
-github.com/zeiss/pkg v0.1.18/go.mod h1:NuTI7tadUwQPvcIZef9Von50QjLZ5r5tKdWvZlysLqU=
+github.com/zeiss/pkg v0.1.19 h1:xFhTEvpwDwv5vTU4K69QXcbdc1mKF/apSqSMF8r5Xc0=
+github.com/zeiss/pkg v0.1.19/go.mod h1:WCFpyj9/BrA1nWIabZGG8yn86aRy6RUzttD4tyRzJMw=
 go.opentelemetry.io/otel v1.29.0 h1:PdomN/Al4q/lN6iBJEN3AwPvUiHPMlt93c8bqTG5Llw=
 go.opentelemetry.io/otel v1.29.0/go.mod h1:N/WtXPs1CNCUEx+Agz5uouwCba+i+bJGFicT8SR4NP8=
 go.opentelemetry.io/otel/metric v1.29.0 h1:vPf/HFWTNkPu1aYeIsc98l4ktOQaL6LeSoeV2g+8YLc=
