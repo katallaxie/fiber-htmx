@@ -6,7 +6,7 @@ toolchain go1.23.1
 
 require (
 	github.com/air-verse/air v1.61.5
-	github.com/evanw/esbuild v0.24.0
+	github.com/evanw/esbuild v0.24.2
 	github.com/golang/mock v1.6.0
 	github.com/golangci/golangci-lint v1.62.2
 	github.com/goreleaser/goreleaser v1.26.2
