@@ -8,7 +8,7 @@ require (
 	github.com/air-verse/air v1.61.5
 	github.com/evanw/esbuild v0.24.2
 	github.com/golang/mock v1.6.0
-	github.com/golangci/golangci-lint v1.63.3
+	github.com/golangci/golangci-lint v1.63.4
 	github.com/goreleaser/goreleaser v1.26.2
 	golang.org/x/perf v0.0.0-20240208143119-b26761745961
 	gotest.tools/gotestsum v1.12.0
