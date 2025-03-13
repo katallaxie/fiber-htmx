@@ -11,7 +11,7 @@ require (
 	github.com/golangci/golangci-lint v1.64.7
 	github.com/goreleaser/goreleaser v1.26.2
 	golang.org/x/perf v0.0.0-20240208143119-b26761745961
-	gotest.tools/gotestsum v1.12.0
+	gotest.tools/gotestsum v1.12.1
 	mvdan.cc/gofumpt v0.7.0
 )
 
