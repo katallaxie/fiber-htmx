@@ -23,7 +23,7 @@ jobs:
       with:
         go-version-file: ./go.mod
     - run: make test
-    - uses: dorny/test-reporter@v1
+    - uses: dorny/test-reporter@v2
       if: success() || failure()
       with:
         name: Go Test Results
