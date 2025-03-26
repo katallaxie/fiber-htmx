@@ -23,7 +23,7 @@ require (
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
 	github.com/tdewolff/parse/v2 v2.7.21
-	github.com/valyala/fasthttp v1.57.0
+	github.com/valyala/fasthttp v1.59.0
 	github.com/yuin/goldmark v1.7.8
 	github.com/zeiss/fiber-authz v1.0.33
 	github.com/zeiss/fiber-goth v1.2.15
@@ -464,7 +464,6 @@ require (
 	github.com/uudashr/gocognit v1.2.0 // indirect
 	github.com/uudashr/iface v1.3.1 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/vbatts/tar-split v0.11.6 // indirect
 	github.com/vektra/mockery/v2 v2.53.3 // indirect
 	github.com/wagoodman/go-partybus v0.0.0-20230516145632-8ccac152c651 // indirect
