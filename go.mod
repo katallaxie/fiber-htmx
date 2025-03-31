@@ -1,7 +1,6 @@
 module github.com/zeiss/fiber-htmx
 
 go 1.24.0
-
 tool (
 	github.com/air-verse/air
 	github.com/evanw/esbuild/cmd/esbuild
@@ -15,7 +14,7 @@ tool (
 
 require (
 	github.com/ettle/strcase v0.2.0
-	github.com/go-playground/validator/v10 v10.25.0
+	github.com/go-playground/validator/v10 v10.26.0
 	github.com/gofiber/fiber/v2 v2.52.6
 	github.com/google/uuid v1.6.0
 	github.com/katallaxie/pkg v0.7.2
