@@ -1,6 +1,7 @@
 module github.com/zeiss/fiber-htmx
 
 go 1.24.0
+
 tool (
 	github.com/air-verse/air
 	github.com/evanw/esbuild/cmd/esbuild
@@ -21,7 +22,7 @@ require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
-	github.com/tdewolff/parse/v2 v2.7.21
+	github.com/tdewolff/parse/v2 v2.7.22
 	github.com/valyala/fasthttp v1.60.0
 	github.com/yuin/goldmark v1.7.8
 	github.com/zeiss/fiber-authz v1.0.33
