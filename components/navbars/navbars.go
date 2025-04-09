@@ -1,6 +1,6 @@
 package navbars
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // NavbarProps are the properties of the Navbar component
 type NavbarProps struct {

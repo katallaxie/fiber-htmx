@@ -3,8 +3,8 @@ package htmx_test
 import (
 	"testing"
 
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/fiber-htmx/internal/assert"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/fiber-htmx/internal/assert"
 )
 
 func Test_SVG(t *testing.T) {

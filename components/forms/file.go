@@ -1,6 +1,6 @@
 package forms
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // FileInputProps represents the properties for a file input element.
 type FileInputProps struct {

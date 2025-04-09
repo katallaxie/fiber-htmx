@@ -1,7 +1,7 @@
 package tabs
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 // TabsProps is a struct that contains the properties of the Tabs component

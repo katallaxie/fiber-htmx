@@ -7,9 +7,9 @@
     "HTML",
     "HTMX"
   ],
-  "homepage": "https://github.com/zeiss/fiber-htmx",
+  "homepage": "https://github.com/katallaxie/fiber-htmx",
   "bugs": {
-    "url": "https://github.com/zeiss/fiber-htmx/issues"
+    "url": "https://github.com/katallaxie/fiber-htmx/issues"
   },
   "scripts": {
     "build:esm": "esbuild --bundle --sourcemap --platform=neutral --packages=external --outfile=dist/fiber-htmx.esm.js src/main.ts",
@@ -31,7 +31,7 @@
   "unpkg": "dist/fiber-htmx.min.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZEISS/fiber-htmx.git"
+    "url": "git+https://github.com/katallaxie/fiber-htmx.git"
   },
   "license": "MIT",
   "dependencies": {

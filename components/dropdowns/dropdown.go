@@ -1,8 +1,8 @@
 package dropdowns
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/pkg/conv"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/conv"
 )
 
 // DropdownProps represents the properties for a dropdown element.

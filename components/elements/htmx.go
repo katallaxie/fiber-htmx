@@ -1,6 +1,6 @@
 package elements
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // HTMXToasts is a component that displays toasts.
 func HTMXToasts() htmx.Node {

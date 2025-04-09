@@ -1,6 +1,6 @@
 package typography
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // Props contains the properties for the text component.
 type Props struct {

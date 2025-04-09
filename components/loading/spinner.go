@@ -1,6 +1,6 @@
 package loading
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // SpinnerProps is the type of the props for the Spinner component
 type SpinnerProps struct {

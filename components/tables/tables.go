@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/zeiss/fiber-htmx/components/buttons"
-	"github.com/zeiss/fiber-htmx/components/forms"
-	"github.com/zeiss/fiber-htmx/components/utils"
-	"github.com/zeiss/pkg/conv"
-	"github.com/zeiss/pkg/urlx"
-	"github.com/zeiss/pkg/utilx"
+	"github.com/katallaxie/fiber-htmx/components/buttons"
+	"github.com/katallaxie/fiber-htmx/components/forms"
+	"github.com/katallaxie/fiber-htmx/components/utils"
+	"github.com/katallaxie/pkg/conv"
+	"github.com/katallaxie/pkg/urlx"
+	"github.com/katallaxie/pkg/utilx"
 
 	"github.com/gofiber/fiber/v2"
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 	"gorm.io/gorm"
 )
 

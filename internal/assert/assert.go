@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
+	htmx "github.com/katallaxie/fiber-htmx"
 	"github.com/stretchr/testify/require"
-	htmx "github.com/zeiss/fiber-htmx"
 )
 
 // Equal asserts that the provided string matches the rendered Node output.

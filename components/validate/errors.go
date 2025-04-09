@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/zeiss/pkg/slices"
-	"github.com/zeiss/pkg/utilx"
+	"github.com/katallaxie/pkg/slices"
+	"github.com/katallaxie/pkg/utilx"
 )
 
 // Errors is a map of field names to error messages.

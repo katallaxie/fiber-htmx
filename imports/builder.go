@@ -1,6 +1,6 @@
 package imports
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // Builder ...
 type Builder interface {

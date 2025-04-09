@@ -5,8 +5,8 @@
 package icons
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/fiber-htmx/components/tailwind"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/fiber-htmx/components/tailwind"
 )
 
 // IconProps ...

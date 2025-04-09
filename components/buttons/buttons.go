@@ -1,6 +1,6 @@
 package buttons
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // ButtonProps represents the properties for a button element.
 type ButtonProps struct {

@@ -1,7 +1,7 @@
 package html
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 type Parser interface {

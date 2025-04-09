@@ -1,6 +1,6 @@
 package mockups
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // CodeProps is a struct that contains the properties of the code component
 type CodeProps struct {

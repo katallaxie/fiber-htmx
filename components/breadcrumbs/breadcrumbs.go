@@ -1,6 +1,6 @@
 package breadcrumbs
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // BreadcrumsbProps represents the properties for a breadcrumb element.
 type BreadcrumbsProps struct {

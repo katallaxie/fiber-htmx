@@ -1,6 +1,6 @@
 package modals
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // ModalProps contains the properties for the modal component.
 type ModalProps struct {

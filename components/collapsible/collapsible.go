@@ -1,8 +1,8 @@
 package collapsible
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/pkg/conv"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/conv"
 )
 
 // CollapseProps is a component that can be expanded and collapsed.

@@ -1,8 +1,8 @@
 package forms
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/pkg/utilx"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/utilx"
 )
 
 // RadioProps represents the properties for a radio element.

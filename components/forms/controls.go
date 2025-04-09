@@ -1,6 +1,6 @@
 package forms
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // FormControlProps represents the properties for a form control element.
 type FormControlProps struct {

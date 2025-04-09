@@ -1,6 +1,6 @@
 package drawers
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // DrawerOpenProps is the props for the DrawerOpen component
 type DrawerOpenProps struct {

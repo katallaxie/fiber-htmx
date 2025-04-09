@@ -7,10 +7,10 @@ import (
 	"os"
 	"testing"
 
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/conv"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/pkg/conv"
 )
 
 func BenchmarkElement(b *testing.B) {

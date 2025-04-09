@@ -1,6 +1,6 @@
 package forms
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // SelectProps ...
 type SelectProps struct {

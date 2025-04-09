@@ -1,6 +1,6 @@
 package cards
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // CardProps contains the properties for the card component.
 type CardProps struct {

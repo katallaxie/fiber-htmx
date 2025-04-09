@@ -1,6 +1,6 @@
 package badges
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // BadgeProps represents the properties for a badge element.
 type BadgeProps struct {

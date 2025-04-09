@@ -1,6 +1,6 @@
 package dividers
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // DividerProps is a struct that contains the props of a divider.
 type DividerProps struct {

@@ -1,9 +1,9 @@
 package dropdowns
 
 import (
-	"github.com/zeiss/fiber-htmx/components/forms"
+	"github.com/katallaxie/fiber-htmx/components/forms"
 
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 // SingleSelectProps ...

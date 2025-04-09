@@ -1,6 +1,6 @@
 package kbds
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // KbdProps contains the properties for the kbds component.
 type KbdProps struct {

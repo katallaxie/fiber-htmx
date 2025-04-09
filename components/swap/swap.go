@@ -1,6 +1,6 @@
 package swap
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // SwapProps contains the properties for the swap component.
 type SwapProps struct {

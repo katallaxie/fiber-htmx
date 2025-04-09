@@ -3,7 +3,7 @@ package htmx_test
 import (
 	"testing"
 
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 
 	"github.com/stretchr/testify/assert"
 )

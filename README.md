@@ -1,8 +1,8 @@
 # 🔨 HTMX
 
-[![Test & Build](https://github.com/zeiss/fiber-htmx/actions/workflows/main.yml/badge.svg)](https://github.com/zeiss/fiber-htmx/actions/workflows/main.yml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/zeiss/fiber-htmx.svg)](https://pkg.go.dev/github.com/zeiss/fiber-htmx)
-[![Go Report Card](https://goreportcard.com/badge/github.com/zeiss/fiber-htmx)](https://goreportcard.com/report/github.com/zeiss/fiber-htmx)
+[![Test & Build](https://github.com/katallaxie/fiber-htmx/actions/workflows/main.yml/badge.svg)](https://github.com/katallaxie/fiber-htmx/actions/workflows/main.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/katallaxie/fiber-htmx.svg)](https://pkg.go.dev/github.com/katallaxie/fiber-htmx)
+[![Go Report Card](https://goreportcard.com/badge/github.com/katallaxie/fiber-htmx)](https://goreportcard.com/report/github.com/katallaxie/fiber-htmx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Taylor Swift](https://img.shields.io/badge/secured%20by-taylor%20swift-brightgreen.svg)](https://twitter.com/SwiftOnSecurity)
 
@@ -20,7 +20,7 @@ A Go package to write HTML5 and HTMX components in Go. The package is designed t
 ## Installation
 
 ```bash
-go get github.com/zeiss/fiber-htmx
+go get github.com/katallaxie/fiber-htmx
 ```
 
 The available web components are published in the `fiber-htmx` package.
@@ -85,7 +85,7 @@ This will create the following HTML element.
 <div class="font-semibold">Hello World</div>
 ```
 
-There is support for all HTML5 elements and Tailwind classes. Use `import "github.com/zeiss/fiber-htmx/tailwind"` to include Tailwind classes.
+There is support for all HTML5 elements and Tailwind classes. Use `import "github.com/katallaxie/fiber-htmx/tailwind"` to include Tailwind classes.
 
 ## Components
 
@@ -213,7 +213,7 @@ htmx.Fallback(
 
 ## Examples
 
-See [examples](https://github.com/zeiss/fiber-htmx/tree/master/examples) to understand the provided interfaces.
+See [examples](https://github.com/katallaxie/fiber-htmx/tree/master/examples) to understand the provided interfaces.
 
 ## Benchmarks
 

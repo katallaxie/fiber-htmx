@@ -1,6 +1,6 @@
 package utils
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // Transformer is a function that transforms a node.
 type Transformer[T any] func(el T) htmx.Node

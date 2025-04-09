@@ -1,8 +1,8 @@
 package alerts
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/fiber-htmx/components/icons"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/fiber-htmx/components/icons"
 )
 
 // AlertProps is the type of the props for the Alert component

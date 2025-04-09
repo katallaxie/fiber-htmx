@@ -1,6 +1,6 @@
 package typography
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // H1 is a component that displays a h1 text.
 func H1(props Props, children ...htmx.Node) htmx.Node {

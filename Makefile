@@ -4,7 +4,7 @@
 GO 					?= go
 GO_TOOL 			?= $(GO) tool
 GO_TEST 			?= $(GO_TOOL) gotest.tools/gotestsum --format pkgname
-GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser/v2
+GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser
 
 .PHONY: release
 release: ## Release the project.

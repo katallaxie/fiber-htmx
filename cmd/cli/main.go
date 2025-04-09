@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/zeiss/fiber-htmx/cmd/cli/cmd"
+	"github.com/katallaxie/fiber-htmx/cmd/cli/cmd"
 )
 
 func main() {

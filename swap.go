@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zeiss/pkg/cast"
-	"github.com/zeiss/pkg/conv"
+	"github.com/katallaxie/pkg/cast"
+	"github.com/katallaxie/pkg/conv"
 )
 
 var (

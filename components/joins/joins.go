@@ -1,6 +1,6 @@
 package joins
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // JoinProps is a struct that contains the properties of a join.
 type JoinProps struct {

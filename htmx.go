@@ -7,8 +7,8 @@ import (
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/katallaxie/pkg/conv"
 	authz "github.com/zeiss/fiber-authz"
-	"github.com/zeiss/pkg/conv"
 )
 
 // The contextKey type is unexported to prevent collisions with context keys defined in

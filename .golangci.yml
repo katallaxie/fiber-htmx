@@ -23,7 +23,7 @@ linters-settings:
 
   govet:
     # report about shadowed variables
-    check-shadowing: false
+    shadow: false
 
   gofmt:
     # simplify code: gofmt with `-s` option, true by default

@@ -1,6 +1,6 @@
 package accordions
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // AccordionProps is a component that can be expanded and collapsed.
 type AccordionProps struct {

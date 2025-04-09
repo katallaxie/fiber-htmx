@@ -3,8 +3,8 @@ package forms
 import (
 	"fmt"
 
-	htmx "github.com/zeiss/fiber-htmx"
-	"github.com/zeiss/pkg/utilx"
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/utilx"
 )
 
 // DatalistProps is the type of the props for the Datalist component

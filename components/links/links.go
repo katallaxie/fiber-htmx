@@ -1,7 +1,7 @@
 package links
 
 import (
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 // LinkProps represents the properties for a link element.

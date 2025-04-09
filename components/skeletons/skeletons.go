@@ -3,7 +3,7 @@ package skeletons
 import (
 	"fmt"
 
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 // SkeletonProps is a struct that contains the props of the skeleton component

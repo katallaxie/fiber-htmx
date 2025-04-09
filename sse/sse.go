@@ -10,8 +10,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
+	"github.com/katallaxie/pkg/server"
 	"github.com/valyala/fasthttp"
-	"github.com/zeiss/pkg/server"
 )
 
 var _ Event = (*EventImpl)(nil)

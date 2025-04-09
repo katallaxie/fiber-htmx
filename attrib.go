@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zeiss/pkg/conv"
-	"github.com/zeiss/pkg/errorx"
+	"github.com/katallaxie/pkg/conv"
+	"github.com/katallaxie/pkg/errorx"
 )
 
 // JSEvetType represents the type of JavaScript event.

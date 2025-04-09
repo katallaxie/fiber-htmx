@@ -1,6 +1,6 @@
 package stacks
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // StackProps is a struct that contains the properties of a stack.
 type StackProps struct {

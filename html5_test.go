@@ -5,9 +5,9 @@ import (
 	"io"
 	"testing"
 
+	htmx "github.com/katallaxie/fiber-htmx"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	htmx "github.com/zeiss/fiber-htmx"
 )
 
 func Benchmark_HTML5_Render(b *testing.B) {

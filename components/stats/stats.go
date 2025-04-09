@@ -1,6 +1,6 @@
 package stats
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // StatsProps contains the properties for the stats component.
 type StatsProps struct {

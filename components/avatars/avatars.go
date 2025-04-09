@@ -1,6 +1,6 @@
 package avatars
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // AvatarProps represents the properties for an avatar.
 type AvatarProps struct {

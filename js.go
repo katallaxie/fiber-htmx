@@ -3,7 +3,7 @@ package htmx
 import (
 	"encoding/json"
 
-	"github.com/zeiss/pkg/errorx"
+	"github.com/katallaxie/pkg/errorx"
 )
 
 // Imports is following the WICG Import Maps proposal.

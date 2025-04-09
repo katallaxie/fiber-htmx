@@ -3,7 +3,7 @@ package dates
 import (
 	"time"
 
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 // DateTextProps is a struct that holds the properties of a date

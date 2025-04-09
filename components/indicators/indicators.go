@@ -1,6 +1,6 @@
 package indicators
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // IndicatorProps is a struct that contains the properties of an indicator.
 type IndicatorProps struct {

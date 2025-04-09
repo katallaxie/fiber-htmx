@@ -1,6 +1,6 @@
 package alpine
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // XData returns an attribute that tells Alpine.js to ignore an element.
 func XData(data string) htmx.Node {

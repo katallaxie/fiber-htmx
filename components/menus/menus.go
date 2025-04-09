@@ -1,6 +1,6 @@
 package menus
 
-import htmx "github.com/zeiss/fiber-htmx"
+import htmx "github.com/katallaxie/fiber-htmx"
 
 // MenuProps is the struct for the menu props
 type MenuProps struct {

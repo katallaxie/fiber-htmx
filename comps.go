@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/go-playground/validator/v10"
+	"github.com/katallaxie/pkg/errorx"
 	"github.com/yuin/goldmark"
-	"github.com/zeiss/pkg/errorx"
 )
 
 // Node is a node in the HTML tree.

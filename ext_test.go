@@ -3,9 +3,9 @@ package htmx_test
 import (
 	"testing"
 
-	"github.com/zeiss/fiber-htmx/internal/assert"
+	"github.com/katallaxie/fiber-htmx/internal/assert"
 
-	htmx "github.com/zeiss/fiber-htmx"
+	htmx "github.com/katallaxie/fiber-htmx"
 )
 
 func Test_MustacheTemplate(t *testing.T) {

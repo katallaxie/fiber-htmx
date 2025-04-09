@@ -3,8 +3,8 @@ package htmx_test
 import (
 	"testing"
 
+	htmx "github.com/katallaxie/fiber-htmx"
 	"github.com/stretchr/testify/require"
-	htmx "github.com/zeiss/fiber-htmx"
 )
 
 func TestNewTransactionControl(t *testing.T) {

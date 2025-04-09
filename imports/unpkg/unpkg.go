@@ -3,7 +3,7 @@ package unpkg
 import (
 	"fmt"
 
-	"github.com/zeiss/fiber-htmx/imports"
+	"github.com/katallaxie/fiber-htmx/imports"
 )
 
 const (
