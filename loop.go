@@ -1,50 +1,5 @@
 package htmx
 
-// RangeLoop is a loop control structure.
-type RangeLoop interface {
-	// Filter loops and filters the content.
-	Filter(f func(int) bool) RangeLoop
-	// Map loops and maps the content.
-	Map(f func(int) Node) RangeLoop
-	// Group returns the nodes as a group.
-	Group() Node
-}
-
-type rangeLoop struct {
-	nodes []Node
-	src   []Node
-}
-
-// Range loops over the content.
-func Range(nodes ...Node) RangeLoop {
-	return &rangeLoop{nodes: []Node{}, src: nodes}
-}
-
-// Group returns the nodes as a group.
-func (r *rangeLoop) Group() Node {
-	return Group(r.nodes...)
-}
-
-// Filter loops and slices the content.
-func (r *rangeLoop) Filter(f func(int) bool) RangeLoop {
-	for i := range r.src {
-		if f(i) {
-			r.nodes = append(r.nodes, r.src[i])
-		}
-	}
-
-	return r
-}
-
-// Map loops and maps the content.
-func (r *rangeLoop) Map(f func(int) Node) RangeLoop {
-	for i := range r.src {
-		r.nodes[i] = f(i)
-	}
-
-	return r
-}
-
 // Filter loops and filters the content.
 func Filter(f func(n Node) bool, children ...Node) []Node {
 	var nodes []Node
