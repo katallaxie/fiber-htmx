@@ -4,9 +4,34 @@ import (
 	"testing"
 
 	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/utilx"
 
 	"github.com/stretchr/testify/assert"
 )
+
+func TestFilter(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name   string
+		in     []htmx.Node
+		filter func(n htmx.Node) bool
+	}{
+		{
+			name: "filter",
+			in:   []htmx.Node{htmx.Text("a"), nil, htmx.Details()},
+			filter: func(n htmx.Node) bool { // nolint:gocritic
+				return utilx.NotEmpty(n)
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Len(t, htmx.Filter(tt.filter, tt.in...), 2)
+		})
+	}
+}
 
 func TestMerge(t *testing.T) {
 	tests := []struct {

@@ -8,11 +8,16 @@ import (
 
 // HTML5Props represents the properties for an HTML5 document.
 type HTML5Props struct {
-	Title       string // The title of the HTML document.
-	Description string // The description of the HTML document.
-	Language    string // The language of the HTML document.
-	Head        []Node // The nodes to be included in the head section of the HTML document.
-	Attributes  []Node // The attributes to be included in the HTML document.
+	// Title is the title of the HTML document.
+	Title string
+	// Description is the description of the HTML document.
+	Description string
+	// Language is the language of the HTML document.
+	Language string
+	// Head is the head section of the HTML document.
+	Head []Node
+	// Attributes are the attributes to be included in the HTML document.
+	Attributes []Node
 }
 
 // HTML5 generates an HTML5 document based on the provided properties.

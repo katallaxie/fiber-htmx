@@ -152,6 +152,29 @@ func HelloWorld(classes htmx.ClassNames) htmx.Node {
 }
 ```
 
+There is alos another pattern to create a component. This enables you to track state and to use the component in a more declarative way.
+
+```go
+type Page struct {
+	htmx.Node
+}
+
+func NewPage(title, body string) *Page {
+	return &Page{
+		Node: htmx.HTML5(
+			htmx.HTML5Props{
+				Title: title,
+			},
+			htmx.Body(
+				htmx.Div(
+					htmx.Text(body),
+				),
+			),
+		),
+	}
+}
+```
+
 There is also the option to use `htmx.Controller` to encapsulate the logic of the components.
 
 ```go

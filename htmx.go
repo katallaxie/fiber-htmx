@@ -229,8 +229,8 @@ func RenderStatusCode(err error) RenderOpt {
 	}
 }
 
-// NewCompHandler returns a new comp handler.
-func NewCompHandler(n Node, config ...Config) fiber.Handler {
+// NewHandler returns a new handler for a htmx.Node.
+func NewHandler(n Node, config ...Config) fiber.Handler {
 	cfg := configDefault(config...)
 
 	return func(c *fiber.Ctx) error {

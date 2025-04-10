@@ -836,7 +836,7 @@ func (w *webSrv) Start(ctx context.Context, ready server.ReadyFunc, run server.R
 			return RegisterForm(RegisterFormProps{}), nil
 		}))
 
-		app.Post("/dropdown", htmx.NewCompHandler(
+		app.Post("/dropdown", htmx.NewHandler(
 			htmx.Fragment(
 				dropdowns.DropdownMenuItem(
 					dropdowns.DropdownMenuItemProps{},
