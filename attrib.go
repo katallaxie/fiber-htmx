@@ -12,12 +12,17 @@ import (
 	"github.com/katallaxie/pkg/errorx"
 )
 
-// JSEvetType represents the type of JavaScript event.
+// JSEventType represents the type of JavaScript event.
 type JSEventType string
 
 // String returns the string representation of the JSEventType.
 func (e JSEventType) String() string {
 	return string(e)
+}
+
+// JSEvent is a type that represents JavaScript events.
+func JSEvent(e JSEventType, value ...string) Node {
+	return Attribute(e.String(), value...)
 }
 
 // List of predefined JavaScript event types.

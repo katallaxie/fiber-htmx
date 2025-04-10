@@ -236,3 +236,33 @@ func Test_HxIndicator(t *testing.T) {
 		})
 	}
 }
+
+func TestJSEvent(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name  string
+		want  string
+		value string
+		event htmx.JSEventType
+	}{
+		{
+			name:  "onclick",
+			want:  " onclick=\"\"",
+			event: htmx.JSEventTypeClickEvent,
+		},
+		{
+			name:  "onload with values",
+			want:  " onload=\"foo\"",
+			event: htmx.JSEventTypeLoadEvent,
+			value: "foo",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			h := htmx.JSEvent(test.event, test.value)
+			assert.Equal(t, test.want, h)
+		})
+	}
+}
