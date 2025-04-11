@@ -1058,8 +1058,8 @@ github.com/zeiss/fiber-goth v1.2.15 h1:5imQDAf6lG8xKAzjjsaab25TAYdc5QtyaaqaCwEUb
 github.com/zeiss/fiber-goth v1.2.15/go.mod h1:nBus53MvxBZwPIul1TJVwg4bDOvoIoqs9Bj86YFUkoo=
 github.com/zeiss/fiber-reload v0.1.1 h1:ozSpAjXfCkHa4x2y+lY4cqBWiQ9ORbECMBsMruMexo0=
 github.com/zeiss/fiber-reload v0.1.1/go.mod h1:n8KLvNS6qbfcmQhgHhUNrOfEkiQWxscweIvBBsHy2XI=
-github.com/zeiss/pkg v0.1.17 h1:rDvBtaRUSD1ypeu66R3UHMtEphPSBaZ52484BQtPEVI=
-github.com/zeiss/pkg v0.1.17/go.mod h1:2k/MCcM0p8KiHJMdUG3Rnx90pE7UfzaGd0GIXm6V7/8=
+github.com/zeiss/pkg v0.1.23 h1:y7Tv1j2ZdD1bNWbPYtIPHUl5FGD2tuyVPe0a7sIDJgQ=
+github.com/zeiss/pkg v0.1.23/go.mod h1:8yoQpqhbbpcBKdmWRfQ+P9GSccC6CjNGPq4WcZZVGSc=
 gitlab.com/bosi/decorder v0.4.2 h1:qbQaV3zgwnBZ4zPMhGLW4KZe7A7NwxEhJx39R3shffo=
 gitlab.com/bosi/decorder v0.4.2/go.mod h1:muuhHoaJkA9QLcYHq4Mj8FJUwDZ+EirSHRiaTcTf6T8=
 gitlab.com/digitalxero/go-conventional-commit v1.0.7 h1:8/dO6WWG+98PMhlZowt/YjuiKhqhGlOCwlIV8SqqGh8=
