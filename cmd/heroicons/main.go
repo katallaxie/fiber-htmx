@@ -6,7 +6,6 @@ import (
 	"io/fs"
 	"log"
 	"os"
-	"path"
 	"path/filepath"
 	"strings"
 	"text/template"
@@ -14,6 +13,8 @@ import (
 	"github.com/katallaxie/pkg/logx"
 	"github.com/spf13/pflag"
 	"github.com/zeiss/pkg/filex"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 type SVG struct {
@@ -74,24 +75,6 @@ func {{.FuncName}}(p IconProps) htmx.Node {
 
 var defaultRoot = "heroicons/src"
 
-var sizes = map[string]string{
-	"sm": "16",
-	"md": "24",
-	"lg": "32",
-}
-
-var styles = []string{
-	"solid",
-	"outline",
-}
-
-var paths = []string{
-	path.Join(sizes["sm"], "solid"),
-	path.Join(sizes["md"], "solid"),
-	path.Join(sizes["lg"], "solid"),
-	path.Join(sizes["lg"], "outline"),
-}
-
 type flags struct {
 	Root   string
 	Output string
@@ -101,7 +84,11 @@ func ToCamelCase(filepath string) string {
 	parts := strings.Split(filepath, "-")
 	for i := range parts {
 		if i > 0 && len(parts[i]) > 0 {
-			parts[i] = strings.Title(parts[i])
+			for _, c := range []cases.Caser{
+				cases.Title(language.English),
+			} {
+				parts[i] = c.String(parts[i])
+			}
 		}
 	}
 	return strings.Join(parts, "")
@@ -140,7 +127,7 @@ func main() {
 }
 
 func processSVG(inputPath, outputDir string) error {
-	data, err := os.ReadFile(inputPath)
+	data, err := os.ReadFile(filepath.Clean(inputPath))
 	if err != nil {
 		return err
 	}
@@ -153,7 +140,8 @@ func processSVG(inputPath, outputDir string) error {
 
 	variant := filepath.Base(filepath.Dir(inputPath)) // "solid" or "outline"
 	baseName := strings.TrimSuffix(filepath.Base(inputPath), ".svg")
-	funcName := fmt.Sprintf("%s%s", strings.Title(ToCamelCase(baseName)), strings.Title(variant))
+
+	funcName := fmt.Sprintf("%s%s", cases.Title(language.English).String(ToCamelCase(baseName)), cases.Title(language.English).String(variant))
 	outputFile := filepath.Join(outputDir, baseName+"-"+variant+".go")
 
 	tmpl, err := template.New("component").Parse(templ)
@@ -166,7 +154,7 @@ func processSVG(inputPath, outputDir string) error {
 		return err
 	}
 
-	output, err := os.Create(outputFile)
+	output, err := os.Create(filepath.Clean(outputFile))
 	if err != nil {
 		return err
 	}

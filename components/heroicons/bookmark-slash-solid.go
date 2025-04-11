@@ -3,7 +3,7 @@ package heroicons
 
 import "github.com/katallaxie/fiber-htmx"
 
-func BookmarkSlashSolid(p IconProps) htmx.Node {
+func BookmarkslashSolid(p IconProps) htmx.Node {
     return htmx.SVG(
         htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),

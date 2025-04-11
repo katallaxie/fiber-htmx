@@ -3,7 +3,7 @@ package heroicons
 
 import "github.com/katallaxie/fiber-htmx"
 
-func PresentationChartBarSolid(p IconProps) htmx.Node {
+func PresentationchartbarSolid(p IconProps) htmx.Node {
     return htmx.SVG(
         htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
