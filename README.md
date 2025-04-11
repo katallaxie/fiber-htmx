@@ -17,6 +17,15 @@ A Go package to write HTML5 and HTMX components in Go. The package is designed t
 - Easy to use and learn.
 - Easy to extend and customize.
 
+There are additional complex components that help to write HTML5 and HTMX components in Go.
+
+- [x] [htmx](https://htmx.org/)
+- [x] [HTML5](https://www.w3.org/TR/2011/WD-html5-20110405/)
+- [x] [TailwindCSS](https://tailwindcss.com/)
+- [x] [Alpine.js](https://alpinejs.dev/)
+- [ ] [DaisyUI](https://daisyui.com/) (WIP)
+- [x] [Heroicons](https://heroicons.com/)
+
 ## Installation
 
 ```bash
@@ -56,15 +65,6 @@ htmx.Button(
     htmx.HxPost("/api/respond")
 )
 ```
-
-There are additional complex components that help to write HTML5 and HTMX components in Go.
-
-- [x] [htmx](https://htmx.org/)
-- [x] [HTML5](https://www.w3.org/TR/2011/WD-html5-20110405/)
-- [x] [TailwindCSS](https://tailwindcss.com/)
-- [x] [Alpine.js](https://alpinejs.dev/)
-- [ ] [DaisyUI](https://daisyui.com/) (WIP)
-- [x] [Heroicons](https://heroicons.com/) (WIP)
 
 ## Elements
 
