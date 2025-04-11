@@ -3,7 +3,7 @@ package heroicons
 
 import "github.com/katallaxie/fiber-htmx"
 
-func ArrowdownOutline(p IconProps) htmx.Node {
+func ArrowDownOutline(p IconProps) htmx.Node {
     return htmx.SVG(
         htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),

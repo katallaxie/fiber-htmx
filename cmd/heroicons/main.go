@@ -83,14 +83,9 @@ type flags struct {
 func ToCamelCase(filepath string) string {
 	parts := strings.Split(filepath, "-")
 	for i := range parts {
-		if i > 0 && len(parts[i]) > 0 {
-			for _, c := range []cases.Caser{
-				cases.Title(language.English),
-			} {
-				parts[i] = c.String(parts[i])
-			}
-		}
+		parts[i] = cases.Title(language.English).String(parts[i])
 	}
+
 	return strings.Join(parts, "")
 }
 
@@ -141,7 +136,7 @@ func processSVG(inputPath, outputDir string) error {
 	variant := filepath.Base(filepath.Dir(inputPath)) // "solid" or "outline"
 	baseName := strings.TrimSuffix(filepath.Base(inputPath), ".svg")
 
-	funcName := fmt.Sprintf("%s%s", cases.Title(language.English).String(ToCamelCase(baseName)), cases.Title(language.English).String(variant))
+	funcName := fmt.Sprintf("%s%s", ToCamelCase(baseName), cases.Title(language.English).String(variant))
 	outputFile := filepath.Join(outputDir, baseName+"-"+variant+".go")
 
 	tmpl, err := template.New("component").Parse(templ)
