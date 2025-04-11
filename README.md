@@ -64,7 +64,7 @@ There are additional complex components that help to write HTML5 and HTMX compon
 - [x] [TailwindCSS](https://tailwindcss.com/)
 - [x] [Alpine.js](https://alpinejs.dev/)
 - [ ] [DaisyUI](https://daisyui.com/) (WIP)
-- [ ] [Heroicons](https://heroicons.com/) (WIP)
+- [x] [Heroicons](https://heroicons.com/) (WIP)
 
 ## Elements
 
@@ -209,6 +209,15 @@ app := fiber.New()
 app.Get("/", htmx.NewHxControllerHandler(NewHelloWorldController()))
 
 app.Listen(":3000")
+```
+
+## Icons
+
+The package has support for [Heroicons](https://heroicons.com/). The support is for the outline and solid icons.
+
+```go
+icon := heroicons.AcademicCapOutline(heroicons.IconProps{})
+icon.Render(os.Stdout)
 ```
 
 ## Server-side events (SSE)
