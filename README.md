@@ -221,6 +221,26 @@ icon := heroicons.AcademicCapOutline(heroicons.IconProps{})
 icon.Render(os.Stdout)
 ```
 
+## 🧑‍💻 VSCode and Copilot
+
+1 Run this command to save the `llms.txt` to `.vscode/htmx.md`
+
+```bash
+curl -L https://raw.githubusercontent.com/katallaxie/fiber-htmx/refs/heads/main/llms.txt --create-dirs -o .vscode/htmx.md
+```
+
+2. In `.vscode/settings.json` Add this:
+
+```json
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "./.vscode/htmx.md"
+    }
+  ]
+}
+```
+
 ## Server-side events (SSE)
 
 The package supports server-side events (SSE) to update the components on the client-side.

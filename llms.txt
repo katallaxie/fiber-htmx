@@ -1,0 +1,12 @@
+# Fiber for HTMX
+Fiber for HTMX is a package to create HTMX and HTML applications using pure Go.
+Fiber for HTMX provides primitives to write the applications in a declarative way.
+
+[docs](https://pkg.go.dev/github.com/katallaxie/fiber-htmx)
+
+## Fiber for HTMX install notes
+Install the package using the following command: go get github.com/katallaxie/fiber-htmx
+
+## Fiber for HTMX usage rules
+1. We can create HTMX applications by using the primitives components that are named after the HTML and HTMX tags and attributes.
+2. Properties to components are injected via structs and children nodes are injected via the the last argument of the function.
