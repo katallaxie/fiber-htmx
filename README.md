@@ -8,7 +8,7 @@
 
 A Go package to write HTML5 and HTMX components in Go. The package is designed to work with [fiber](http://gofiber.io) and [htmx](https://htmx.org/).
 
-## Features
+## 🦄 Features
 
 - Write declartive HTML5 components in Go without using templates and with the full-power of a type-safe language, auto-completion, and refactoring.
 - Full support for HTMX components.
@@ -17,16 +17,17 @@ A Go package to write HTML5 and HTMX components in Go. The package is designed t
 - Easy to use and learn.
 - Easy to extend and customize.
 
+## ✨ Components
+
 There are additional complex components that help to write HTML5 and HTMX components in Go.
 
 - [x] [htmx](https://htmx.org/)
 - [x] [HTML5](https://www.w3.org/TR/2011/WD-html5-20110405/)
-- [x] [TailwindCSS](https://tailwindcss.com/)
-- [x] [Alpine.js](https://alpinejs.dev/)
-- [ ] [DaisyUI](https://daisyui.com/) (WIP)
 - [x] [Heroicons](https://heroicons.com/)
+- [x] [TailwindCSS](https://tailwindcss.com/)
+- [ ] [DaisyUI](https://daisyui.com/) (WIP)
 
-## Installation
+## 🛸 Installation
 
 ```bash
 go get github.com/katallaxie/fiber-htmx
