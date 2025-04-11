@@ -55,7 +55,7 @@ htmx.HTML5(
 )
 ```
 
-### Example
+## 🧪 Sample Use
 
 Creating a button leveraging htmx is as easy as this.
 
@@ -67,7 +67,7 @@ htmx.Button(
 )
 ```
 
-## Elements
+## 🎨 Elements
 
 HTML and HTMX elements are represented as functions in Go. The functions are used to create the elements.
 
@@ -88,7 +88,7 @@ This will create the following HTML element.
 
 There is support for all HTML5 elements and Tailwind classes. Use `import "github.com/katallaxie/fiber-htmx/tailwind"` to include Tailwind classes.
 
-## Components
+## 📦 Components
 
 Write HTML5 and HTMX components in Go.
 
@@ -212,7 +212,7 @@ app.Get("/", htmx.NewHxControllerHandler(NewHelloWorldController()))
 app.Listen(":3000")
 ```
 
-## Icons
+## 🏄‍♀️ Icons
 
 The package has support for [Heroicons](https://heroicons.com/). The support is for the outline and solid icons.
 
@@ -229,7 +229,7 @@ The package supports server-side events (SSE) to update the components on the cl
 manager := sse.NewBroadcastManager(5)
 app.Get("/sse", sse.NewSSEHandler(manager))
 ```
-## Error Handling
+## 🛑 Error Handling
 
 There are components that enable handling fallbacks in case of errors and to recover from panics in rendering components.
 
@@ -244,11 +244,11 @@ htmx.Fallback(
 ),
 ```
 
-## Examples
+## 📄 Examples
 
 See [examples](https://github.com/katallaxie/fiber-htmx/tree/master/examples) to understand the provided interfaces.
 
-## Benchmarks
+## 🏎️ Benchmarks
 
 ```bash
 BenchmarkElement-10                     12964440                77.40 ns/op
