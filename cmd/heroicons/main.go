@@ -71,7 +71,8 @@ func {{.FuncName}}(p IconProps) htmx.Node {
         ),
         {{- end}}
     )
-}`
+}
+`
 
 var defaultRoot = "heroicons/src"
 
@@ -114,7 +115,6 @@ func main() {
 
 		return processSVG(path, f.Output)
 	})
-
 	if err != nil {
 		fmt.Print(err)
 		log.Fatal(err)
@@ -144,7 +144,7 @@ func processSVG(inputPath, outputDir string) error {
 		return err
 	}
 
-	err = filex.MkdirAll(outputDir, 0755)
+	err = filex.MkdirAll(outputDir, 0o755)
 	if err != nil {
 		return err
 	}
