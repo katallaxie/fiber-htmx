@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 
 	"github.com/katallaxie/pkg/errorx"
+	"github.com/zeiss/pkg/conv"
 )
 
 // Imports is following the WICG Import Maps proposal.
@@ -19,10 +20,10 @@ type Imports struct {
 
 // ImportMap returns a new ImportMaps object.
 func ImportMap(m Imports) Node {
-	b := errorx.Ignore(json.MarshalIndent(m, "", "    "))
+	b := errorx.Ignore(json.Marshal(m))
 
 	return Script(
 		Attribute("type", "importmap"),
-		Raw(string(b)),
+		Raw(conv.String(b)),
 	)
 }
