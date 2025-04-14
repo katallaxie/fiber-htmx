@@ -6,12 +6,15 @@ import (
 	"fmt"
 	"net/http"
 	"path/filepath"
+	"strings"
 
 	"github.com/katallaxie/fiber-htmx/imports"
 )
 
-const DefaultUrl = "https://unpkg.com/%s@%s/?meta"
-const DefaultCdnUrl = "https://unpkg.com/%s@%s/"
+const (
+	DefaultUrl    = "https://unpkg.com/%s@%s/?meta"
+	DefaultCdnUrl = "https://unpkg.com/%s@%s/%s"
+)
 
 var _ imports.Resolver = (*client)(nil)
 
@@ -31,54 +34,52 @@ type Response struct {
 }
 
 // New returns a new unpkg provider.
-func New() *client {
+func New() imports.Resolver {
 	return &client{}
 }
 
 // Resolve resolves the package to a URL.
-func (c *client) Resolve(ctx context.Context, name, version string) (*imports.Package, error) {
-	metaUrl := fmt.Sprintf(DefaultUrl, name, version)
+func (c *client) Resolve(ctx context.Context, pkg *imports.ExactPackage) error {
+	metaUrl := fmt.Sprintf(DefaultUrl, pkg.Name, pkg.Version)
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, metaUrl, nil)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		return nil, err
+		return err
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("unpkg API responded with status %d", resp.StatusCode)
+		return fmt.Errorf("unpkg API responded with status %d", resp.StatusCode)
 	}
 
 	var meta Response
 	if err := json.NewDecoder(resp.Body).Decode(&meta); err != nil {
-		return nil, err
-	}
-
-	pkg := &imports.Package{
-		Name:    meta.Package,
-		Version: meta.Version,
+		return err
 	}
 
 	for _, f := range meta.Files {
 		switch filepath.Ext(f.Path) {
 		case ".js":
 			pkg.Files = append(pkg.Files, &imports.FileJS{
-				Path: f.Path,
+				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				LocalPath: f.Path,
 			})
 		case ".css":
 			pkg.Files = append(pkg.Files, &imports.FileCSS{
-				Path: f.Path,
+				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				LocalPath: f.Path,
 			})
 		default:
 			pkg.Files = append(pkg.Files, &imports.FileUnkown{
-				Path: f.Path,
+				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				LocalPath: f.Path,
 			})
 		}
 	}
 
-	return pkg, nil
+	return nil
 }

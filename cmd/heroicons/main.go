@@ -105,10 +105,7 @@ func main() {
 	pflag.StringVar(&f.Root, "root", f.Root, "root")
 	pflag.Parse()
 
-	fmt.Println("root:", f.Root)
-
 	err := filepath.WalkDir(f.Root, func(path string, d fs.DirEntry, err error) error {
-		fmt.Println("path:", path)
 		if filepath.Ext(path) != ".svg" {
 			return nil
 		}
@@ -116,7 +113,6 @@ func main() {
 		return processSVG(path, f.Output)
 	})
 	if err != nil {
-		fmt.Print(err)
 		log.Fatal(err)
 	}
 }
