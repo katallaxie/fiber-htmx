@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"path/filepath"
 
 	"github.com/katallaxie/fiber-htmx/imports"
 )
@@ -16,12 +17,16 @@ var _ imports.Resolver = (*client)(nil)
 
 type client struct{}
 
+// Response is the response from the unpkg API.
 type Response struct {
-	Type  string `json:"type"`
-	Path  string `json:"path"`
-	Files []struct {
-		Path string `json:"path"`
-		Type string `json:"type"`
+	Package string `json:"package"`
+	Version string `json:"version"`
+	Prefix  string `json:"prefix"`
+	Files   []struct {
+		Path      string `json:"path"`
+		Size      int    `json:"size"`
+		Integrity string `json:"integrity"`
+		Type      string `json:"type"`
 	} `json:"files"`
 }
 
@@ -31,37 +36,49 @@ func New() *client {
 }
 
 // Resolve resolves the package to a URL.
-func (c *client) Resolve(ctx context.Context, pkg *imports.Package) error {
-	metaUrl := fmt.Sprintf(DefaultUrl, pkg.Name, pkg.Version)
+func (c *client) Resolve(ctx context.Context, name, version string) (*imports.Package, error) {
+	metaUrl := fmt.Sprintf(DefaultUrl, name, version)
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, metaUrl, nil)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("unpkg API responded with status %d", resp.StatusCode)
+		return nil, fmt.Errorf("unpkg API responded with status %d", resp.StatusCode)
 	}
 
 	var meta Response
 	if err := json.NewDecoder(resp.Body).Decode(&meta); err != nil {
-		return err
+		return nil, err
 	}
 
-	fmt.Println(meta)
+	pkg := &imports.Package{
+		Name:    meta.Package,
+		Version: meta.Version,
+	}
 
-	// basePath := fmt.Sprintf(DefaultCdnUrl, pkg.Name, pkg.Version)
+	for _, f := range meta.Files {
+		switch filepath.Ext(f.Path) {
+		case ".js":
+			pkg.Files = append(pkg.Files, &imports.FileJS{
+				Path: f.Path,
+			})
+		case ".css":
+			pkg.Files = append(pkg.Files, &imports.FileCSS{
+				Path: f.Path,
+			})
+		default:
+			pkg.Files = append(pkg.Files, &imports.FileUnkown{
+				Path: f.Path,
+			})
+		}
+	}
 
-	// // Recursively collect all files
-	// var files library.Files
-	// c.walkFiles(meta.Files, basePath, &files)
-
-	// return files, version, nil
-
-	return nil
+	return pkg, nil
 }

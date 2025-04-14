@@ -17,22 +17,22 @@ type FileJS struct {
 	LocalPath string
 }
 
-func (f *FileJS) isFile_Type() {}
+func (*FileJS) isFile_Type() {}
 
 type FileCSS struct {
 	Path      string
 	LocalPath string
 }
 
-func (f *FileCSS) isFile_Type() {}
+func (*FileCSS) isFile_Type() {}
 
 type FileUnkown struct {
 	Path      string
 	LocalPath string
 }
 
-func (f *FileUnkown) isFile_Type() {}
+func (*FileUnkown) isFile_Type() {}
 
 type Resolver interface {
-	Resolve(ctx context.Context, pkg *Package) error
+	Resolve(ctx context.Context, name, version string) (*Package, error)
 }
