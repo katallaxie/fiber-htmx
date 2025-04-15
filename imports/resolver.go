@@ -1,7 +1,7 @@
 package imports
 
 import (
-	"crypto/md5"
+	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
 )
@@ -44,8 +44,8 @@ type ExactPackage struct {
 
 // Hash is a struct that represents a hash of a file.
 func (e *ExactPackage) Hash() string {
-	hasher := md5.New()
-	hasher.Write([]byte(fmt.Sprintf("%s@%s", e.Name, e.Version)))
+	hasher := sha256.New()
+	fmt.Fprintf(hasher, "%s@%s", e.Name, e.Version)
 	return hex.EncodeToString(hasher.Sum(nil))
 }
 
