@@ -9,8 +9,6 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-playground/validator/v10"
-	htmx "github.com/katallaxie/fiber-htmx"
 	"github.com/katallaxie/fiber-htmx/components/alerts"
 	"github.com/katallaxie/fiber-htmx/components/avatars"
 	"github.com/katallaxie/fiber-htmx/components/buttons"
@@ -35,10 +33,12 @@ import (
 	"github.com/katallaxie/pkg/server"
 	"github.com/katallaxie/pkg/utilx"
 
+	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
+	htmx "github.com/katallaxie/fiber-htmx"
 	"github.com/spf13/cobra"
 )
 
@@ -306,6 +306,11 @@ func (c *exampleController) Get() error {
 						htmx.Attribute("rel", "stylesheet"),
 						htmx.Attribute("type", "text/css"),
 					),
+					htmx.Script(
+						htmx.Async(),
+						htmx.CrossOrigin("anonymous"),
+						htmx.Src("https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"),
+					),
 					htmx.Imports(htmx.ImportsProp{
 						Resolver: cache.New(jsdeliver.New()),
 						Pkgs: []imports.ExactPackage{
@@ -320,11 +325,6 @@ func (c *exampleController) Get() error {
 							},
 						},
 					}),
-					htmx.Script(
-						htmx.Async(),
-						htmx.CrossOrigin("anonymous"),
-						htmx.Src("https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"),
-					),
 					htmx.Script(
 						htmx.Type("module"),
 						htmx.Raw(`import htmx from "htmx.org";`),

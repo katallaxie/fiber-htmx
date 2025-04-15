@@ -212,6 +212,31 @@ app.Get("/", htmx.NewHxControllerHandler(NewHelloWorldController()))
 app.Listen(":3000")
 ```
 
+## 🧩 Import map
+
+An import map is a JSON object that allows developers to control how the browser resolves module specifiers when importing JavaScript modules.
+
+```go
+htmx.Imports(
+    htmx.ImportsProp{
+        Resolver: cache.New(jsdeliver.New()),
+        Pkgs: []imports.ExactPackage{
+            {
+                Name:    "htmx.org",
+                Version: "2.0.4",
+            },
+        },
+        Requires: []imports.Require{
+            {
+                File: "dist/htmx.esm.js",
+            },
+        },
+    }
+),
+```
+
+[Import maps](https://github.com/WICG/import-maps) let you import JavaScript modules using logical names that map to versioned/digested files – directly from the browser. So you can [build modern JavaScript applications using JavaScript libraries made for ES modules (ESM) without the need for transpiling or bundling](https://world.hey.com/dhh/modern-web-apps-without-javascript-bundling-or-transpiling-a20f2755). This frees you from needing Webpack, Yarn, npm, or any other part of the JavaScript toolchain. All you need is the asset pipeline that's already included in Rails.
+
 ## 🏄‍♀️ Icons
 
 The package has support for [Heroicons](https://heroicons.com/). The support is for the outline and solid icons.
