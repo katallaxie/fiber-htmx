@@ -1,5 +1,11 @@
 package imports
 
+import (
+	"crypto/md5"
+	"encoding/hex"
+	"fmt"
+)
+
 // Resolver is the interface that must be implemented by all resolvers.
 type Resolver interface {
 	// Resolve resolves a package by its name and version.
@@ -34,6 +40,13 @@ type ExactPackage struct {
 	Version string
 	// Files is a list of files associated with the package.
 	Files []isFile_Type
+}
+
+// Hash is a struct that represents a hash of a file.
+func (e *ExactPackage) Hash() string {
+	hasher := md5.New()
+	hasher.Write([]byte(fmt.Sprintf("%s@%s", e.Name, e.Version)))
+	return hex.EncodeToString(hasher.Sum(nil))
 }
 
 type isFile_Type interface {

@@ -29,7 +29,8 @@ import (
 	"github.com/katallaxie/fiber-htmx/components/utils"
 	"github.com/katallaxie/fiber-htmx/components/validate"
 	"github.com/katallaxie/fiber-htmx/imports"
-	"github.com/katallaxie/fiber-htmx/imports/unpkg"
+	"github.com/katallaxie/fiber-htmx/imports/cache"
+	"github.com/katallaxie/fiber-htmx/imports/jsdeliver"
 	"github.com/katallaxie/fiber-htmx/sse"
 	"github.com/katallaxie/pkg/server"
 	"github.com/katallaxie/pkg/utilx"
@@ -306,7 +307,7 @@ func (c *exampleController) Get() error {
 						htmx.Attribute("type", "text/css"),
 					),
 					htmx.Imports(htmx.ImportsProp{
-						Resolver: unpkg.New(),
+						Resolver: cache.New(jsdeliver.New()),
 						Pkgs: []imports.ExactPackage{
 							{
 								Name:    "htmx.org",
