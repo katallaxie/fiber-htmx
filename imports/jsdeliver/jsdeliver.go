@@ -79,7 +79,7 @@ func walkFiles(files Files, filePath string, pkg *imports.ExactPackage) {
 		switch filepath.Ext(file.Name) {
 		case ".js":
 			pkg.Files = append(pkg.Files, &imports.FileJS{
-				Path:      fmt.Sprintf(DefaultCdnUrl, pkg.Name, pkg.Version, filepath.Join(filePath, file.Name)),
+				Path:      fmt.Sprintf(DefaultCdnUrl, pkg.Name, pkg.Version, filepath.Clean(filepath.Join(filePath, file.Name))),
 				Integrity: file.Hash,
 				LocalPath: filepath.Join(filePath, file.Name),
 			})

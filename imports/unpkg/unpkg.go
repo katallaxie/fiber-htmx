@@ -68,19 +68,19 @@ func (c *client) Resolve(ctx context.Context, pkg *imports.ExactPackage) error {
 			pkg.Files = append(pkg.Files, &imports.FileJS{
 				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
 				Integrity: f.Integrity,
-				LocalPath: f.Path,
+				LocalPath: strings.TrimPrefix(f.Path, "/"),
 			})
 		case ".css":
 			pkg.Files = append(pkg.Files, &imports.FileCSS{
 				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
 				Integrity: f.Integrity,
-				LocalPath: f.Path,
+				LocalPath: strings.TrimPrefix(f.Path, "/"),
 			})
 		default:
 			pkg.Files = append(pkg.Files, &imports.FileUnkown{
 				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
 				Integrity: f.Integrity,
-				LocalPath: f.Path,
+				LocalPath: strings.TrimPrefix(f.Path, "/"),
 			})
 		}
 	}
