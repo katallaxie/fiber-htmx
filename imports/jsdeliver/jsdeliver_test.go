@@ -1,4 +1,4 @@
-package unpkg
+package jsdeliver
 
 import (
 	"testing"

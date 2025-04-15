@@ -40,8 +40,9 @@ func New() imports.Resolver {
 
 // Resolve resolves the package to a URL.
 func (c *client) Resolve(ctx context.Context, pkg *imports.ExactPackage) error {
-	metaUrl := fmt.Sprintf(DefaultUrl, pkg.Name, pkg.Version)
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, metaUrl, nil)
+	url := fmt.Sprintf(DefaultUrl, pkg.Name, pkg.Version)
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return err
 	}
@@ -66,16 +67,19 @@ func (c *client) Resolve(ctx context.Context, pkg *imports.ExactPackage) error {
 		case ".js":
 			pkg.Files = append(pkg.Files, &imports.FileJS{
 				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				Integrity: f.Integrity,
 				LocalPath: f.Path,
 			})
 		case ".css":
 			pkg.Files = append(pkg.Files, &imports.FileCSS{
 				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				Integrity: f.Integrity,
 				LocalPath: f.Path,
 			})
 		default:
 			pkg.Files = append(pkg.Files, &imports.FileUnkown{
 				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				Integrity: f.Integrity,
 				LocalPath: f.Path,
 			})
 		}

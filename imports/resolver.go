@@ -82,6 +82,7 @@ type isFile_Type interface {
 type FileJS struct {
 	Path      string
 	LocalPath string
+	Integrity string
 }
 
 func (*FileJS) isFile_Type() {}
@@ -90,6 +91,7 @@ func (*FileJS) isFile_Type() {}
 type FileCSS struct {
 	Path      string
 	LocalPath string
+	Integrity string
 }
 
 func (*FileCSS) isFile_Type() {}
@@ -98,6 +100,7 @@ func (*FileCSS) isFile_Type() {}
 type FileUnkown struct {
 	Path      string
 	LocalPath string
+	Integrity string
 }
 
 func (*FileUnkown) isFile_Type() {}
