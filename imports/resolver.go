@@ -1,106 +1,9 @@
 package imports
 
-import (
-	"context"
-
-	"github.com/katallaxie/pkg/utilx"
-)
-
-// Imports is a struct that represents an import map for JavaScript modules.
-// sse https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap
-type Imports struct {
-	// Imports is a map of module specifiers to URLs.
-	Imports map[string]string `json:"imports"`
-	// Scopes is a map of scopes to maps of module specifiers to URLs.
-	Scopes map[string]map[string]string `json:"scopes,omitempty"`
-	// Integrity is a map of URLs to integrity metadata.
-	Integrity map[string]string `json:"integrity,omitempty"`
-}
-
-// NewImports creates a new Imports instance.
-func NewImports() Imports {
-	return Imports{
-		Imports:   make(map[string]string),
-		Scopes:    make(map[string]map[string]string),
-		Integrity: make(map[string]string),
-	}
-}
-
-// Builder is a struct that represents a builder for an import map.
-type Builder interface {
-	// Packages adds packahges to the import map.
-	Packages(pkgs ...*ExactPackage) Builder
-	// Require a package to the import map.
-	Require(pkgs ...*Require) Builder
-	// Build returns the import map.
-	Build(ctx context.Context) (Imports, error)
-}
-
-// BuilderImpl is a struct that implements the Builder interface.
-type BuilderImpl struct {
-	pkgs     []*ExactPackage
-	require  []*Require
-	resolver Resolver
-}
-
-// New creates a new Imports instance.
-func New(resolver Resolver) Builder {
-	return &BuilderImpl{
-		resolver: resolver,
-	}
-}
-
-// Packages adds packages to the import map.
-func (b *BuilderImpl) Packages(pkgs ...*ExactPackage) Builder {
-	b.pkgs = append(b.pkgs, pkgs...)
-	return b
-}
-
-// Require adds a package to the import map.
-func (b *BuilderImpl) Require(pkgs ...*Require) Builder {
-	b.require = append(b.require, pkgs...)
-	return b
-}
-
-// Build builds the import map.
-func (b *BuilderImpl) Build(ctx context.Context) (Imports, error) {
-	imports := NewImports()
-
-	for _, pkg := range b.pkgs {
-		if err := b.resolver.Resolve(ctx, pkg); err != nil {
-			return imports, err
-		}
-	}
-
-	// TODO(katallaxie): add support for scopes and improve runtime performance
-	for _, req := range b.require {
-		for _, pkg := range b.pkgs {
-			for _, file := range pkg.Files {
-				switch f := file.(type) {
-				case *FileJS:
-					if req.File == f.LocalPath {
-						imports.Imports[pkg.Name] = f.LocalPath
-						if utilx.NotEmpty(req.As) {
-							imports.Imports[req.As] = f.LocalPath
-						}
-
-						if utilx.NotEmpty(f.Integrity) {
-							imports.Integrity[f.LocalPath] = f.Integrity
-						}
-					}
-				default:
-				}
-			}
-		}
-	}
-
-	return imports, nil
-}
-
 // Resolver is the interface that must be implemented by all resolvers.
 type Resolver interface {
 	// Resolve resolves a package by its name and version.
-	Resolve(ctx context.Context, pkg *ExactPackage) error
+	Resolve(pkg *ExactPackage) error
 }
 
 var _ Resolver = (*UnimplementedResolver)(nil)
@@ -109,7 +12,7 @@ var _ Resolver = (*UnimplementedResolver)(nil)
 type UnimplementedResolver struct{}
 
 // Resolve resolves a package by its name and version.
-func (r *UnimplementedResolver) Resolve(ctx context.Context, pkg *ExactPackage) error {
+func (r *UnimplementedResolver) Resolve(pkg *ExactPackage) error {
 	return nil
 }
 

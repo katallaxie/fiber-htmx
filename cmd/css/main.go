@@ -218,11 +218,7 @@ func Page() htmx.Node {
 					htmx.Attribute("rel", "stylesheet"),
 					htmx.Attribute("type", "text/css"),
 				),
-				htmx.ImportMap(htmx.Imports{
-					Imports: map[string]string{
-						"htmx": "https://unpkg.com/htmx.org@2.0.3/dist/htmx.esm.js",
-					},
-				}),
+				htmx.Imports(htmx.ImportsProp{}),
 				htmx.Script(
 					htmx.Async(),
 					htmx.CrossOrigin("anonymous"),

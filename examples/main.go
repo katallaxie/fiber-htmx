@@ -28,6 +28,8 @@ import (
 	"github.com/katallaxie/fiber-htmx/components/typography"
 	"github.com/katallaxie/fiber-htmx/components/utils"
 	"github.com/katallaxie/fiber-htmx/components/validate"
+	"github.com/katallaxie/fiber-htmx/imports"
+	"github.com/katallaxie/fiber-htmx/imports/unpkg"
 	"github.com/katallaxie/fiber-htmx/sse"
 	"github.com/katallaxie/pkg/server"
 	"github.com/katallaxie/pkg/utilx"
@@ -303,9 +305,18 @@ func (c *exampleController) Get() error {
 						htmx.Attribute("rel", "stylesheet"),
 						htmx.Attribute("type", "text/css"),
 					),
-					htmx.ImportMap(htmx.Imports{
-						Imports: map[string]string{
-							"htmx": "https://unpkg.com/htmx.org@2.0.3/dist/htmx.esm.js",
+					htmx.Imports(htmx.ImportsProp{
+						Resolver: unpkg.New(),
+						Pkgs: []imports.ExactPackage{
+							{
+								Name:    "htmx.org",
+								Version: "2.0.4",
+							},
+						},
+						Requires: []imports.Require{
+							{
+								File: "dist/htmx.esm.js",
+							},
 						},
 					}),
 					htmx.Script(
@@ -315,7 +326,7 @@ func (c *exampleController) Get() error {
 					),
 					htmx.Script(
 						htmx.Type("module"),
-						htmx.Raw(`import htmx from "htmx";`),
+						htmx.Raw(`import htmx from "htmx.org";`),
 						htmx.Raw(`htmx.logAll();`),
 					),
 					htmx.Script(
