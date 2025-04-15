@@ -32,7 +32,7 @@ type Files []File
 // Response is the response from the unpkg API.
 type Response struct {
 	Default string `json:"default"`
-	Files   Files
+	Files   Files  `json:"files"`
 }
 
 // New returns a new unpkg provider.
