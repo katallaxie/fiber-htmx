@@ -21,11 +21,11 @@ A Go package to write HTML5 and HTMX components in Go. The package is designed t
 
 There are additional complex components that help to write HTML5 and HTMX components in Go.
 
-- [x] [htmx](https://htmx.org/)
+- [x] [HTMX](https://htmx.org/)
 - [x] [HTML5](https://www.w3.org/TR/2011/WD-html5-20110405/)
 - [x] [Heroicons](https://heroicons.com/)
 - [x] [TailwindCSS](https://tailwindcss.com/)
-- [ ] [DaisyUI](https://daisyui.com/) (WIP)
+- [ ] [DaisyUI](https://daisyui.com/) (73% 📈)
 
 ## 🛸 Installation
 
