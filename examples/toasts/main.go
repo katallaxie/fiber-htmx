@@ -11,7 +11,7 @@ import (
 	"github.com/katallaxie/fiber-htmx/components/buttons"
 	"github.com/katallaxie/fiber-htmx/components/drawers"
 	"github.com/katallaxie/fiber-htmx/components/dropdowns"
-	"github.com/katallaxie/fiber-htmx/components/icons"
+	"github.com/katallaxie/fiber-htmx/components/heroicons"
 	"github.com/katallaxie/fiber-htmx/components/menus"
 	"github.com/katallaxie/fiber-htmx/components/navbars"
 	"github.com/katallaxie/fiber-htmx/components/swap"
@@ -141,8 +141,8 @@ func (c *exampleController) Get() error {
 														"btn-primary": false,
 													},
 												},
-												icons.Bars3Outline(
-													icons.IconProps{},
+												heroicons.Bars3Outline(
+													heroicons.IconProps{},
 												),
 											),
 										),
@@ -161,21 +161,21 @@ func (c *exampleController) Get() error {
 												),
 												swap.SwapOn(
 													swap.SwapProps{},
-													icons.MoonOutlineSmall(
-														icons.IconProps{},
+													heroicons.MoonOutline(
+														heroicons.IconProps{},
 													),
 												),
 												swap.SwapOff(
 													swap.SwapProps{},
-													icons.SunOutlineSmall(
-														icons.IconProps{},
+													heroicons.SunOutline(
+														heroicons.IconProps{},
 													),
 												),
 											),
 											buttons.CircleSmall(
 												buttons.ButtonProps{},
-												icons.BellAlertOutlineSmall(
-													icons.IconProps{},
+												heroicons.BellAlertOutline(
+													heroicons.IconProps{},
 												),
 											),
 											dropdowns.Dropdown(

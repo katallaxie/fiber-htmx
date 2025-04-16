@@ -2,7 +2,7 @@ package alerts
 
 import (
 	htmx "github.com/katallaxie/fiber-htmx"
-	"github.com/katallaxie/fiber-htmx/components/icons"
+	"github.com/katallaxie/fiber-htmx/components/heroicons"
 )
 
 // AlertProps is the type of the props for the Alert component
@@ -26,8 +26,8 @@ func Alert(p AlertProps, children ...htmx.Node) htmx.Node {
 		htmx.IfElse(
 			p.Icon != nil,
 			p.Icon,
-			icons.InformationCircleOutline(
-				icons.IconProps{},
+			heroicons.InformationCircleOutline(
+				heroicons.IconProps{},
 			),
 		),
 		htmx.Span(
@@ -50,8 +50,8 @@ func Info(p AlertProps, children ...htmx.Node) htmx.Node {
 		htmx.IfElse(
 			p.Icon != nil,
 			p.Icon,
-			icons.InformationCircleOutline(
-				icons.IconProps{},
+			heroicons.InformationCircleOutline(
+				heroicons.IconProps{},
 			),
 		),
 		htmx.Span(
