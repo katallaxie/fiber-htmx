@@ -1,15 +1,15 @@
-package swap
+package swaps
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// SwapProps contains the properties for the swap component.
-type SwapProps struct {
+// Props contains the properties for the swap component.
+type Props struct {
 	ClassNames htmx.ClassNames
 	Value      string
 }
 
-// SwapOn is a component for the on state of the swap component.
-func SwapOn(p SwapProps, children ...htmx.Node) htmx.Node {
+// On is a component for the on state of the swap component.
+func On(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -21,8 +21,8 @@ func SwapOn(p SwapProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// SwapOff is a component for the off state of the swap component.
-func SwapOff(p SwapProps, children ...htmx.Node) htmx.Node {
+// Off is a component for the off state of the swap component.
+func Off(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -35,7 +35,7 @@ func SwapOff(p SwapProps, children ...htmx.Node) htmx.Node {
 }
 
 // Swap is a component for the htmx swap extension.
-func Swap(p SwapProps, children ...htmx.Node) htmx.Node {
+func Swap(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Label(
 		htmx.Merge(
 			htmx.ClassNames{

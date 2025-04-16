@@ -95,7 +95,7 @@ func (b *BroadcastManagerImpl) Remove(client Client) {
 }
 
 // Start starts the broadcast manager.
-func (b *BroadcastManagerImpl) Start(ctx context.Context, ready server.ReadyFunc, run server.RunFunc) func() error {
+func (b *BroadcastManagerImpl) Start(ctx context.Context, ready server.ReadyFunc, _ server.RunFunc) func() error {
 	return func() error {
 		if b.poolSize < 1 {
 			return server.NewServerError(fmt.Errorf("pool size must be greater than 0"))
@@ -150,7 +150,7 @@ func (b *BroadcastManagerImpl) startWorkers(ctx context.Context) {
 			for {
 				select {
 				case msg := <-b.broadcast:
-					b.clients.Range(func(key, value any) bool {
+					b.clients.Range(func(_, value any) bool {
 						client, ok := value.(Client)
 						if !ok {
 							return true
@@ -199,10 +199,8 @@ func NewSSEHandler(manager Manager, config ...Config) fiber.Handler {
 				select {
 				case <-notify:
 					manager.Remove(client)
-					fmt.Println("client removed")
 					return
 				case msg := <-client.Events():
-					fmt.Println("msg received")
 					_, err := fmt.Fprint(w, msg.String())
 					if err != nil {
 						return
@@ -226,7 +224,7 @@ func NewSSEHandler(manager Manager, config ...Config) fiber.Handler {
 // ConfigDefault is the default configuration for the server-sent events server.
 var ConfigDefault = Config{}
 
-// Helper function to set default values
+// Helper function to set default values.
 func configDefault(config ...Config) Config {
 	if len(config) < 1 {
 		return ConfigDefault

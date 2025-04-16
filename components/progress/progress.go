@@ -5,15 +5,15 @@ import (
 	"github.com/katallaxie/pkg/conv"
 )
 
-// ProgressProps is a struct that contains the props of the progress component
-type ProgressProps struct {
+// Props is a struct that contains the props of the  component.
+type Props struct {
 	ClassNames htmx.ClassNames
 	Value      int
 	Max        int
 }
 
-// Progress is a component that renders a progress element
-func Progress(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Progress is a component that renders a  element.
+func Progress(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -28,8 +28,8 @@ func Progress(p ProgressProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ProgressPrimary is a component that renders a primary progress element
-func ProgressPrimary(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Primary is a component that renders a primary element.
+func Primary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -45,8 +45,8 @@ func ProgressPrimary(p ProgressProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ProgressSecondary is a component that renders a secondary progress element
-func ProgressSecondary(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Secondary is a component that renders a secondary element.
+func Secondary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -62,8 +62,8 @@ func ProgressSecondary(p ProgressProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ProgressSuccess is a component that renders a success progress element
-func ProgressSuccess(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Success is a component that renders a success element.
+func Success(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -79,8 +79,8 @@ func ProgressSuccess(p ProgressProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ProgressInfo is a component that renders a info progress element
-func ProgressInfo(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Info is a component that renders a info element.
+func Info(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -96,8 +96,8 @@ func ProgressInfo(p ProgressProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ProgressWarning is a component that renders a warning progress element
-func ProgressWarning(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Warning is a component that renders a warning element.
+func Warning(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -112,8 +112,8 @@ func ProgressWarning(p ProgressProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ProgressIntermediate is a component that renders a intermediate progress element
-func ProgressIntermediate(p ProgressProps, children ...htmx.Node) htmx.Node {
+// Intermediate is a component that renders a intermediate element.
+func Intermediate(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Progress(
 		htmx.Merge(
 			htmx.ClassNames{

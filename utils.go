@@ -60,8 +60,8 @@ func Merge(classNames ...ClassNames) ClassNames {
 	return merged
 }
 
-// JsonSerializeOrEmpty returns a JSON serialized string of the provided data or an empty string if the serialization fails.
-func JsonSerializeOrEmpty(data any) string {
+// JSONSerializeOrEmpty returns a JSON serialized string of the provided data or an empty string if the serialization fails.
+func JSONSerializeOrEmpty(data any) string {
 	if data == nil {
 		return ""
 	}

@@ -8,8 +8,6 @@ import (
 )
 
 func Test_SVG(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -29,8 +27,6 @@ func Test_SVG(t *testing.T) {
 }
 
 func Test_ClipRule(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -50,8 +46,6 @@ func Test_ClipRule(t *testing.T) {
 }
 
 func Test_Fill(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -71,8 +65,6 @@ func Test_Fill(t *testing.T) {
 }
 
 func Test_FillRule(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -92,8 +84,6 @@ func Test_FillRule(t *testing.T) {
 }
 
 func Test_Stroke(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -113,8 +103,6 @@ func Test_Stroke(t *testing.T) {
 }
 
 func Test_StrokeWidth(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -134,8 +122,6 @@ func Test_StrokeWidth(t *testing.T) {
 }
 
 func Test_ViewBox(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string

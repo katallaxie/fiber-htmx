@@ -23,6 +23,7 @@ func main() {
 	log.SetFlags(0)
 	log.SetOutput(os.Stderr)
 
+	//nolint:errcheck
 	logx.RedirectStdLog(logx.LogSink)
 
 	f := &flags{}

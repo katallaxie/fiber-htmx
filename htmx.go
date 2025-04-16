@@ -15,15 +15,11 @@ import (
 // other packages.
 type contextKey int
 
-// The keys for the values in context
-const (
-	messagesKey contextKey = iota
-)
+// The keys for the values in context.
+const messagesKey contextKey = iota
 
-const (
-	// StatusStopPolling is a helper status code to stop polling.
-	StatusStopPolling = 286
-)
+// StatusStopPolling is a helper status code to stop polling.
+const StatusStopPolling = 286
 
 // HxRequestHeader is a helper type for htmx request headers.
 type HxRequestHeader string
@@ -58,10 +54,10 @@ func (h *HxResponseHeaders) Get(k HxResponseHeader) string {
 
 const (
 	HXLocation           HxResponseHeader = "HX-Location"             // Allows you to do a client-side redirect that does not do a full page reload
-	HXPushUrl            HxResponseHeader = "HX-Push-Url"             // pushes a new url into the history stack
+	HXPushURL            HxResponseHeader = "HX-Push-Url"             // pushes a new url into the history stack
 	HXRedirect           HxResponseHeader = "HX-Redirect"             // can be used to do a client-side redirect to a new location
 	HXRefresh            HxResponseHeader = "HX-Refresh"              // if set to "true" the client side will do a full refresh of the page
-	HXReplaceUrl         HxResponseHeader = "HX-Replace-Url"          // replaces the current URL in the location bar
+	HXReplaceURL         HxResponseHeader = "HX-Replace-Url"          // replaces the current URL in the location bar
 	HXReswap             HxResponseHeader = "HX-Reswap"               // Allows you to specify how the response will be swapped. See hx-swap for possible values
 	HXRetarget           HxResponseHeader = "HX-Retarget"             // A CSS selector that updates the target of the content update to a different element on the page
 	HXReselect           HxResponseHeader = "HX-Reselect"             // A CSS selector that allows you to choose which part of the response is used to be swapped in. Overrides an existing hx-select on the triggering element
@@ -88,7 +84,7 @@ func Redirect(c *fiber.Ctx, url string) {
 
 // ReplaceURL is a helper function to replace the current URL.
 func ReplaceURL(c *fiber.Ctx, url string) {
-	c.Set(HXReplaceUrl.String(), url)
+	c.Set(HXReplaceURL.String(), url)
 }
 
 // ReSwap is a helper function to swap the response.
@@ -208,7 +204,7 @@ var ConfigDefault = Config{
 	AuthzChecker: authz.NewNoop(),
 }
 
-// default ErrorHandler that process return error from fiber.Handler
+// default ErrorHandler that process return error from fiber.Handler.
 func defaultErrorHandler(_ *fiber.Ctx, _ error) error {
 	return fiber.ErrBadRequest
 }
@@ -284,7 +280,8 @@ func NewHxControllerHandler(ctrl ControllerFactory, config ...Config) fiber.Hand
 }
 
 // NewControllerHandler returns a new htmx controller handler.
-// nolint:gocyclo
+//
+//nolint:gocyclo
 func NewControllerHandler(factory ControllerFactory, config ...Config) fiber.Handler {
 	cfg := configDefault(config...)
 
@@ -316,7 +313,7 @@ func NewControllerHandler(factory ControllerFactory, config ...Config) fiber.Han
 		c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
 
 		auth, ok := ctrl.(authz.AuthzController) // check for authz from the controller
-		if ok && cfg.AuthzChecker != nil {
+		if ok && cfg.AuthzChecker != nil {       //nolint:nestif
 			principal, err := auth.GetPrincipial(c)
 			if err != nil {
 				return ctrl.Error(err)
@@ -388,8 +385,8 @@ func NewControllerHandler(factory ControllerFactory, config ...Config) fiber.Han
 	}
 }
 
-// NewHtmxMessageHandler is a helper function to handle htmx messages.
-func NewHtmxMessageHandler(config ...Config) fiber.Handler {
+// NewMessageHandler is a helper function to handle htmx messages.
+func NewMessageHandler(config ...Config) fiber.Handler {
 	cfg := configDefault(config...)
 
 	return func(c *fiber.Ctx) (err error) {
@@ -397,7 +394,7 @@ func NewHtmxMessageHandler(config ...Config) fiber.Handler {
 			return c.Next()
 		}
 
-		header := NewHtmxMessageHeader()
+		header := NewMessageHeader()
 		c.Locals(messagesKey, header.Messages)
 
 		if Request(c) {
@@ -408,7 +405,7 @@ func NewHtmxMessageHandler(config ...Config) fiber.Handler {
 	}
 }
 
-func addHeaders(c *fiber.Ctx, headers *HtmxMessageHeader) error {
+func addHeaders(c *fiber.Ctx, headers *MessageHeader) error {
 	b, err := json.Marshal(headers)
 	if err != nil {
 		return err
@@ -419,38 +416,38 @@ func addHeaders(c *fiber.Ctx, headers *HtmxMessageHeader) error {
 	return nil
 }
 
-// HtmxMessageHeader is a struct that represents a message header.
-type HtmxMessageHeader struct {
+// MessageHeader is a struct that represents a message header.
+type MessageHeader struct {
 	// Message is the message for the user.
-	Messages *HtmxMessages `json:"messages"`
+	Messages *Messages `json:"messages"`
 }
 
-// HtmxMessage is s struct that represents a message.
-type HtmxMessage struct {
+// Message is s struct that represents a message.
+type Message struct {
 	// Message is the message for the user.
 	Message string `json:"message"`
 	// Tags is the tag for the message e.g. info, warning, error, success.
 	Tags string `json:"tags"`
 }
 
-// NewHtmxMessageHeader returns a new htmx messages.
-func NewHtmxMessageHeader() *HtmxMessageHeader {
-	return &HtmxMessageHeader{
-		Messages: &HtmxMessages{},
+// NewMessageHeader returns a new htmx messages.
+func NewMessageHeader() *MessageHeader {
+	return &MessageHeader{
+		Messages: &Messages{},
 	}
 }
 
-// HtmxMessages is a slice of messages.
-type HtmxMessages []HtmxMessage
+// Message is a slice of messages.
+type Messages []Message
 
 // AddMessage adds a message to the messages.
-func (m *HtmxMessages) Add(msg ...HtmxMessage) {
+func (m *Messages) Add(msg ...Message) {
 	*m = append(*m, msg...)
 }
 
 // MessagesFromContext returns the messages from the context.
-func MessagesFromContext(c *fiber.Ctx) *HtmxMessages {
-	messages, ok := c.Locals(messagesKey).(*HtmxMessages)
+func MessagesFromContext(c *fiber.Ctx) *Messages {
+	messages, ok := c.Locals(messagesKey).(*Messages)
 	if !ok {
 		return nil
 	}
@@ -458,7 +455,7 @@ func MessagesFromContext(c *fiber.Ctx) *HtmxMessages {
 	return messages
 }
 
-// Helper function to set default values
+// Helper function to set default values.
 func configDefault(config ...Config) Config {
 	if len(config) < 1 {
 		return ConfigDefault

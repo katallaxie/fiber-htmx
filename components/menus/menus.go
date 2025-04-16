@@ -2,12 +2,12 @@ package menus
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// MenuProps is the struct for the menu props
+// MenuProps is the struct for the menu props.
 type MenuProps struct {
 	ClassNames htmx.ClassNames
 }
 
-// Menu is the component for the menu
+// Menu is the component for the menu.
 func Menu(p MenuProps, children ...htmx.Node) htmx.Node {
 	return htmx.Ul(
 		htmx.Merge(
@@ -23,12 +23,12 @@ func Menu(p MenuProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuItemProps is the struct for the menu item props
+// MenuItemProps is the struct for the menu item props.
 type MenuItemProps struct {
 	ClassNames htmx.ClassNames
 }
 
-// MenuItem is the component for the menu item
+// MenuItem is the component for the menu item.
 func MenuItem(p MenuItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
@@ -41,12 +41,12 @@ func MenuItem(p MenuItemProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuTitleProps is the struct for the menu title props
+// MenuTitleProps is the struct for the menu title props.
 type MenuTitleProps struct {
 	ClassNames htmx.ClassNames
 }
 
-// MenuTitle is the component for the menu title
+// MenuTitle is the component for the menu title.
 func MenuTitle(p MenuTitleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
@@ -59,13 +59,13 @@ func MenuTitle(p MenuTitleProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuCollapsibleProps is the struct for the menu collapse props
+// MenuCollapsibleProps is the struct for the menu collapse props.
 type MenuCollapsibleProps struct {
 	ClassNames htmx.ClassNames
 	Open       bool
 }
 
-// MenuCollapsible is the component for the menu collapse
+// MenuCollapsible is the component for the menu collapse.
 func MenuCollapsible(p MenuCollapsibleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Details(
 		htmx.Merge(
@@ -76,12 +76,12 @@ func MenuCollapsible(p MenuCollapsibleProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuCollapsibleSummaryProps is the struct for the menu collapse summary props
+// MenuCollapsibleSummaryProps is the struct for the menu collapse summary props.
 type MenuCollapsibleSummaryProps struct {
 	ClassNames htmx.ClassNames
 }
 
-// MenuCollapsibleSummary is the component for the menu collapse summary
+// MenuCollapsibleSummary is the component for the menu collapse summary.
 func MenuCollapsibleSummary(p MenuCollapsibleSummaryProps, children ...htmx.Node) htmx.Node {
 	return htmx.Summary(
 		htmx.Merge(
@@ -91,14 +91,14 @@ func MenuCollapsibleSummary(p MenuCollapsibleSummaryProps, children ...htmx.Node
 	)
 }
 
-// MenuLinkProps is the struct for the menu link props
+// MenuLinkProps is the struct for the menu link props.
 type MenuLinkProps struct {
 	ClassNames htmx.ClassNames
 	Href       string
 	Active     bool
 }
 
-// MenuLink is the component for the menu link
+// MenuLink is the component for the menu link.
 func MenuLink(p MenuLinkProps, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(

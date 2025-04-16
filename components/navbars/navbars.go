@@ -2,9 +2,9 @@ package navbars
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// NavbarProps are the properties of the Navbar component
+// NavbarProps are the properties of the Navbar component.
 type NavbarProps struct {
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // Navbar represents a Daisy UI Navbar component.
@@ -22,7 +22,7 @@ func Navbar(props NavbarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// NavbarStartProps represents the properties of the NavbarStart component
+// NavbarStartProps represents the properties of the NavbarStart component.
 type NavbarStartProps struct {
 	ClassNames htmx.ClassNames
 }
@@ -40,7 +40,7 @@ func NavbarStart(props NavbarStartProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// NavbarCenterProps are the properties of the NavbarCenter component
+// NavbarCenterProps are the properties of the NavbarCenter component.
 type NavbarCenterProps struct {
 	ClassNames htmx.ClassNames
 }
@@ -58,7 +58,7 @@ func NavbarCenter(props NavbarCenterProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// NavbarEndProps are the properties of the NavbarEnd component
+// NavbarEndProps are the properties of the NavbarEnd component.
 type NavbarEndProps struct {
 	ClassNames htmx.ClassNames
 }
@@ -70,6 +70,7 @@ func NavbarEnd(props NavbarEndProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"navbar-end": true,
 			},
+			props.ClassNames,
 		),
 		htmx.Group(children...),
 	)

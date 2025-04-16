@@ -58,6 +58,7 @@ func Success(c *fiber.Ctx, message string, code ...int) {
 		statusCode = code[0]
 	}
 
+	//nolint:errcheck
 	New(SUCCESS, message, statusCode).SetHXTriggerHeader(c)
 }
 
@@ -71,8 +72,8 @@ func Error(message string, code ...int) Toast {
 	return New(ERROR, message, statusCode)
 }
 
-// ToJson returns the JSON representation of the toast.
-func (t Toast) ToJson() (string, error) {
+// ToJSON returns the JSON representation of the toast.
+func (t Toast) ToJSON() (string, error) {
 	t.Message = t.Error()
 
 	eventMap := map[string]Toast{}
@@ -88,7 +89,7 @@ func (t Toast) ToJson() (string, error) {
 
 // SetHXTriggerHeader sets the HTMX trigger header.
 func (t Toast) SetHXTriggerHeader(c *fiber.Ctx) error {
-	jsonData, err := t.ToJson()
+	jsonData, err := t.ToJSON()
 	if err != nil {
 		return err
 	}

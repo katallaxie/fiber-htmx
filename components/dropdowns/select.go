@@ -44,6 +44,7 @@ func SingleSelect(props SingleSelectProps, children ...htmx.Node) htmx.Node {
 				htmx.ID("search-results"),
 			),
 		),
+		htmx.Group(children...),
 	)
 }
 

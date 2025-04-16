@@ -84,13 +84,15 @@ func CollapseContent(props CollapseContentProps, children ...htmx.Node) htmx.Nod
 
 // CollapseCheckboxProps is a component that can be expanded and collapsed.
 type CollapseCheckboxProps struct {
-	ClassNames htmx.ClassNames
-	Checked    bool
+	Checked bool
+
+	htmx.ClassNames
 }
 
 // CollapseCheckbox is a component that can be expanded and collapsed.
 func CollapseCheckbox(props CollapseCheckboxProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
+		htmx.Merge(props.ClassNames),
 		htmx.Type("checkbox"),
 		htmx.Group(children...),
 	)
@@ -98,9 +100,10 @@ func CollapseCheckbox(props CollapseCheckboxProps, children ...htmx.Node) htmx.N
 
 // CollapseRadioProps is a component that can be expanded and collapsed.
 type CollapseRadioProps struct {
-	ClassNames htmx.ClassNames
-	Checked    bool
-	Name       string
+	Checked bool
+	Name    string
+
+	htmx.ClassNames
 }
 
 // CollapseRadio is a component that can be expanded and collapsed.

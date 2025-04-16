@@ -6,13 +6,13 @@ import (
 	htmx "github.com/katallaxie/fiber-htmx"
 )
 
-// DateTextProps is a struct that holds the properties of a date
+// DateTextProps is a struct that holds the properties of a date.
 type DateTextProps struct {
 	// Format is a string that holds the format of a date
 	Format string
 }
 
-// DateText ...
+// DateText generates a date text element based on the provided properties.
 func DateText(props DateTextProps, date time.Time) htmx.Node {
 	if props.Format == "" {
 		props.Format = time.RFC822

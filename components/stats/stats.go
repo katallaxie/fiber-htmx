@@ -2,13 +2,15 @@ package stats
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// StatsProps contains the properties for the stats component.
-type StatsProps struct {
-	ClassNames htmx.ClassNames
+// Props contains the properties for the stats component.
+type Props struct {
+	htmx.ClassNames
 }
 
 // Stats is a component for the htmx stats extension.
-func Stats(p StatsProps, children ...htmx.Node) htmx.Node {
+//
+//nolint:revive
+func Stats(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -21,8 +23,8 @@ func Stats(p StatsProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatsVertical is a component for the htmx stats extension.
-func StatsVertical(p StatsProps, children ...htmx.Node) htmx.Node {
+// Vertical is a component for the htmx stats extension.
+func Vertical(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{

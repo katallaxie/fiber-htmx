@@ -18,7 +18,6 @@ import (
 var addr = ":3000"
 
 func Demo() htmx.Node {
-
 	return htmx.HTML5(
 		htmx.HTML5Props{
 			Title:    "Demo",

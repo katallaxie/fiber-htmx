@@ -45,8 +45,6 @@ func Benchmark_ClassNames_Render(b *testing.B) {
 }
 
 func Test_ClassNames_Render(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		c    htmx.ClassNames

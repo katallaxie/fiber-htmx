@@ -16,7 +16,7 @@ func SVG(children ...Node) Node {
 // ClipRule returns an SVG attribute node for specifying the clip rule.
 // The clip rule determines how the clipping path is applied to the SVG element.
 // The value of the clip rule is specified as a string.
-// Example usage: ClipRule("evenodd")
+// Example usage: ClipRule("evenodd").
 func ClipRule(v string) Node {
 	return Attribute("clip-rule", v)
 }
@@ -24,7 +24,7 @@ func ClipRule(v string) Node {
 // D returns an SVG attribute node for specifying the path data.
 // The path data defines the shape of the SVG path element.
 // The value of the path data is specified as a string.
-// Example usage: D("M10 10 L20 20")
+// Example usage: D("M10 10 L20 20").
 func D(v string) Node {
 	return Attribute("d", v)
 }
@@ -32,7 +32,7 @@ func D(v string) Node {
 // Fill returns an SVG attribute node for specifying the fill color.
 // The fill color determines the color used to fill the SVG element.
 // The value of the fill color is specified as a string.
-// Example usage: Fill("red")
+// Example usage: Fill("red").
 func Fill(v string) Node {
 	return Attribute("fill", v)
 }
@@ -40,7 +40,7 @@ func Fill(v string) Node {
 // FillRule returns an SVG attribute node for specifying the fill rule.
 // The fill rule determines how the interior of the SVG element is filled.
 // The value of the fill rule is specified as a string.
-// Example usage: FillRule("evenodd")
+// Example usage: FillRule("evenodd").
 func FillRule(v string) Node {
 	return Attribute("fill-rule", v)
 }
@@ -48,7 +48,7 @@ func FillRule(v string) Node {
 // Stroke returns an SVG attribute node for specifying the stroke color.
 // The stroke color determines the color used to stroke the SVG element.
 // The value of the stroke color is specified as a string.
-// Example usage: Stroke("blue")
+// Example usage: Stroke("blue").
 func Stroke(v string) Node {
 	return Attribute("stroke", v)
 }
@@ -56,7 +56,7 @@ func Stroke(v string) Node {
 // StrokeWidth returns an SVG attribute node for specifying the stroke width.
 // The stroke width determines the thickness of the stroke applied to an SVG element.
 // The value of the stroke width is specified as a string.
-// Example usage: StrokeWidth("2px")
+// Example usage: StrokeWidth("2px").
 func StrokeWidth(v string) Node {
 	return Attribute("stroke-width", v)
 }
@@ -64,7 +64,7 @@ func StrokeWidth(v string) Node {
 // ViewBox returns an SVG attribute node for specifying the viewBox.
 // The viewBox defines the position and size of the SVG element's viewport.
 // The value of the viewBox is specified as a string.
-// Example usage: ViewBox("0 0 100 100")
+// Example usage: ViewBox("0 0 100 100").
 func ViewBox(v string) Node {
 	return Attribute("viewBox", v)
 }

@@ -4,16 +4,16 @@ import htmx "github.com/katallaxie/fiber-htmx"
 
 const defaultTokenName = "CSRFToken"
 
-// CsrfTokenProps is the struct that holds the CSRF properties
-type CsrfTokenProps struct {
+// TokenProps is the struct that holds the CSRF properties.
+type TokenProps struct {
 	// Token is the CSRF token
 	Token string
 	// Name is the name of the CSRF token
 	Name string
 }
 
-// CsrfToken is the struct that holds the CSRF properties
-func CsrfToken(props CsrfTokenProps) htmx.Node {
+// Token is the struct that holds the CSRF properties.
+func Token(props TokenProps) htmx.Node {
 	if props.Name == "" {
 		props.Name = defaultTokenName
 	}

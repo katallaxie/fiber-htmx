@@ -6,14 +6,15 @@ import (
 	htmx "github.com/katallaxie/fiber-htmx"
 )
 
-// SkeletonProps is a struct that contains the props of the skeleton component
+// SkeletonProps is a struct that contains the props of the skeleton component.
 type SkeletonProps struct {
-	ClassNames htmx.ClassNames
-	Width      int
-	Height     int
+	Width  int
+	Height int
+
+	htmx.ClassNames
 }
 
-// Skeleton is a component that renders a skeleton element
+// Skeleton is a component that renders a skeleton element.
 func Skeleton(p SkeletonProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
@@ -24,5 +25,6 @@ func Skeleton(p SkeletonProps, children ...htmx.Node) htmx.Node {
 			},
 			p.ClassNames,
 		),
+		htmx.Group(children...),
 	)
 }

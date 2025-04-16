@@ -2,13 +2,14 @@ package drawers
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// DrawerOpenProps is the props for the DrawerOpen component
+// DrawerOpenProps is the props for the DrawerOpen component.
 type DrawerOpenProps struct {
-	ID         string
-	ClassNames htmx.ClassNames
+	ID string
+
+	htmx.ClassNames
 }
 
-// DrawerOpenButton is a component that renders a drawer open button
+// DrawerOpenButton is a component that renders a drawer open button.
 func DrawerOpenButton(p DrawerOpenProps, children ...htmx.Node) htmx.Node {
 	return htmx.Label(
 		htmx.Merge(
@@ -24,13 +25,13 @@ func DrawerOpenButton(p DrawerOpenProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DrawerSideProps is a component that renders a drawer side
+// DrawerSideProps is a component that renders a drawer side.
 type DrawerSideProps struct {
 	ID         string
 	ClassNames htmx.ClassNames
 }
 
-// DrawerSide is a component that renders a drawer side
+// DrawerSide is a component that renders a drawer side.
 func DrawerSide(p DrawerSideProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
@@ -50,13 +51,14 @@ func DrawerSide(p DrawerSideProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DrawerSideMenuProps is the props for the DrawerSideMenu component
+// DrawerSideMenuProps is the props for the DrawerSideMenu component.
 type DrawerSideMenuProps struct {
-	ID         string
-	ClassNames htmx.ClassNames
+	ID string
+
+	htmx.ClassNames
 }
 
-// DrawerSideMenu is a component that renders a drawer side menu
+// DrawerSideMenu is a component that renders a drawer side menu.
 func DrawerSideMenu(p DrawerSideMenuProps, children ...htmx.Node) htmx.Node {
 	return htmx.Ul(
 		htmx.Merge(
@@ -74,13 +76,13 @@ func DrawerSideMenu(p DrawerSideMenuProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DrawerSideMenuItemProps is the props for the DrawerSideMenuItem component
+// DrawerSideMenuItemProps is the props for the DrawerSideMenuItem component.
 type DrawerSideMenuItemProps struct {
 	ID         string
 	ClassNames htmx.ClassNames
 }
 
-// DrawerSideMenuItem is a component that renders a drawer side menu item
+// DrawerSideMenuItem is a component that renders a drawer side menu item.
 func DrawerSideMenuItem(p DrawerSideMenuItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
@@ -91,13 +93,13 @@ func DrawerSideMenuItem(p DrawerSideMenuItemProps, children ...htmx.Node) htmx.N
 	)
 }
 
-// DrawerContentProps is the props for the DrawerContent component
+// DrawerContentProps is the props for the DrawerContent component.
 type DrawerContentProps struct {
 	ID         string
 	ClassNames htmx.ClassNames
 }
 
-// DrawerContent is a component that renders a drawer content
+// DrawerContent is a component that renders a drawer content.
 func DrawerContent(p DrawerContentProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
@@ -110,14 +112,14 @@ func DrawerContent(p DrawerContentProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DrawerProps is the props for the Drawer component
+// DrawerProps is the props for the Drawer component.
 type DrawerProps struct {
 	ID         string
 	ClassNames htmx.ClassNames
 	DrawerSide []htmx.Node
 }
 
-// Drawer is a component that renders a drawer
+// Drawer is a component that renders a drawer.
 func Drawer(p DrawerProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(

@@ -8,7 +8,7 @@ type FormProps struct {
 }
 
 // Form returns a form element based on the provided properties.
-// <form class="peer h-5 w-8"></form>
+// <form class="peer h-5 w-8"></form>.
 func Form(p FormProps, children ...htmx.Node) htmx.Node {
 	return htmx.Form(
 		htmx.Merge(

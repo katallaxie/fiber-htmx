@@ -7,7 +7,7 @@ import (
 
 // DropdownProps represents the properties for a dropdown element.
 type DropdownProps struct {
-	ClassNames htmx.ClassNames // The class names for the dropdown element.
+	htmx.ClassNames // The class names for the dropdown element.
 }
 
 // Dropdown generates a dropdown element based on the provided properties.
@@ -25,8 +25,8 @@ func Dropdown(p DropdownProps, children ...htmx.Node) htmx.Node {
 
 // DropdownButtonProps represents the properties for a dropdown summary element.
 type DropdownButtonProps struct {
-	ClassNames htmx.ClassNames // The class names for the dropdown summary element.
-	TabIndex   int
+	TabIndex int
+	htmx.ClassNames
 }
 
 // DropdownButton generates a dropdown summary element based on the provided properties.
@@ -48,8 +48,9 @@ func DropdownButton(p DropdownButtonProps, children ...htmx.Node) htmx.Node {
 
 // DropdownMenuItemsProps represents the properties for a dropdown menu items element.
 type DropdownMenuItemsProps struct {
-	ClassNames htmx.ClassNames // The class names for the dropdown menu items element.
-	TabIndex   int
+	TabIndex int
+
+	htmx.ClassNames
 }
 
 // DropdownMenuItems generates a dropdown menu items element based on the provided properties.

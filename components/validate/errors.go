@@ -30,7 +30,7 @@ func (e Errors) HasError(name string) bool {
 
 // TagNameFunc returns the tag name for the provided field.
 func TagNameFunc(fld reflect.StructField) string {
-	name := slices.First(strings.SplitN(fld.Tag.Get("json"), ",", 2)...)
+	name := slices.First(strings.SplitN(fld.Tag.Get("json"), ",", 2)...) //nolint:mnd
 
 	if name == "-" {
 		return ""

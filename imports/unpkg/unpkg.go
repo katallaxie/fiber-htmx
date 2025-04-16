@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	DefaultUrl    = "https://unpkg.com/%s@%s/?meta"
-	DefaultCdnUrl = "https://unpkg.com/%s@%s/%s"
+	DefaultURL    = "https://unpkg.com/%s@%s/?meta"
+	DefaultCdnURL = "https://unpkg.com/%s@%s/%s"
 )
 
 var _ imports.Resolver = (*client)(nil)
@@ -39,9 +39,9 @@ func New() imports.Resolver {
 
 // Resolve resolves the package to a URL.
 func (c *client) Resolve(pkg *imports.ExactPackage) error {
-	url := fmt.Sprintf(DefaultUrl, pkg.Name, pkg.Version)
+	url := fmt.Sprintf(DefaultURL, pkg.Name, pkg.Version)
 
-	// nolint:noctx
+	//nolint:noctx
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return err
@@ -66,19 +66,19 @@ func (c *client) Resolve(pkg *imports.ExactPackage) error {
 		switch filepath.Ext(f.Path) {
 		case ".js":
 			pkg.Files = append(pkg.Files, &imports.FileJS{
-				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				Path:      fmt.Sprintf(DefaultCdnURL, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
 				Integrity: f.Integrity,
 				LocalPath: strings.TrimPrefix(f.Path, "/"),
 			})
 		case ".css":
 			pkg.Files = append(pkg.Files, &imports.FileCSS{
-				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				Path:      fmt.Sprintf(DefaultCdnURL, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
 				Integrity: f.Integrity,
 				LocalPath: strings.TrimPrefix(f.Path, "/"),
 			})
 		default:
 			pkg.Files = append(pkg.Files, &imports.FileUnkown{
-				Path:      fmt.Sprintf(DefaultCdnUrl, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
+				Path:      fmt.Sprintf(DefaultCdnURL, meta.Package, meta.Version, strings.TrimPrefix(f.Path, "/")),
 				Integrity: f.Integrity,
 				LocalPath: strings.TrimPrefix(f.Path, "/"),
 			})

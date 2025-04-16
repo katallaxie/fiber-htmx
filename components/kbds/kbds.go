@@ -2,13 +2,13 @@ package kbds
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// KbdProps contains the properties for the kbds component.
-type KbdProps struct {
-	ClassNames htmx.ClassNames
+// Props contains the properties for the kbds component.
+type Props struct {
+	htmx.ClassNames
 }
 
-// Kbds is a component for the htmx kbds extension.
-func Kbd(p KbdProps, children ...htmx.Node) htmx.Node {
+// Kbd is a component for the htmx kbds extension.
+func Kbd(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Kbd(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -20,8 +20,8 @@ func Kbd(p KbdProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// KbdsExtraSmall is a component for the htmx kbds extension.
-func KbdsExtraSmall(p KbdProps, children ...htmx.Node) htmx.Node {
+// ExtraSmall is a component for the htmx kbds extension.
+func ExtraSmall(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Kbd(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -34,8 +34,8 @@ func KbdsExtraSmall(p KbdProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// KbdsSmall is a component for the htmx kbds extension.
-func KbdsSmall(p KbdProps, children ...htmx.Node) htmx.Node {
+// Small is a component for the htmx kbds extension.
+func Small(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Kbd(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -48,8 +48,8 @@ func KbdsSmall(p KbdProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// KbdsMedium is a component for the htmx kbds extension.
-func KbdsMedium(p KbdProps, children ...htmx.Node) htmx.Node {
+// Medium is a component for the htmx kbds extension.
+func Medium(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Kbd(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -62,8 +62,8 @@ func KbdsMedium(p KbdProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// KbdsLarge is a component for the htmx kbds extension.
-func KbdsLarge(p KbdProps, children ...htmx.Node) htmx.Node {
+// Large is a component for the htmx kbds extension.
+func Large(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Kbd(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -76,8 +76,8 @@ func KbdsLarge(p KbdProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// KbdsExtraLarge is a component for the htmx kbds extension.
-func KbdsExtraLarge(p KbdProps, children ...htmx.Node) htmx.Node {
+// ExtraLarge is a component for the htmx kbds extension.
+func ExtraLarge(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Kbd(
 		htmx.Merge(
 			htmx.ClassNames{

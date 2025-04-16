@@ -14,7 +14,7 @@ func ExampleButton() {
 	)
 
 	var buf bytes.Buffer
-	btn.Render(&buf)
+	_ = btn.Render(&buf)
 
 	fmt.Println(buf.String())
 	// Output:
@@ -27,7 +27,7 @@ func ExampleAccordion() {
 	)
 
 	var buf bytes.Buffer
-	accordion.Render(&buf)
+	_ = accordion.Render(&buf)
 	fmt.Println(buf.String())
 	// Output:
 	// <div class="bg-base-200 border border-base-300 collapse"><input type="radio" name=""></div>

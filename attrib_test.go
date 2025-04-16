@@ -8,8 +8,6 @@ import (
 )
 
 func Test_Async(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -29,8 +27,6 @@ func Test_Async(t *testing.T) {
 }
 
 func Test_AutoFocus(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -50,8 +46,6 @@ func Test_AutoFocus(t *testing.T) {
 }
 
 func Test_HxPost(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -72,8 +66,6 @@ func Test_HxPost(t *testing.T) {
 }
 
 func Test_HxPut(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -94,8 +86,6 @@ func Test_HxPut(t *testing.T) {
 }
 
 func Test_HxPatch(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -116,8 +106,6 @@ func Test_HxPatch(t *testing.T) {
 }
 
 func Test_HxDelete(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -138,8 +126,6 @@ func Test_HxDelete(t *testing.T) {
 }
 
 func Test_HxGet(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		want string
@@ -160,8 +146,6 @@ func Test_HxGet(t *testing.T) {
 }
 
 func Test_HxTrigger(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name  string
 		want  string
@@ -193,8 +177,6 @@ func Test_HxTrigger(t *testing.T) {
 }
 
 func Test_HxSwap(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name   string
 		want   string
@@ -216,8 +198,6 @@ func Test_HxSwap(t *testing.T) {
 }
 
 func Test_HxIndicator(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name   string
 		want   string
@@ -238,8 +218,6 @@ func Test_HxIndicator(t *testing.T) {
 }
 
 func TestJSEvent(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name  string
 		want  string

@@ -2,10 +2,9 @@ package loading
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// SpinnerProps is the type of the props for the Spinner component
+// SpinnerProps is the type of the props for the Spinner component.
 type SpinnerProps struct {
-	// ClassNames is a map of class names to conditionally add to the component
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // Spinner is a component that displays a spinner.

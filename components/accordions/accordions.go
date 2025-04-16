@@ -98,5 +98,6 @@ func AccordionRadio(props AccordionRadioProps, children ...htmx.Node) htmx.Node 
 		htmx.Type("radio"),
 		htmx.Name(props.Name),
 		htmx.If(props.Checked, htmx.Checked()),
+		htmx.Group(children...),
 	)
 }

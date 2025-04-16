@@ -7,12 +7,13 @@ import (
 
 // RadioProps represents the properties for a radio element.
 type RadioProps struct {
-	ClassNames htmx.ClassNames // The class names for the radio element.
-	Name       string          // The name of the radio element.
-	Value      string          // The value of the radio element.
-	Checked    bool            // Whether the radio element is checked.
-	Disabled   bool
-	Error      error
+	Name     string // The name of the radio element.
+	Value    string // The value of the radio element.
+	Checked  bool   // Whether the radio element is checked.
+	Disabled bool
+	Error    error
+
+	htmx.ClassNames // The class names for the radio element.
 }
 
 // Radio generates a radio element based on the provided properties.

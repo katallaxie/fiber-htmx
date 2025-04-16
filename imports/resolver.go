@@ -18,7 +18,7 @@ var _ Resolver = (*UnimplementedResolver)(nil)
 type UnimplementedResolver struct{}
 
 // Resolve resolves a package by its name and version.
-func (r *UnimplementedResolver) Resolve(pkg *ExactPackage) error {
+func (r *UnimplementedResolver) Resolve(_ *ExactPackage) error {
 	return nil
 }
 
@@ -39,7 +39,7 @@ type ExactPackage struct {
 	// Version is the version of the package.
 	Version string
 	// Files is a list of files associated with the package.
-	Files []isFile_Type
+	Files []isFileType
 }
 
 // Hash is a struct that represents a hash of a file.
@@ -49,8 +49,8 @@ func (e *ExactPackage) Hash() string {
 	return hex.EncodeToString(hasher.Sum(nil))
 }
 
-type isFile_Type interface {
-	isFile_Type()
+type isFileType interface {
+	isFileType()
 }
 
 // FileJS is a struct that represents a JavaScript file.
@@ -60,7 +60,7 @@ type FileJS struct {
 	Integrity string
 }
 
-func (*FileJS) isFile_Type() {}
+func (*FileJS) isFileType() {}
 
 // FileCSS is a struct that represents a CSS file.
 type FileCSS struct {
@@ -69,7 +69,7 @@ type FileCSS struct {
 	Integrity string
 }
 
-func (*FileCSS) isFile_Type() {}
+func (*FileCSS) isFileType() {}
 
 // FileUnkown is a struct that represents an unknown file type.
 type FileUnkown struct {
@@ -78,4 +78,4 @@ type FileUnkown struct {
 	Integrity string
 }
 
-func (*FileUnkown) isFile_Type() {}
+func (*FileUnkown) isFileType() {}

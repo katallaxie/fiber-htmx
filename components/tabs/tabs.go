@@ -4,14 +4,17 @@ import (
 	htmx "github.com/katallaxie/fiber-htmx"
 )
 
-// TabsProps is a struct that contains the properties of the Tabs component
-type TabsProps struct {
-	ID         string
-	ClassNames htmx.ClassNames
+// Props is a struct that contains the properties of the Tabs component.
+type Props struct {
+	ID string
+
+	htmx.ClassNames
 }
 
-// Tabs is a component that renders a list of tabs
-func Tabs(props TabsProps, children ...htmx.Node) htmx.Node {
+// Tabs is a component that renders a list of tabs.
+//
+//nolint:revive
+func Tabs(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -24,8 +27,8 @@ func Tabs(props TabsProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TabsBoxed is a component that renders a list of tabs in a box
-func TabsBoxed(props TabsProps, children ...htmx.Node) htmx.Node {
+// Boxed is a component that renders a list of tabs in a box.
+func Boxed(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -39,7 +42,7 @@ func TabsBoxed(props TabsProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TabProps is a struct that contains the properties of the Tab component
+// TabProps is a struct that contains the properties of the Tab component.
 type TabProps struct {
 	ClassNames htmx.ClassNames
 	Name       string

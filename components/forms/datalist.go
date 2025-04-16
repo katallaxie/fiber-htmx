@@ -7,7 +7,7 @@ import (
 	"github.com/katallaxie/pkg/utilx"
 )
 
-// DatalistProps is the type of the props for the Datalist component
+// DatalistProps is the type of the props for the Datalist component.
 type DatalistProps struct {
 	// ID is the id of the datalist
 	ID string

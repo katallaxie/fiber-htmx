@@ -145,35 +145,35 @@ func (s *Swap) setTiming(mode HxSwapTimingMode, swap ...time.Duration) *Swap {
 	return s
 }
 
-// Swap modifies the amount of time that htmx will wait after receiving a response to swap the content
+// Swap modifies the amount of time that htmx will wait after receiving a response to swap the content.
 func (s *Swap) Swap(swap ...time.Duration) *Swap {
 	return s.setTiming(HxTimingSwap, swap...)
 }
 
-// Settle modifies the amount of time that htmx will wait after receiving a response to settle the content
+// Settle modifies the amount of time that htmx will wait after receiving a response to settle the content.
 func (s *Swap) Settle(swap ...time.Duration) *Swap {
 	return s.setTiming(HxTimingSwap, swap...)
 }
 
-// Transition ...
+// Transition is a boolean attribute that indicates whether the swap should be animated.
 func (s *Swap) Transition(transition bool) *Swap {
 	s.transition = &transition
 	return s
 }
 
-// IgnoreTitle ...
+// IgnoreTitle is a boolean attribute that indicates whether the title of the page should be ignored.
 func (s *Swap) IgnoreTitle(ignoreTitle bool) *Swap {
 	s.ignoreTitle = &ignoreTitle
 	return s
 }
 
-// FocusScroll ...
+// FocusScroll is a boolean attribute that indicates whether the element should be scrolled into view after the swap.
 func (s *Swap) FocusScroll(focusScroll bool) *Swap {
 	s.focusScroll = &focusScroll
 	return s
 }
 
-// String ...
+// String returns the string representation of the Swap.
 func (s *Swap) String() string {
 	var parts []string
 

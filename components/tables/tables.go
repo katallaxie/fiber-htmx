@@ -16,7 +16,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// Paginated is a struct that contains the properties of a pagination
+// Paginated is a struct that contains the properties of a pagination.
 type Paginated[T any] struct {
 	// Limit is the number of items to return.
 	Limit int `json:"limit" xml:"limit" form:"limit" query:"limit"`
@@ -63,7 +63,7 @@ func (p *Paginated[T]) GetSearch() string {
 }
 
 // Paginate returns a function that paginates the results.
-func Paginate[T any](value interface{}, pagination *Paginated[T], db *gorm.DB) func(db *gorm.DB) *gorm.DB {
+func Paginate[T any](_ interface{}, pagination *Paginated[T], _ *gorm.DB) func(db *gorm.DB) *gorm.DB {
 	return func(db *gorm.DB) *gorm.DB {
 		return db.Offset(pagination.GetOffset()).Limit(pagination.GetLimit())
 	}
@@ -79,7 +79,7 @@ func RowsPtr[T any](rows []T) []*T {
 	return rowsPtr
 }
 
-// Results is a struct that contains the results of a query
+// Results is a struct that contains the results of a query.
 type Results[T any] struct {
 	// Limit is the number of items to return.
 	Limit int `json:"limit" xml:"limit" form:"limit" query:"limit"`
@@ -197,10 +197,10 @@ func searchScope[T any](pagination *Results[T]) func(db *gorm.DB) *gorm.DB {
 	}
 }
 
-// DefaultLimits is a list of default limits
+// DefaultLimits is a list of default limits.
 var DefaultLimits = []int{5, 10, 25, 50}
 
-// PaginationProps is a struct that contains the properties of a pagination
+// PaginationProps is a struct that contains the properties of a pagination.
 type PaginationProps struct {
 	// ClassNames is a struct that contains the class names of a pagination.
 	ClassNames htmx.ClassNames
@@ -387,15 +387,16 @@ func Select(p SelectProps, children ...htmx.Node) htmx.Node {
 				)
 			}, p.Limits...),
 		),
+		htmx.Group(children...),
 	)
 }
 
-// TableToolbarProps is a struct that contains the properties of a table toolbar
+// TableToolbarProps is a struct that contains the properties of a table toolbar.
 type TableToolbarProps struct {
 	ClassNames htmx.ClassNames
 }
 
-// TableToolbar is a component that renders a table toolbar
+// TableToolbar is a component that renders a table toolbar.
 func TableToolbar(p TableToolbarProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
@@ -408,12 +409,12 @@ func TableToolbar(p TableToolbarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TablePaginationProps is a struct that contains the properties of a table pagination
+// TablePaginationProps is a struct that contains the properties of a table pagination.
 type TablePaginationProps struct {
 	ClassNames htmx.ClassNames
 }
 
-// TablePagination is a component that renders a table pagination
+// TablePagination is a component that renders a table pagination.
 func TablePagination(p TablePaginationProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
@@ -439,12 +440,12 @@ func TablePagination(p TablePaginationProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// Row is a struct that contains the properties of a row
+// Row is a struct that contains the properties of a row.
 type Row interface {
 	comparable
 }
 
-// TableProps is a struct that contains the properties of a table
+// TableProps is a struct that contains the properties of a table.
 type TableProps struct {
 	// ClassNames is a struct that contains the class names of a table.
 	ClassNames htmx.ClassNames
@@ -475,7 +476,7 @@ type ColumnDef[R Row] struct {
 	EnableFiltering bool
 }
 
-// Table is a struct that contains the properties of a table
+// Table is a struct that contains the properties of a table.
 func Table[S ~[]R, R Row](p TableProps, columns Columns[R], s S) htmx.Node {
 	headers := []htmx.Node{}
 	for _, column := range columns {
@@ -489,7 +490,6 @@ func Table[S ~[]R, R Row](p TableProps, columns Columns[R], s S) htmx.Node {
 			cells = append(cells, column.Cell(p, row))
 		}
 		rows = append(rows, htmx.Tr(cells...))
-
 	}
 
 	return htmx.Div(

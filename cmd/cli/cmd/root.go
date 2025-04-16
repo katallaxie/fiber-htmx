@@ -34,7 +34,7 @@ func initConfig() {
 var RootCmd = &cobra.Command{
 	Use:   "cli",
 	Short: "cli",
-	RunE: func(cmd *cobra.Command, args []string) error {
+	RunE: func(cmd *cobra.Command, _ []string) error {
 		return runRoot(cmd.Context())
 	},
 	Version: fmt.Sprintf(versionFmt, version, commit, date),

@@ -4,7 +4,7 @@ import htmx "github.com/katallaxie/fiber-htmx"
 
 // BadgeProps represents the properties for a badge element.
 type BadgeProps struct {
-	ClassNames htmx.ClassNames // The class names for the badge element.
+	htmx.ClassNames // The class names for the badge element.
 }
 
 // Badge generates a badge element based on the provided properties.
@@ -14,6 +14,7 @@ func Badge(p BadgeProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"badge": true,
 			},
+			p.ClassNames,
 		),
 		htmx.Group(children...),
 	)
@@ -55,6 +56,7 @@ func Secondary(p BadgeProps, children ...htmx.Node) htmx.Node {
 				"badge":           true,
 				"badge-secondary": true,
 			},
+			p.ClassNames,
 		),
 		htmx.Group(children...),
 	)

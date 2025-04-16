@@ -36,7 +36,7 @@ func NewPage(title, body string) *Page {
 var Addr string
 
 var rootCmd = &cobra.Command{
-	RunE: func(cmd *cobra.Command, args []string) error {
+	RunE: func(cmd *cobra.Command, _ []string) error {
 		return run(cmd.Context())
 	},
 }
@@ -48,7 +48,7 @@ func init() {
 
 type webSrv struct{}
 
-func (w *webSrv) Start(ctx context.Context, ready server.ReadyFunc, run server.RunFunc) func() error {
+func (w *webSrv) Start(_ context.Context, _ server.ReadyFunc, _ server.RunFunc) func() error {
 	return func() error {
 		app := fiber.New()
 		app.Use(requestid.New())

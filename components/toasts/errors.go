@@ -26,7 +26,10 @@ var DefaultErrorHandler = func(c *fiber.Ctx, err error) error {
 		htmx.ReSwap(c, "none")
 	}
 
-	te.SetHXTriggerHeader(c)
+	err = te.SetHXTriggerHeader(c)
+	if err != nil {
+		return err
+	}
 
 	c.Set(fiber.HeaderContentType, fiber.MIMETextPlainCharsetUTF8)
 

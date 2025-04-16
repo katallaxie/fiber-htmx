@@ -2,16 +2,17 @@ package forms
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// TextareaProps are the properties for the textarea component
+// TextareaProps are the properties for the textarea component.
 type TextareaProps struct {
-	ClassNames  htmx.ClassNames
 	Placeholder string
 	Disabled    bool
 	Name        string
 	Value       string
+
+	htmx.ClassNames
 }
 
-// Textarea is a textarea component
+// Textarea is a textarea component.
 func Textarea(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -37,7 +38,7 @@ func Textarea(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaBordered is a textarea component with a border
+// TextareaBordered is a textarea component with a border.
 func TextareaBordered(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -64,7 +65,7 @@ func TextareaBordered(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaGhost is a textarea component with a ghost border
+// TextareaGhost is a textarea component with a ghost border.
 func TextareaGhost(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -91,7 +92,7 @@ func TextareaGhost(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaPrimary is a textarea component with a primary border
+// TextareaPrimary is a textarea component with a primary border.
 func TextareaPrimary(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -118,7 +119,7 @@ func TextareaPrimary(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaSecondary is a textarea component with a secondary border
+// TextareaSecondary is a textarea component with a secondary border.
 func TextareaSecondary(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -145,7 +146,7 @@ func TextareaSecondary(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaSuccess is a textarea component with a success border
+// TextareaSuccess is a textarea component with a success border.
 func TextareaSuccess(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -172,7 +173,7 @@ func TextareaSuccess(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaWarning is a textarea component with a warning border
+// TextareaWarning is a textarea component with a warning border.
 func TextareaWarning(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
@@ -199,7 +200,7 @@ func TextareaWarning(p TextareaProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TextareaError is a textarea component with an error border
+// TextareaError is a textarea component with an error border.
 func TextareaError(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(

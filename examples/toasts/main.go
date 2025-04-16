@@ -14,7 +14,7 @@ import (
 	"github.com/katallaxie/fiber-htmx/components/heroicons"
 	"github.com/katallaxie/fiber-htmx/components/menus"
 	"github.com/katallaxie/fiber-htmx/components/navbars"
-	"github.com/katallaxie/fiber-htmx/components/swap"
+	"github.com/katallaxie/fiber-htmx/components/swaps"
 	"github.com/katallaxie/fiber-htmx/components/tailwind"
 	"github.com/katallaxie/fiber-htmx/components/toasts"
 	"github.com/katallaxie/pkg/server"
@@ -42,7 +42,7 @@ var cfg = &Config{
 }
 
 var rootCmd = &cobra.Command{
-	RunE: func(cmd *cobra.Command, args []string) error {
+	RunE: func(cmd *cobra.Command, _ []string) error {
 		return run(cmd.Context())
 	},
 }
@@ -148,8 +148,8 @@ func (c *exampleController) Get() error {
 										),
 										navbars.NavbarEnd(
 											navbars.NavbarEndProps{},
-											swap.Swap(
-												swap.SwapProps{
+											swaps.Swap(
+												swaps.Props{
 													ClassNames: htmx.ClassNames{
 														"swap-rotate": true,
 													},
@@ -159,14 +159,14 @@ func (c *exampleController) Get() error {
 													htmx.Value("dark"),
 													htmx.Attribute("type", "checkbox"),
 												),
-												swap.SwapOn(
-													swap.SwapProps{},
+												swaps.On(
+													swaps.Props{},
 													heroicons.MoonOutline(
 														heroicons.IconProps{},
 													),
 												),
-												swap.SwapOff(
-													swap.SwapProps{},
+												swaps.Off(
+													swaps.Props{},
 													heroicons.SunOutline(
 														heroicons.IconProps{},
 													),
@@ -315,7 +315,7 @@ func (c *exampleController) Get() error {
 
 type webSrv struct{}
 
-func (w *webSrv) Start(ctx context.Context, ready server.ReadyFunc, run server.RunFunc) func() error {
+func (w *webSrv) Start(_ context.Context, _ server.ReadyFunc, _ server.RunFunc) func() error {
 	return func() error {
 		app := fiber.New(
 			fiber.Config{

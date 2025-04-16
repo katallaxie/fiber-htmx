@@ -10,8 +10,6 @@ import (
 )
 
 func TestJoin(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
@@ -61,8 +59,6 @@ func TestJoin(t *testing.T) {
 }
 
 func TestJoinVertical(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
@@ -112,8 +108,6 @@ func TestJoinVertical(t *testing.T) {
 }
 
 func TestJoinHorizontal(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames

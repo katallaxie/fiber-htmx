@@ -9,8 +9,6 @@ import (
 )
 
 func TestElementA(t *testing.T) {
-	t.Parallel()
-
 	e := Element("a")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -19,8 +17,6 @@ func TestElementA(t *testing.T) {
 }
 
 func TestElementDiv(t *testing.T) {
-	t.Parallel()
-
 	e := Element("div")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -29,8 +25,6 @@ func TestElementDiv(t *testing.T) {
 }
 
 func TestElementSpan(t *testing.T) {
-	t.Parallel()
-
 	e := Element("span")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -39,8 +33,6 @@ func TestElementSpan(t *testing.T) {
 }
 
 func TestElementP(t *testing.T) {
-	t.Parallel()
-
 	e := Element("p")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -49,8 +41,6 @@ func TestElementP(t *testing.T) {
 }
 
 func TestElementH1(t *testing.T) {
-	t.Parallel()
-
 	e := Element("h1")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -59,8 +49,6 @@ func TestElementH1(t *testing.T) {
 }
 
 func TestElementH2(t *testing.T) {
-	t.Parallel()
-
 	e := Element("h2")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -69,8 +57,6 @@ func TestElementH2(t *testing.T) {
 }
 
 func TestElementH3(t *testing.T) {
-	t.Parallel()
-
 	e := Element("h3")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -79,8 +65,6 @@ func TestElementH3(t *testing.T) {
 }
 
 func TestElementH4(t *testing.T) {
-	t.Parallel()
-
 	e := Element("h4")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -89,8 +73,6 @@ func TestElementH4(t *testing.T) {
 }
 
 func TestElementH5(t *testing.T) {
-	t.Parallel()
-
 	e := Element("h5")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -99,8 +81,6 @@ func TestElementH5(t *testing.T) {
 }
 
 func TestElementH6(t *testing.T) {
-	t.Parallel()
-
 	e := Element("h6")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
@@ -109,8 +89,6 @@ func TestElementH6(t *testing.T) {
 }
 
 func TestElementCustom(t *testing.T) {
-	t.Parallel()
-
 	e := Element("custom")
 	assert.NotNil(t, e)
 	assert.Implements(t, (*fmt.Stringer)(nil), e)

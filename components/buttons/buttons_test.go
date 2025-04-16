@@ -10,8 +10,6 @@ import (
 )
 
 func TestButton(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		expected string
@@ -95,8 +93,6 @@ func TestButton(t *testing.T) {
 }
 
 func TestPrimary(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		expected string
@@ -180,8 +176,6 @@ func TestPrimary(t *testing.T) {
 }
 
 func TestSecondary(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		expected string

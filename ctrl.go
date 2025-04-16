@@ -6,6 +6,7 @@ import (
 	"errors"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/katallaxie/pkg/conv"
 	goth "github.com/zeiss/fiber-goth"
 	"github.com/zeiss/fiber-goth/adapters"
 	reload "github.com/zeiss/fiber-reload"
@@ -121,7 +122,7 @@ func (c *DefaultController) Options() error {
 }
 
 // Error is called when an error occurs.
-func (c *DefaultController) Error(err error) error {
+func (c *DefaultController) Error(_ error) error {
 	return fiber.NewError(fiber.StatusInternalServerError)
 }
 
@@ -157,17 +158,17 @@ func (c *DefaultController) Values(key any, value ...any) (val any) {
 
 // ValuesString is a helper function to get the values as a string from the context.
 func (c *DefaultController) ValuesString(key any, value ...any) (val string) {
-	return c.ctx.Locals(key, value...).(string)
+	return conv.String(c.ctx.Locals(key, value...))
 }
 
 // ValuesInt is a helper function to get the values as an int from the context.
 func (c *DefaultController) ValuesInt(key any, value ...any) (val int) {
-	return c.ctx.Locals(key, value...).(int)
+	return conv.Int(c.ctx.Locals(key, value...))
 }
 
 // ValuesBool is a helper function to get the values as a bool from the context.
 func (c *DefaultController) ValuesBool(key any, value ...any) (val bool) {
-	return c.ctx.Locals(key, value...).(bool)
+	return conv.Bool(c.ctx.Locals(key, value...))
 }
 
 // Session is a helper function to get the session from the context.
@@ -181,7 +182,7 @@ func (c *DefaultController) Session() adapters.GothSession {
 }
 
 // Messages is a helper function to get the message from the context.
-func (c *DefaultController) Messages(msgs ...HtmxMessage) {
+func (c *DefaultController) Messages(msgs ...Message) {
 	m := MessagesFromContext(c.Ctx())
 	m.Add(msgs...)
 }

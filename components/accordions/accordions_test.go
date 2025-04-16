@@ -10,8 +10,6 @@ import (
 )
 
 func TestAccordion(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
@@ -55,8 +53,6 @@ func TestAccordion(t *testing.T) {
 }
 
 func TestAccordionTitle(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
@@ -106,8 +102,6 @@ func TestAccordionTitle(t *testing.T) {
 }
 
 func TestAccordionContent(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames

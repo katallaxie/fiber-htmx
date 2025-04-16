@@ -1,6 +1,5 @@
 // Package htmx provides a set of functions for generating HTML attributes as nodes.
 // These attributes can be used in conjunction with the Fiber framework and the htmx library.
-
 package htmx
 
 import (
@@ -149,7 +148,7 @@ const (
 	HxAttributeBoost       HxAttribute = "hx-boost"
 	HxAttributeGet         HxAttribute = "hx-get"
 	HxAttributePost        HxAttribute = "hx-post"
-	HxAttributePushUrl     HxAttribute = "hx-push-url"
+	HxAttributePushURL     HxAttribute = "hx-push-url"
 	HxAttributeTarget      HxAttribute = "hx-target"
 	HxAttributeSelect      HxAttribute = "hx-select"
 	HxAttributeSelectOob   HxAttribute = "hx-select-oob"
@@ -199,8 +198,8 @@ func HxPost(url string) Node {
 	return Attribute(HxAttributePost.String(), url)
 }
 
-// HxPushUrl sets the hx-push-url attribute to enable or disable URL pushing.
-func HxPushUrl(v bool) Node {
+// HxPushURL sets the hx-push-url attribute to enable or disable URL pushing.
+func HxPushURL(v bool) Node {
 	return Attribute(HxAttributeBoost.String(), conv.String(v))
 }
 

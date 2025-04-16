@@ -9,8 +9,6 @@ import (
 )
 
 func Test_MustacheTemplate(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		v    string
@@ -32,8 +30,6 @@ func Test_MustacheTemplate(t *testing.T) {
 }
 
 func Test_HandlebarsTemplate(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		v    string
@@ -55,8 +51,6 @@ func Test_HandlebarsTemplate(t *testing.T) {
 }
 
 func Test_NunjucksTemplate(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		v    string
@@ -78,8 +72,6 @@ func Test_NunjucksTemplate(t *testing.T) {
 }
 
 func Test_XSLTTemplat(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		v    string
@@ -101,8 +93,6 @@ func Test_XSLTTemplat(t *testing.T) {
 }
 
 func Test_HyperScript(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name string
 		v    string

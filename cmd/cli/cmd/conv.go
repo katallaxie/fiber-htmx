@@ -14,11 +14,11 @@ func init() {
 var ConvertCmd = &cobra.Command{
 	Use:   "convert",
 	Short: "convert",
-	RunE: func(cmd *cobra.Command, args []string) error {
+	RunE: func(cmd *cobra.Command, _ []string) error {
 		return runConvert(cmd.Context())
 	},
 }
 
-func runConvert(ctx context.Context) error {
+func runConvert(_ context.Context) error {
 	return nil
 }

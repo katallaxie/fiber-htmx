@@ -8,10 +8,12 @@ import (
 
 var _ imports.Resolver = (*cache)(nil)
 
+const defaultLimit = 1000
+
 var lru *simplelru.LRU[string, *imports.ExactPackage]
 
 func init() {
-	lru = errorx.Must(simplelru.NewLRU[string, *imports.ExactPackage](1000, nil))
+	lru = errorx.Must(simplelru.NewLRU[string, *imports.ExactPackage](defaultLimit, nil))
 }
 
 type cache struct {

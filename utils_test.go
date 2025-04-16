@@ -10,8 +10,6 @@ import (
 )
 
 func TestFilter(t *testing.T) {
-	t.Parallel()
-
 	tests := []struct {
 		name   string
 		in     []htmx.Node
@@ -20,7 +18,7 @@ func TestFilter(t *testing.T) {
 		{
 			name: "filter",
 			in:   []htmx.Node{htmx.Text("a"), nil, htmx.Details()},
-			filter: func(n htmx.Node) bool { // nolint:gocritic
+			filter: func(n htmx.Node) bool { //nolint:gocritic
 				return utilx.NotEmpty(n)
 			},
 		},
@@ -113,7 +111,7 @@ func TestJsonSerializeOrEmpty(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			assert.Equal(t, tt.out, htmx.JsonSerializeOrEmpty(tt.in))
+			assert.Equal(t, tt.out, htmx.JSONSerializeOrEmpty(tt.in))
 		})
 	}
 }

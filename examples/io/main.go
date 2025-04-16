@@ -20,5 +20,5 @@ func Demo() htmx.Node {
 }
 
 func main() {
-	Demo().Render(os.Stdout)
+	_ = Demo().Render(os.Stdout)
 }

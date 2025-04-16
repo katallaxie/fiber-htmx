@@ -5,7 +5,7 @@ import (
 	"github.com/katallaxie/fiber-htmx/components/heroicons"
 )
 
-// AlertProps is the type of the props for the Alert component
+// AlertProps is the type of the props for the Alert component.
 type AlertProps struct {
 	// ClassNames are the class names for the alert component.
 	ClassNames htmx.ClassNames

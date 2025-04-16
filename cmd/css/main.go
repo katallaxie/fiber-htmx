@@ -18,7 +18,7 @@ import (
 	"github.com/katallaxie/fiber-htmx/components/menus"
 	"github.com/katallaxie/fiber-htmx/components/mockups"
 	"github.com/katallaxie/fiber-htmx/components/navbars"
-	"github.com/katallaxie/fiber-htmx/components/swap"
+	"github.com/katallaxie/fiber-htmx/components/swaps"
 	"github.com/katallaxie/fiber-htmx/components/tables"
 	"github.com/katallaxie/fiber-htmx/components/tabs"
 	"github.com/katallaxie/fiber-htmx/components/tailwind"
@@ -34,6 +34,7 @@ type DemoRow struct {
 	Name string
 }
 
+//nolint:mnd
 var demoRows = []DemoRow{
 	{
 		ID:   1,
@@ -304,8 +305,8 @@ func Page() htmx.Node {
 									),
 									navbars.NavbarEnd(
 										navbars.NavbarEndProps{},
-										swap.Swap(
-											swap.SwapProps{
+										swaps.Swap(
+											swaps.Props{
 												ClassNames: htmx.ClassNames{
 													"swap-rotate": true,
 												},
@@ -315,14 +316,14 @@ func Page() htmx.Node {
 												htmx.Value("dark"),
 												htmx.Attribute("type", "checkbox"),
 											),
-											swap.SwapOn(
-												swap.SwapProps{},
+											swaps.On(
+												swaps.Props{},
 												heroicons.MoonOutline(
 													heroicons.IconProps{},
 												),
 											),
-											swap.SwapOff(
-												swap.SwapProps{},
+											swaps.Off(
+												swaps.Props{},
 												heroicons.SunOutline(
 													heroicons.IconProps{},
 												),
@@ -371,8 +372,8 @@ func Page() htmx.Node {
 									mockups.Code(
 										mockups.CodeProps{},
 									),
-									swap.Swap(
-										swap.SwapProps{
+									swaps.Swap(
+										swaps.Props{
 											ClassNames: htmx.ClassNames{
 												"swap-rotate": true,
 											},
@@ -388,14 +389,14 @@ func Page() htmx.Node {
 											htmx.Attribute("type", "checkbox"),
 											htmx.Checked(),
 										),
-										swap.SwapOn(
-											swap.SwapProps{},
+										swaps.On(
+											swaps.Props{},
 											heroicons.MoonOutline(
 												heroicons.IconProps{},
 											),
 										),
-										swap.SwapOff(
-											swap.SwapProps{},
+										swaps.Off(
+											swaps.Props{},
 											heroicons.SunOutline(
 												heroicons.IconProps{},
 											),
@@ -406,8 +407,8 @@ func Page() htmx.Node {
 									htmx.ClassNames{
 										"bg-base-100": true,
 									},
-									tabs.TabsBoxed(
-										tabs.TabsProps{},
+									tabs.Boxed(
+										tabs.Props{},
 										tabs.Tab(
 											tabs.TabProps{
 												Name:   "my_tabs_1",
@@ -522,7 +523,7 @@ func Page() htmx.Node {
 										),
 									),
 								),
-								htmx.Fallback(htmx.Markdown([]byte("## Hello, Markdown!")), func(err error) htmx.Node {
+								htmx.Fallback(htmx.Markdown([]byte("## Hello, Markdown!")), func(_ error) htmx.Node {
 									return htmx.Text("Fallback")
 								}),
 								htmx.Fallback(
@@ -576,7 +577,7 @@ func Page() htmx.Node {
 													tables.PaginationProps{
 														Total:  len(demoRows),
 														Offset: 0,
-														Limit:  10,
+														Limit:  10, //nolint:mnd
 													},
 												),
 											),
@@ -585,10 +586,10 @@ func Page() htmx.Node {
 											{
 												ID:          "id",
 												AccessorKey: "ID",
-												Header: func(p tables.TableProps) htmx.Node {
+												Header: func(_ tables.TableProps) htmx.Node {
 													return htmx.Th(htmx.Text("ID"))
 												},
-												Cell: func(p tables.TableProps, row DemoRow) htmx.Node {
+												Cell: func(_ tables.TableProps, row DemoRow) htmx.Node {
 													return htmx.Td(
 														htmx.Text(strconv.Itoa(row.ID)),
 													)
@@ -597,10 +598,10 @@ func Page() htmx.Node {
 											{
 												ID:          "name",
 												AccessorKey: "Name",
-												Header: func(p tables.TableProps) htmx.Node {
+												Header: func(_ tables.TableProps) htmx.Node {
 													return htmx.Th(htmx.Text("Name"))
 												},
-												Cell: func(p tables.TableProps, row DemoRow) htmx.Node {
+												Cell: func(_ tables.TableProps, row DemoRow) htmx.Node {
 													return htmx.Td(htmx.Text(row.Name))
 												},
 											},
@@ -708,6 +709,7 @@ func main() {
 		panic(err)
 	}
 
+	//nolint:mnd
 	f, err := os.OpenFile(filepath.Join(filepath.Clean(cwd), "examples/index.html"), os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0o600)
 	if err != nil {
 		panic(err)
