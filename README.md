@@ -246,9 +246,23 @@ icon := heroicons.AcademicCapOutline(heroicons.IconProps{})
 icon.Render(os.Stdout)
 ```
 
+## 🧑‍🎤 Live Reload
+
+[Air](vhttps://github.com/cosmtrek/air) is a live reloading tool for Go applications. It watches your files and reloads the application when changes are detected.
+
+[fiber-reload](https://github.com/katallaxie/fiber-reload) is a package that enables live reloading for fiber applications.
+
+```go
+app := fiber.New()
+app.Use(reload.Environment(reload.Development))
+reload.WithHotReload(app)
+```
+
+This reloads the application as the server is restart on file changes.
+
 ## 🧑‍💻 VSCode and Copilot
 
-1 Run this command to save the `llms.txt` to `.vscode/htmx.md`
+1. Run this command to save the `llms.txt` to `.vscode/htmx.md`
 
 ```bash
 curl -L https://raw.githubusercontent.com/katallaxie/fiber-htmx/refs/heads/main/llms.txt --create-dirs -o .vscode/htmx.md
