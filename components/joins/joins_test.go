@@ -1,96 +1,51 @@
-package accordions_test
+package joins_test
 
 import (
 	"bytes"
 	"testing"
 
 	htmx "github.com/katallaxie/fiber-htmx"
-	"github.com/katallaxie/fiber-htmx/components/accordions"
+	"github.com/katallaxie/fiber-htmx/components/joins"
 	"github.com/stretchr/testify/require"
 )
 
-func TestAccordion(t *testing.T) {
+func TestJoin(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
-		expected string
-		checked  bool
-	}{
-		{
-			name:     "default",
-			classes:  nil,
-			expected: "<div class=\"bg-base-200 border border-base-300 collapse\"><input type=\"radio\" name=\"\"></div>",
-		},
-		{
-			name:     "with classes",
-			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"bg-base-200 border border-base-300 collapse custom-class\"><input type=\"radio\" name=\"\"></div>",
-		},
-		{
-			name:     "checked",
-			classes:  nil,
-			expected: "<div class=\"bg-base-200 border border-base-300 collapse\"><input type=\"radio\" name=\"\" checked=\"checked\"></div>",
-			checked:  true,
-		},
-	}
-
-	for _, test := range tests {
-		t.Run(test.name, func(t *testing.T) {
-			component := accordions.Accordion(
-				accordions.AccordionProps{
-					ClassNames: test.classes,
-					Checked:    test.checked,
-				},
-			)
-
-			var buf bytes.Buffer
-			err := component.Render(&buf)
-			require.NoError(t, err)
-
-			require.Equal(t, test.expected, buf.String())
-		})
-	}
-}
-
-func TestAccordionTitle(t *testing.T) {
-	t.Parallel()
-
-	tests := []struct {
-		name     string
-		classes  htmx.ClassNames
-		expected string
 		children []htmx.Node
+		expected string
 	}{
 		{
 			name:     "default",
 			classes:  nil,
-			expected: "<div class=\"collapse-title font-semibold\"></div>",
+			expected: "<div class=\"join\"></div>",
 		},
 		{
 			name:     "with classes",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"collapse-title custom-class font-semibold\"></div>",
+			expected: "<div class=\"custom-class join\"></div>",
 		},
 		{
 			name:     "with children",
 			classes:  nil,
-			expected: "<div class=\"collapse-title font-semibold\">child</div>",
 			children: []htmx.Node{htmx.Text("child")},
+			expected: "<div class=\"join\">child</div>",
 		},
 		{
 			name:     "with classes and children",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"collapse-title custom-class font-semibold\">child</div>",
 			children: []htmx.Node{htmx.Text("child")},
+			expected: "<div class=\"custom-class join\">child</div>",
 		},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := accordions.AccordionTitle(
-				accordions.AccordionTitleProps{
+			component := joins.Join(
+				joins.JoinProps{
 					ClassNames: test.classes,
 				},
 				test.children...,
@@ -105,32 +60,97 @@ func TestAccordionTitle(t *testing.T) {
 	}
 }
 
-func TestAccordionContent(t *testing.T) {
+func TestJoinVertical(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
+		children []htmx.Node
 		expected string
 	}{
 		{
 			name:     "default",
 			classes:  nil,
-			expected: "<div class=\"collapse-content\"></div>",
+			expected: "<div class=\"join join-vertical\"></div>",
 		},
 		{
 			name:     "with classes",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"collapse-content custom-class\"></div>",
+			expected: "<div class=\"custom-class join join-vertical\"></div>",
+		},
+		{
+			name:     "with children",
+			classes:  nil,
+			children: []htmx.Node{htmx.Text("child")},
+			expected: "<div class=\"join join-vertical\">child</div>",
+		},
+		{
+			name:     "with classes and children",
+			classes:  htmx.ClassNames{"custom-class": true},
+			children: []htmx.Node{htmx.Text("child")},
+			expected: "<div class=\"custom-class join join-vertical\">child</div>",
 		},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := accordions.AccordionContent(
-				accordions.AccordionContentProps{
+			component := joins.JoinVertical(
+				joins.JoinProps{
 					ClassNames: test.classes,
 				},
+				test.children...,
+			)
+
+			var buf bytes.Buffer
+			err := component.Render(&buf)
+			require.NoError(t, err)
+
+			require.Equal(t, test.expected, buf.String())
+		})
+	}
+}
+
+func TestJoinHorizontal(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name     string
+		classes  htmx.ClassNames
+		children []htmx.Node
+		expected string
+	}{
+		{
+			name:     "default",
+			classes:  nil,
+			expected: "<div class=\"join join-horizontal\"></div>",
+		},
+		{
+			name:     "with classes",
+			classes:  htmx.ClassNames{"custom-class": true},
+			expected: "<div class=\"custom-class join join-horizontal\"></div>",
+		},
+		{
+			name:     "with children",
+			classes:  nil,
+			children: []htmx.Node{htmx.Text("child")},
+			expected: "<div class=\"join join-horizontal\">child</div>",
+		},
+		{
+			name:     "with classes and children",
+			classes:  htmx.ClassNames{"custom-class": true},
+			children: []htmx.Node{htmx.Text("child")},
+			expected: "<div class=\"custom-class join join-horizontal\">child</div>",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			component := joins.JoinHorizontal(
+				joins.JoinProps{
+					ClassNames: test.classes,
+				},
+				test.children...,
 			)
 
 			var buf bytes.Buffer

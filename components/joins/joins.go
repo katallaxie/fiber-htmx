@@ -4,8 +4,7 @@ import htmx "github.com/katallaxie/fiber-htmx"
 
 // JoinProps is a struct that contains the properties of a join.
 type JoinProps struct {
-	// ClassNames is a map of class names.
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // Join is a function that returns a join.
@@ -28,6 +27,20 @@ func JoinVertical(props JoinProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"join":          true,
 				"join-vertical": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// JoinHorizontal is a function that returns a horizontal join.
+func JoinHorizontal(props JoinProps, children ...htmx.Node) htmx.Node {
+	return htmx.Div(
+		htmx.Merge(
+			htmx.ClassNames{
+				"join":            true,
+				"join-horizontal": true,
 			},
 			props.ClassNames,
 		),

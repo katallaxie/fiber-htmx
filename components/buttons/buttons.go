@@ -1,12 +1,18 @@
 package buttons
 
-import htmx "github.com/katallaxie/fiber-htmx"
+import (
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/utilx"
+)
 
 // ButtonProps represents the properties for a button element.
 type ButtonProps struct {
-	ClassNames htmx.ClassNames
-	Type       string // The type of the button element.
-	Disabled   bool   // Whether the button element is disabled.
+	// Type is the type of the button element (e.g., "button", "submit", "reset").
+	Type string
+	// Disabled indicates whether the button is disabled.
+	Disabled bool
+
+	htmx.ClassNames
 }
 
 // Button generates a button element based on the provided properties.
@@ -18,7 +24,7 @@ func Button(props ButtonProps, children ...htmx.Node) htmx.Node {
 			},
 			props.ClassNames,
 		),
-		htmx.Attribute("type", props.Type),
+		htmx.IfElse(utilx.Empty(props.Type), htmx.Attribute("type", "button"), htmx.Attribute("type", props.Type)),
 		htmx.If(props.Disabled, htmx.Disabled()),
 		htmx.Group(children...),
 	)

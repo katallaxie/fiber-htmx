@@ -385,7 +385,7 @@ func AutoPlay() Node {
 
 // Checked sets the checked attribute for input elements.
 func Checked() Node {
-	return Attribute("checked")
+	return Attribute("checked", "checked")
 }
 
 // Controls sets the controls attribute for media elements.
@@ -400,7 +400,7 @@ func Defer() Node {
 
 // Disabled sets the disabled attribute for form elements.
 func Disabled() Node {
-	return Attribute("disabled")
+	return Attribute("disabled", "disabled")
 }
 
 // Loop sets the loop attribute for media elements.

@@ -6,6 +6,7 @@ import htmx "github.com/katallaxie/fiber-htmx"
 type AccordionProps struct {
 	ClassNames htmx.ClassNames
 	Name       string
+	Checked    bool
 }
 
 // Accordion is a component that can be expanded and collapsed.
@@ -13,10 +14,18 @@ func Accordion(props AccordionProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"collapse":    true,
-				"bg-base-200": true,
+				"bg-base-200":     true,
+				"border-base-300": true,
+				"border":          true,
+				"collapse":        true,
 			},
 			props.ClassNames,
+		),
+		AccordionRadio(
+			AccordionRadioProps{
+				Name:    props.Name,
+				Checked: props.Checked,
+			},
 		),
 		htmx.Group(children...),
 	)
@@ -38,7 +47,7 @@ func AccordionArrow(props AccordionProps, children ...htmx.Node) htmx.Node {
 
 // AccordionTitleProps is a component title.
 type AccordionTitleProps struct {
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // AccordionTitle is a component that can be expanded and collapsed.
@@ -47,9 +56,9 @@ func AccordionTitle(props AccordionTitleProps, children ...htmx.Node) htmx.Node 
 		htmx.Merge(
 			htmx.ClassNames{
 				"collapse-title": true,
-				"title-md":       true,
-				"font-medium":    true,
+				"font-semibold":  true,
 			},
+			props.ClassNames,
 		),
 		htmx.Group(children...),
 	)
@@ -57,7 +66,7 @@ func AccordionTitle(props AccordionTitleProps, children ...htmx.Node) htmx.Node 
 
 // AccordionContentProps is a component that can be expanded and collapsed.
 type AccordionContentProps struct {
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // AccordionContent is a component that can be expanded and collapsed.
@@ -75,18 +84,19 @@ func AccordionContent(props AccordionContentProps, children ...htmx.Node) htmx.N
 
 // AccordionRadioProps is a component that can be expanded and collapsed.
 type AccordionRadioProps struct {
-	ClassNames htmx.ClassNames
-	Checked    bool
-	Name       string
+	// Name is the name of the radio button.
+	Name string
+	// Checked is the checked state of the radio button.
+	Checked bool
+
+	htmx.ClassNames
 }
 
 // AccordionRadio is a component that can be expanded and collapsed.
 func AccordionRadio(props AccordionRadioProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Type("radio"),
-		htmx.Attribute(
-			"name",
-			props.Name,
-		),
+		htmx.Name(props.Name),
+		htmx.If(props.Checked, htmx.Checked()),
 	)
 }
