@@ -258,7 +258,16 @@ app.Use(reload.Environment(reload.Development))
 reload.WithHotReload(app)
 ```
 
-This reloads the application as the server is restart on file changes.
+In the application the reload script needs to be added.
+
+```go
+htmx.Script(
+  htmx.Src("https://unpkg.com/fiber-reload@0.9.0/reload.js"),
+  htmx.Type("text/javascript"),
+),
+```
+
+This reloads the application as the server is restart on file changes. See [examples](/examples/simple/main.go).
 
 ## 🧑‍💻 VSCode and Copilot
 
