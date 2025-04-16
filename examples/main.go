@@ -311,20 +311,22 @@ func (c *exampleController) Get() error {
 						htmx.CrossOrigin("anonymous"),
 						htmx.Src("https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"),
 					),
-					htmx.Imports(htmx.ImportsProp{
-						Resolver: cache.New(jsdeliver.New()),
-						Pkgs: []imports.ExactPackage{
-							{
-								Name:    "htmx.org",
-								Version: "2.0.4",
+					htmx.Imports(
+						htmx.ImportsProp{
+							Resolver: cache.New(jsdeliver.New()),
+							Pkgs: []imports.ExactPackage{
+								{
+									Name:    "htmx.org",
+									Version: "2.0.4",
+								},
+							},
+							Requires: []imports.Require{
+								{
+									File: "dist/htmx.esm.js",
+								},
 							},
 						},
-						Requires: []imports.Require{
-							{
-								File: "dist/htmx.esm.js",
-							},
-						},
-					}),
+					),
 					htmx.Script(
 						htmx.Type("module"),
 						htmx.Raw(`import htmx from "htmx.org";`),
