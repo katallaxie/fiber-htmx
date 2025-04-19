@@ -4,16 +4,20 @@ import (
 	htmx "github.com/katallaxie/fiber-htmx"
 )
 
-// LinkProps represents the properties for a link element.
-type LinkProps struct {
-	Rel        string          // The relationship between the current document and the linked document.
-	Href       string          // The URL of the linked document.
-	ClassNames map[string]bool // The class names for the link element.
-	Active     bool            // Whether the link is active.
+// Props represents the properties for a link element.
+type Props struct {
+	// Rel is the relationship between the current document and the linked document.
+	Rel string
+	// Href is the URL of the linked document.
+	Href string
+	// Active indicates whether the link is active or not.
+	Active bool
+
+	htmx.ClassNames
 }
 
 // Link generates a link element based on the provided properties.
-func Link(props LinkProps, children ...htmx.Node) htmx.Node {
+func Link(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -29,7 +33,7 @@ func Link(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Primary generates a primary link element based on the provided properties.
-func Primary(props LinkProps, children ...htmx.Node) htmx.Node {
+func Primary(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -46,7 +50,7 @@ func Primary(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Secondary generates a secondary link element based on the provided properties.
-func Secondary(props LinkProps, children ...htmx.Node) htmx.Node {
+func Secondary(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -63,7 +67,7 @@ func Secondary(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Accent generates an accent link element based on the provided properties.
-func Accent(props LinkProps, children ...htmx.Node) htmx.Node {
+func Accent(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -80,7 +84,7 @@ func Accent(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Neutral generates a neutral link element based on the provided properties.
-func Neutral(props LinkProps, children ...htmx.Node) htmx.Node {
+func Neutral(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -97,7 +101,7 @@ func Neutral(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Info generates an info link element based on the provided properties.
-func Info(props LinkProps, children ...htmx.Node) htmx.Node {
+func Info(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -114,7 +118,7 @@ func Info(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Warning generates a warning link element based on the provided properties.
-func Warning(props LinkProps, children ...htmx.Node) htmx.Node {
+func Warning(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -131,7 +135,7 @@ func Warning(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Error generates an error link element based on the provided properties.
-func Error(props LinkProps, children ...htmx.Node) htmx.Node {
+func Error(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -148,7 +152,7 @@ func Error(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Underline generates an underline link element based on the provided properties.
-func Underline(props LinkProps, children ...htmx.Node) htmx.Node {
+func Underline(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -165,7 +169,7 @@ func Underline(props LinkProps, children ...htmx.Node) htmx.Node {
 }
 
 // Button generate a link that looks like a button.
-func Button(props LinkProps, children ...htmx.Node) htmx.Node {
+func Button(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{
