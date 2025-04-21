@@ -48,7 +48,7 @@ type FilterResetButtonProps struct {
 }
 
 // FilterResetButton is a component that renders a filter reset button.
-func FilterResetButton(props FilterResetButtonProps, children ...htmx.Node) htmx.Node {
+func FilterResetButton(props FilterResetButtonProps, _ ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -70,7 +70,7 @@ type FilterButtonProps struct {
 }
 
 // FilterButton is a component that renders a filter button.
-func FilterButton(props FilterButtonProps, children ...htmx.Node) htmx.Node {
+func FilterButton(props FilterButtonProps, _ ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Merge(
 			htmx.ClassNames{
