@@ -7,13 +7,10 @@ import (
 // Props is a struct that contains the properties of the Tabs component.
 type Props struct {
 	ID string
-
 	htmx.ClassNames
 }
 
 // Tabs is a component that renders a list of tabs.
-//
-//nolint:revive
 func Tabs(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
