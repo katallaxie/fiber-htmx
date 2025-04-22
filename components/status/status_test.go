@@ -12,28 +12,28 @@ import (
 func TestStatus(t *testing.T) {
 	tests := []struct {
 		name     string
-		props    status.StatusProps
+		props    status.Props
 		expected string
 		children []htmx.Node
 	}{
 		{
 			name:     "default",
-			props:    status.StatusProps{},
+			props:    status.Props{},
 			expected: "<div class=\"status\" role=\"status\" aria-label=\"\"></div>",
 		},
 		{
 			name:     "with class",
-			props:    status.StatusProps{ClassNames: htmx.ClassNames{"custom-class": true}},
+			props:    status.Props{ClassNames: htmx.ClassNames{"custom-class": true}},
 			expected: "<div class=\"custom-class status\" role=\"status\" aria-label=\"\"></div>",
 		},
 		{
 			name:     "with aria label",
-			props:    status.StatusProps{AriaLabel: "test"},
+			props:    status.Props{AriaLabel: "test"},
 			expected: "<div class=\"status\" role=\"status\" aria-label=\"test\"></div>",
 		},
 		{
 			name:     "with animate bounce",
-			props:    status.StatusProps{AnimateBounce: true},
+			props:    status.Props{AnimateBounce: true},
 			expected: "<div class=\"animate-bounce status\" role=\"status\" aria-label=\"\"></div>",
 		},
 	}

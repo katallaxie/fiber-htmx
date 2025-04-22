@@ -2,8 +2,8 @@ package status
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// StatusProps is a struct that contains the properties of the Status component.
-type StatusProps struct {
+// Props is a struct that contains the properties of the Status component.
+type Props struct {
 	// AriaLabel is the aria-label attribute for the status element.
 	AriaLabel string
 	// AnimateBounce is a boolean that indicates whether to apply the animate-bounce class.
@@ -13,7 +13,7 @@ type StatusProps struct {
 }
 
 // Status is a component that renders a status indicator.
-func Status(props StatusProps, children ...htmx.Node) htmx.Node {
+func Status(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -28,8 +28,8 @@ func Status(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusPrimary is a component that renders a primary status indicator.
-func StatusPrimary(props StatusProps, children ...htmx.Node) htmx.Node {
+// Primary is a component that renders a primary status indicator.
+func Primary(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -45,8 +45,8 @@ func StatusPrimary(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusSecondary is a component that renders a secondary status indicator.
-func StatusSecondary(props StatusProps, children ...htmx.Node) htmx.Node {
+// Secondary is a component that renders a secondary status indicator.
+func Secondary(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -62,8 +62,8 @@ func StatusSecondary(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusAccent is a component that renders an accent status indicator.
-func StatusAccent(props StatusProps, children ...htmx.Node) htmx.Node {
+// Accent is a component that renders an accent status indicator.
+func Accent(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -79,8 +79,8 @@ func StatusAccent(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusInfo is a component that renders an info status indicator.
-func StatusInfo(props StatusProps, children ...htmx.Node) htmx.Node {
+// Info is a component that renders an info status indicator.
+func Info(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -96,8 +96,8 @@ func StatusInfo(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusSuccess is a component that renders a success status indicator.
-func StatusSuccess(props StatusProps, children ...htmx.Node) htmx.Node {
+// Success is a component that renders a success status indicator.
+func Success(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -113,8 +113,8 @@ func StatusSuccess(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusWarning is a component that renders a warning status indicator.
-func StatusWarning(props StatusProps, children ...htmx.Node) htmx.Node {
+// Warning is a component that renders a warning status indicator.
+func Warning(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -130,8 +130,8 @@ func StatusWarning(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusError is a component that renders an error status indicator.
-func StatusError(props StatusProps, children ...htmx.Node) htmx.Node {
+// Error is a component that renders an error status indicator.
+func Error(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -147,8 +147,8 @@ func StatusError(props StatusProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// StatusNeutral is a component that renders a neutral status indicator.
-func StatusNeutral(props StatusProps, children ...htmx.Node) htmx.Node {
+// Neutral is a component that renders a neutral status indicator.
+func Neutral(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{

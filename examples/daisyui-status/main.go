@@ -19,7 +19,7 @@ type Page struct {
 	htmx.Node
 }
 
-func NewPage(title, body string) *Page {
+func NewPage(title string) *Page {
 	return &Page{
 		Node: htmx.HTML5(
 			htmx.HTML5Props{
@@ -49,63 +49,63 @@ func NewPage(title, body string) *Page {
 							"flex-row": true,
 						},
 						status.Status(
-							status.StatusProps{
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
 						status.Status(
-							status.StatusProps{
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusPrimary(
-							status.StatusProps{
+						status.Primary(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusAccent(
-							status.StatusProps{
+						status.Accent(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusError(
-							status.StatusProps{
+						status.Error(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusInfo(
-							status.StatusProps{
+						status.Info(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusWarning(
-							status.StatusProps{
+						status.Warning(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusSuccess(
-							status.StatusProps{
+						status.Success(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
 							},
 						),
-						status.StatusError(
-							status.StatusProps{
+						status.Error(
+							status.Props{
 								ClassNames: htmx.ClassNames{
 									"m-2": true,
 								},
@@ -140,7 +140,7 @@ func (w *webSrv) Start(_ context.Context, _ server.ReadyFunc, _ server.RunFunc) 
 		app.Use(logger.New())
 		app.Use(recover.New())
 
-		app.Get("/", htmx.NewHandler(NewPage("Hello World", "Hello World")))
+		app.Get("/", htmx.NewHandler(NewPage("Hello World")))
 
 		err := app.Listen(Addr)
 		if err != nil {
