@@ -51,7 +51,20 @@ func LabelSelect(props LabelProps, children ...htmx.Node) htmx.Node {
 	return htmx.Label(
 		htmx.Merge(
 			htmx.ClassNames{
-				"label-select": true,
+				"select": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// LabelInput is a component that renders a label element for an input element.
+func LabelInput(props LabelProps, children ...htmx.Node) htmx.Node {
+	return htmx.Label(
+		htmx.Merge(
+			htmx.ClassNames{
+				"input": true,
 			},
 			props.ClassNames,
 		),
