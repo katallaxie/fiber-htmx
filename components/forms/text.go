@@ -15,6 +15,8 @@ type TextInputProps struct {
 	Name        string          // The name of the text input element.
 	Placeholder string          // The placeholder of the text input element.
 	Value       string          // The value of the text input element.
+	Validator   bool            // Whether the text input element is a validator.
+	Required    bool            // Whether the text input element is required.
 }
 
 // TextInput returns a text input element based on the provided properties.
@@ -25,6 +27,7 @@ func TextInput(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input":       true,
 				"input-error": utilx.NotEmpty(p.Error),
 				"w-full":      true,
+				"validator":   p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -33,6 +36,7 @@ func TextInput(p TextInputProps, children ...htmx.Node) htmx.Node {
 			htmx.Attribute("type", p.Type),
 			htmx.Attribute("type", "text"),
 		),
+		htmx.If(p.Required, htmx.Required()),
 		htmx.Attribute("name", p.Name),
 		htmx.Attribute("value", p.Value),
 		htmx.If(p.Disabled, htmx.Disabled()),
@@ -50,6 +54,7 @@ func TextInputBordered(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input":          true,
 				"input-bordered": true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -70,6 +75,7 @@ func TextInputGhost(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input":       true,
 				"input-ghost": true,
 				"w-full":      true,
+				"validator":   p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -91,6 +97,7 @@ func TextInputPrimary(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input-bordered": true,
 				"input-primary":  true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -112,6 +119,7 @@ func TextInputSecondary(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input-bordered":  true,
 				"input-secondary": true,
 				"w-full":          true,
+				"validator":       p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -133,6 +141,7 @@ func TextInputAccent(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input-bordered": true,
 				"input-accent":   true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -154,6 +163,7 @@ func TextInputError(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input-bordered": true,
 				"input-error":    true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -175,6 +185,7 @@ func TextInputSuccess(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input-bordered": true,
 				"input-success":  true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -196,6 +207,7 @@ func TextInputWarning(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"input-bordered": true,
 				"input-warning":  true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -218,6 +230,7 @@ func TextInputWithIcon(p TextInputProps, children ...htmx.Node) htmx.Node {
 				"flex":           true,
 				"items-center":   true,
 				"gap-2":          true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),

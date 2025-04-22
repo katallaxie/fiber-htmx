@@ -9,6 +9,7 @@ type ToggleProps struct {
 	Value      string          // The value of the toggle element.
 	Disabled   bool            // Whether the toggle element is disabled.
 	Checked    bool            // Whether the toggle element is checked.
+	Validator  bool            // Whether the toggle element is a validator.
 }
 
 // Toggle returns a toggle element based on the provided properties.
@@ -16,7 +17,8 @@ func Toggle(p ToggleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Merge(
 			htmx.ClassNames{
-				"toggle": true,
+				"toggle":    true,
+				"validator": p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -36,6 +38,7 @@ func ToggleSuccess(p ToggleProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"toggle":         true,
 				"toggle-success": true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -55,6 +58,7 @@ func ToggleWarning(p ToggleProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"toggle":         true,
 				"toggle-warning": true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -74,6 +78,7 @@ func ToggleInfo(p ToggleProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"toggle":      true,
 				"toggle-info": true,
+				"validator":   p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -93,6 +98,7 @@ func ToggleError(p ToggleProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"toggle":       true,
 				"toggle-error": true,
+				"validator":    p.Validator,
 			},
 			p.ClassNames,
 		),
