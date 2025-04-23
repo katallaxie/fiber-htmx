@@ -139,3 +139,22 @@ func Test_ViewBox(t *testing.T) {
 		})
 	}
 }
+
+func Test_G(t *testing.T) {
+	tests := []struct {
+		name string
+		want string
+	}{
+		{
+			name: "g",
+			want: `<g></g>`,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			a := htmx.G()
+			assert.Equal(t, test.want, a)
+		})
+	}
+}

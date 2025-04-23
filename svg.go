@@ -6,6 +6,13 @@ func Path(children ...Node) Node {
 	return Element("path", children...)
 }
 
+// G creates an SVG group element with the
+// specified children. It is a convenience function that calls the Element function
+// with "g" as the tag name.
+func G(children ...Node) Node {
+	return Element("g", children...)
+}
+
 // SVG creates an SVG element with the specified children.
 // It sets the "xmlns" attribute to "http://www.w3.org/2000/svg".
 // The children are rendered inside a group element.
