@@ -32,3 +32,16 @@ func Content(props Props, children ...htmx.Node) htmx.Node {
 		htmx.Group(children...),
 	)
 }
+
+// Overlay is a component that renders an overlay for the hero section.
+func Overlay(props Props, children ...htmx.Node) htmx.Node {
+	return htmx.Div(
+		htmx.Merge(
+			htmx.ClassNames{
+				"hero-overlay": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
