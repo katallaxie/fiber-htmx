@@ -2,7 +2,7 @@ package heros
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// Props is the props for the Hero component
+// Props is the props for the Hero component.
 type Props struct {
 	htmx.ClassNames
 }
