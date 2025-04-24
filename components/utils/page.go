@@ -29,5 +29,6 @@ func Page(props PageProps, children ...htmx.Node) htmx.Node {
 				),
 			}, props.Head...),
 		},
+		htmx.Group(children...),
 	)
 }
