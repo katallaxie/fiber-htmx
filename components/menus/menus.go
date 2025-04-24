@@ -2,20 +2,17 @@ package menus
 
 import htmx "github.com/katallaxie/fiber-htmx"
 
-// MenuProps is the struct for the menu props.
-type MenuProps struct {
-	ClassNames htmx.ClassNames
+// Props is the struct for the menu props.
+type Props struct {
+	htmx.ClassNames
 }
 
 // Menu is the component for the menu.
-func Menu(p MenuProps, children ...htmx.Node) htmx.Node {
+func Menu(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Ul(
 		htmx.Merge(
 			htmx.ClassNames{
-				"menu":        true,
-				"bg-base-200": true,
-				"w-56":        true,
-				"rounded-box": true,
+				"menu": true,
 			},
 			p.ClassNames,
 		),
@@ -23,17 +20,13 @@ func Menu(p MenuProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuItemProps is the struct for the menu item props.
-type MenuItemProps struct {
-	ClassNames htmx.ClassNames
-}
-
-// MenuItem is the component for the menu item.
-func MenuItem(p MenuItemProps, children ...htmx.Node) htmx.Node {
-	return htmx.Li(
+// MenuVertical is the component for the vertical menu.
+func MenuVertical(p Props, children ...htmx.Node) htmx.Node {
+	return htmx.Ul(
 		htmx.Merge(
 			htmx.ClassNames{
-				"menu-item": true,
+				"menu":          true,
+				"menu-vertical": true,
 			},
 			p.ClassNames,
 		),
@@ -41,13 +34,42 @@ func MenuItem(p MenuItemProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuTitleProps is the struct for the menu title props.
-type MenuTitleProps struct {
-	ClassNames htmx.ClassNames
+// MenuHorizontal is the component for the horizontal menu.
+func MenuHorizontal(p Props, children ...htmx.Node) htmx.Node {
+	return htmx.Ul(
+		htmx.Merge(
+			htmx.ClassNames{
+				"menu":            true,
+				"menu-horizontal": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Group(children...),
+	)
 }
 
-// MenuTitle is the component for the menu title.
-func MenuTitle(p MenuTitleProps, children ...htmx.Node) htmx.Node {
+// ItemProps is the struct for the menu item props.
+type ItemProps struct {
+	htmx.ClassNames
+}
+
+// Item is the component for the menu item.
+func Item(p ItemProps, children ...htmx.Node) htmx.Node {
+	return htmx.Li(
+		htmx.Merge(
+			p.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// TitleProps is the struct for the menu title props.
+type TitleProps struct {
+	htmx.ClassNames
+}
+
+// Title is the component for the menu title.
+func Title(p TitleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -59,14 +81,14 @@ func MenuTitle(p MenuTitleProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuCollapsibleProps is the struct for the menu collapse props.
-type MenuCollapsibleProps struct {
-	ClassNames htmx.ClassNames
-	Open       bool
+// CollapsibleProps is the struct for the menu collapse props.
+type CollapsibleProps struct {
+	Open bool
+	htmx.ClassNames
 }
 
-// MenuCollapsible is the component for the menu collapse.
-func MenuCollapsible(p MenuCollapsibleProps, children ...htmx.Node) htmx.Node {
+// Collapsible is the component for the menu collapse.
+func Collapsible(p CollapsibleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Details(
 		htmx.Merge(
 			p.ClassNames,
@@ -76,13 +98,13 @@ func MenuCollapsible(p MenuCollapsibleProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// MenuCollapsibleSummaryProps is the struct for the menu collapse summary props.
-type MenuCollapsibleSummaryProps struct {
-	ClassNames htmx.ClassNames
+// CollapsibleSummaryProps is the struct for the menu collapse summary props.
+type CollapsibleSummaryProps struct {
+	htmx.ClassNames
 }
 
-// MenuCollapsibleSummary is the component for the menu collapse summary.
-func MenuCollapsibleSummary(p MenuCollapsibleSummaryProps, children ...htmx.Node) htmx.Node {
+// CollapsibleSummary is the component for the menu collapse summary.
+func CollapsibleSummary(p CollapsibleSummaryProps, children ...htmx.Node) htmx.Node {
 	return htmx.Summary(
 		htmx.Merge(
 			p.ClassNames,
@@ -91,15 +113,15 @@ func MenuCollapsibleSummary(p MenuCollapsibleSummaryProps, children ...htmx.Node
 	)
 }
 
-// MenuLinkProps is the struct for the menu link props.
-type MenuLinkProps struct {
-	ClassNames htmx.ClassNames
-	Href       string
-	Active     bool
+// LinkProps is the struct for the menu link props.
+type LinkProps struct {
+	Href   string
+	Active bool
+	htmx.ClassNames
 }
 
-// MenuLink is the component for the menu link.
-func MenuLink(p MenuLinkProps, children ...htmx.Node) htmx.Node {
+// Link is the component for the menu link.
+func Link(p LinkProps, children ...htmx.Node) htmx.Node {
 	return htmx.A(
 		htmx.Merge(
 			htmx.ClassNames{

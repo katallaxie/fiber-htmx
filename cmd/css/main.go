@@ -629,33 +629,33 @@ func Page() htmx.Node {
 									htmx.ClassNames{},
 								),
 								menus.Menu(
-									menus.MenuProps{
+									menus.Props{
 										ClassNames: htmx.ClassNames{
 											"w-full":      true,
 											"bg-base-200": false,
 										},
 									},
-									menus.MenuItem(
-										menus.MenuItemProps{},
-										menus.MenuLink(
-											menus.MenuLinkProps{},
+									menus.Item(
+										menus.ItemProps{},
+										menus.Link(
+											menus.LinkProps{},
 											htmx.Text("Home"),
 										),
 									),
-									menus.MenuTitle(
-										menus.MenuTitleProps{},
+									menus.Title(
+										menus.TitleProps{},
 										htmx.Text("Components"),
 									),
-									menus.MenuItem(
-										menus.MenuItemProps{},
-										menus.MenuCollapsible(
-											menus.MenuCollapsibleProps{},
-											menus.MenuCollapsibleSummary(
-												menus.MenuCollapsibleSummaryProps{},
+									menus.Item(
+										menus.ItemProps{},
+										menus.Collapsible(
+											menus.CollapsibleProps{},
+											menus.CollapsibleSummary(
+												menus.CollapsibleSummaryProps{},
 												htmx.Text("Buttons"),
 											),
-											menus.MenuItem(
-												menus.MenuItemProps{},
+											menus.Item(
+												menus.ItemProps{},
 												htmx.A(
 													htmx.Attribute("href", "#"),
 													htmx.Text("Item 1"),
@@ -670,14 +670,14 @@ func Page() htmx.Node {
 												),
 											),
 										),
-										menus.MenuCollapsible(
-											menus.MenuCollapsibleProps{},
-											menus.MenuCollapsibleSummary(
-												menus.MenuCollapsibleSummaryProps{},
+										menus.Collapsible(
+											menus.CollapsibleProps{},
+											menus.CollapsibleSummary(
+												menus.CollapsibleSummaryProps{},
 												htmx.Text("Forms"),
 											),
-											menus.MenuItem(
-												menus.MenuItemProps{},
+											menus.Item(
+												menus.ItemProps{},
 												htmx.A(
 													htmx.Attribute("href", "#"),
 													htmx.Text("Item 1"),
