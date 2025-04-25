@@ -1,11 +1,14 @@
 package csrf
 
-import htmx "github.com/katallaxie/fiber-htmx"
+import (
+	htmx "github.com/katallaxie/fiber-htmx"
+	"github.com/katallaxie/pkg/utilx"
+)
 
-const defaultTokenName = "CSRFToken"
+const defaultTokenName = "csrftoken"
 
-// TokenProps is the struct that holds the CSRF properties.
-type TokenProps struct {
+// Props is the struct that holds the CSRF properties.
+type Props struct {
 	// Token is the CSRF token
 	Token string
 	// Name is the name of the CSRF token
@@ -13,14 +16,10 @@ type TokenProps struct {
 }
 
 // Token is the struct that holds the CSRF properties.
-func Token(props TokenProps) htmx.Node {
-	if props.Name == "" {
-		props.Name = defaultTokenName
-	}
-
+func Token(props Props) htmx.Node {
 	return htmx.Input(
 		htmx.Type("hidden"),
-		htmx.Name(props.Name),
+		htmx.IfElse(utilx.NotEmpty(props.Name), htmx.Name(props.Name), htmx.Name(defaultTokenName)),
 		htmx.Value(props.Token),
 	)
 }
