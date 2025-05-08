@@ -20,7 +20,7 @@ require (
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
 	github.com/tdewolff/parse/v2 v2.7.23
-	github.com/valyala/fasthttp v1.61.0
+	github.com/valyala/fasthttp v1.62.0
 	github.com/yuin/goldmark v1.7.11
 	github.com/zeiss/fiber-authz v1.0.33
 	github.com/zeiss/fiber-goth v1.2.15
@@ -255,13 +255,13 @@ require (
 	go.uber.org/automaxprocs v1.6.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
-	golang.org/x/crypto v0.37.0 // indirect
+	golang.org/x/crypto v0.38.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20250210185358-939b2ce775ac // indirect
 	golang.org/x/mod v0.24.0 // indirect
-	golang.org/x/net v0.39.0 // indirect
+	golang.org/x/net v0.40.0 // indirect
 	golang.org/x/sync v0.14.0 // indirect
-	golang.org/x/sys v0.32.0 // indirect
-	golang.org/x/term v0.31.0 // indirect
+	golang.org/x/sys v0.33.0 // indirect
+	golang.org/x/term v0.32.0 // indirect
 	golang.org/x/tools v0.32.0 // indirect
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
