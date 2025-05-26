@@ -27,7 +27,7 @@ require (
 	github.com/zeiss/fiber-reload v0.1.1
 	github.com/zeiss/pkg v0.1.23
 	golang.org/x/text v0.25.0
-	gorm.io/gorm v1.26.1
+	gorm.io/gorm v1.30.0
 )
 
 require (
