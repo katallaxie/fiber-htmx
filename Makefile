@@ -5,6 +5,11 @@ GO 					?= go
 GO_TOOL 			?= $(GO) tool
 GO_TEST 			?= $(GO_TOOL) gotest.tools/gotestsum --format pkgname
 GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser
+GO_AIR 				?= air
+
+.PHONY: start
+start: ## Start the application.
+	$(GO_AIR) -c .air.toml
 
 .PHONY: release
 release: ## Release the project.
@@ -21,10 +26,6 @@ generate: ## Generate code.
 .PHONY: bench
 bench: ## Run benchmarks.
 	$(GO) test -bench=. ./...
-
-.PHONY: start
-start: ## Run air live reload.
-	$(GO_TOOL) github.com/air-verse/air
 
 .PHONY: bundle
 bundle: ## Bundle the project.

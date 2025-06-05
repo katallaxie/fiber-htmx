@@ -8,13 +8,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 RUN apt-get update \
  && apt-get install -y --no-install-recommends ca-certificates
 
-# zScaler certificate, for all busy engineers
-ADD zscaler.pem /usr/local/share/ca-certificates/zscaler.crt
-RUN sudo chmod 644 /usr/local/share/ca-certificates/zscaler.crt && sudo update-ca-certificates
-
-# Set the environment variable NODE_EXTRA_CA_CERTS to the zScaler certificate
-ENV NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/zscaler.crt
-
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install protobuf-compiler

@@ -6,6 +6,7 @@ import (
 	"errors"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/katallaxie/htmx"
 	"github.com/katallaxie/pkg/conv"
 	goth "github.com/zeiss/fiber-goth"
 	"github.com/zeiss/fiber-goth/adapters"
@@ -215,7 +216,7 @@ func (c *DefaultController) Redirect(path string) error {
 }
 
 // Render renders a component.
-func (c *DefaultController) Render(node Node, opt ...RenderOpt) error {
+func (c *DefaultController) Render(node htmx.Node, opt ...RenderOpt) error {
 	return RenderComp(c.ctx, node, opt...)
 }
 
