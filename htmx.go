@@ -253,12 +253,23 @@ type CompFunc func(c *fiber.Ctx) (htmx.Node, error)
 func NewCompFuncHandler(handler CompFunc, config ...Config) fiber.Handler {
 	cfg := configDefault(config...)
 
-	return func(c *fiber.Ctx) error {
+	return func(c *fiber.Ctx) (err error) {
 		if cfg.Next != nil && cfg.Next(c) {
 			return c.Next()
 		}
 
 		c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
+
+		defer func() {
+			if r := recover(); r != nil {
+				var ok bool
+				err, ok = r.(error)
+				if !ok {
+					err = fiber.NewError(fiber.StatusInternalServerError, fmt.Sprintf("%v", r))
+				}
+				err = cfg.ErrorHandler(c, err)
+			}
+		}()
 
 		n, err := handler(c)
 		if err != nil {
