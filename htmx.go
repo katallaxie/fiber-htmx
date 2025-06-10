@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/katallaxie/htmx"
+	h "github.com/katallaxie/htmx"
 	"github.com/katallaxie/pkg/conv"
 	authz "github.com/zeiss/fiber-authz"
 )
@@ -154,7 +154,7 @@ func RenderPartial(c *fiber.Ctx) bool {
 }
 
 // RenderComp is a helper function to render a component.
-func RenderComp(c *fiber.Ctx, n htmx.Node, opt ...RenderOpt) error {
+func RenderComp(c *fiber.Ctx, n h.Node, opt ...RenderOpt) error {
 	for _, o := range opt {
 		o(c)
 	}
@@ -163,10 +163,10 @@ func RenderComp(c *fiber.Ctx, n htmx.Node, opt ...RenderOpt) error {
 }
 
 // RenderCompFunc is a helper function to render a component function.
-type ControllerComponentFactory func(ctrl Controller) htmx.Node
+type ControllerComponentFactory func(ctrl Controller) h.Node
 
 // ControllerComponent is a helper function to render a controller component.
-func ControllerComponent(ctrl Controller, fn ControllerComponentFactory) htmx.Node {
+func ControllerComponent(ctrl Controller, fn ControllerComponentFactory) h.Node {
 	return fn(ctrl)
 }
 
@@ -227,7 +227,7 @@ func RenderStatusCode(err error) RenderOpt {
 }
 
 // NewHandler returns a new handler for a htmx.Node.
-func NewHandler(n htmx.Node, config ...Config) fiber.Handler {
+func NewHandler(n h.Node, config ...Config) fiber.Handler {
 	cfg := configDefault(config...)
 
 	return func(c *fiber.Ctx) error {
@@ -247,7 +247,7 @@ func NewHandler(n htmx.Node, config ...Config) fiber.Handler {
 }
 
 // CompFunc is a helper type for component functions.
-type CompFunc func(c *fiber.Ctx) (htmx.Node, error)
+type CompFunc func(c *fiber.Ctx) (h.Node, error)
 
 // NewCompFuncHandler returns a new comp handler.
 func NewCompFuncHandler(handler CompFunc, config ...Config) fiber.Handler {
