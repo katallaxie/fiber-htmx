@@ -12,7 +12,7 @@ tool (
 require (
 	github.com/gofiber/fiber/v2 v2.52.8
 	github.com/google/uuid v1.6.0
-	github.com/katallaxie/htmx v0.5.2
+	github.com/katallaxie/htmx v0.5.3
 	github.com/katallaxie/pkg v0.7.7
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
