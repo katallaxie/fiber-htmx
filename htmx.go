@@ -9,7 +9,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 	h "github.com/katallaxie/htmx"
 	"github.com/katallaxie/pkg/conv"
-	authz "github.com/zeiss/fiber-authz"
 )
 
 // The contextKey type is unexported to prevent collisions with context keys defined in
@@ -187,8 +186,6 @@ type Config struct {
 	Next func(c *fiber.Ctx) bool
 	// Filters is a list of filters that filter the context.
 	Filters []FilterFunc
-	// AuthzChecker is a function that authenticates the user.
-	AuthzChecker authz.AuthzChecker
 	// ErrorHandler is executed when an error is returned from fiber.Handler.
 	//
 	// Optional. Default: DefaultErrorHandler
@@ -201,8 +198,6 @@ var ConfigDefault = Config{
 	ErrorHandler: defaultErrorHandler,
 	// Filters is a list of filters that filter the context.
 	Filters: []FilterFunc{},
-	// AuthzChecker is a function that authenticates the user.
-	AuthzChecker: authz.NewNoop(),
 }
 
 // default ErrorHandler that process return error from fiber.Handler.
@@ -323,33 +318,6 @@ func NewControllerHandler(factory ControllerFactory, config ...Config) fiber.Han
 		}()
 
 		c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
-
-		auth, ok := ctrl.(authz.AuthzController) // check for authz from the controller
-		if ok && cfg.AuthzChecker != nil {       //nolint:nestif
-			principal, err := auth.GetPrincipial(c)
-			if err != nil {
-				return ctrl.Error(err)
-			}
-
-			object, err := auth.GetObject(c)
-			if err != nil {
-				return ctrl.Error(err)
-			}
-
-			action, err := auth.GetAction(c)
-			if err != nil {
-				return ctrl.Error(err)
-			}
-
-			allowed, err := cfg.AuthzChecker.Allowed(c.Context(), principal, object, action)
-			if err != nil {
-				return ctrl.Error(err)
-			}
-
-			if !allowed {
-				return ctrl.Error(authz.ErrForbidden)
-			}
-		}
 
 		for _, f := range cfg.Filters {
 			err = f(c)
@@ -482,10 +450,6 @@ func configDefault(config ...Config) Config {
 
 	if cfg.Filters == nil {
 		cfg.Filters = ConfigDefault.Filters
-	}
-
-	if cfg.AuthzChecker == nil {
-		cfg.AuthzChecker = ConfigDefault.AuthzChecker
 	}
 
 	return cfg

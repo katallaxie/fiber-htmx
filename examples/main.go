@@ -10,10 +10,10 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
+	reload "github.com/katallaxie/fiber-reload"
 	htmx "github.com/katallaxie/htmx"
 	"github.com/katallaxie/htmx/buttons"
 	"github.com/spf13/pflag"
-	reload "github.com/zeiss/fiber-reload"
 )
 
 var addr = ":3000"

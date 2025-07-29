@@ -6,11 +6,11 @@ import (
 	"errors"
 
 	"github.com/gofiber/fiber/v2"
+	goth "github.com/katallaxie/fiber-goth"
+	"github.com/katallaxie/fiber-goth/adapters"
+	reload "github.com/katallaxie/fiber-reload"
 	"github.com/katallaxie/htmx"
 	"github.com/katallaxie/pkg/conv"
-	goth "github.com/zeiss/fiber-goth"
-	"github.com/zeiss/fiber-goth/adapters"
-	reload "github.com/zeiss/fiber-reload"
 	"gorm.io/gorm"
 )
 
