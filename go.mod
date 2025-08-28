@@ -17,7 +17,7 @@ require (
 	github.com/katallaxie/htmx v0.5.3
 	github.com/katallaxie/pkg v0.7.8
 	github.com/spf13/pflag v1.0.7
-	github.com/stretchr/testify v1.11.0
+	github.com/stretchr/testify v1.11.1
 	github.com/valyala/fasthttp v1.65.0
 	gorm.io/gorm v1.30.1
 )
