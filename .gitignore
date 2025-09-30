@@ -23,8 +23,7 @@
 tmp
 
 # Go workspace file
-go.work
-dist 
+# go.work 
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
