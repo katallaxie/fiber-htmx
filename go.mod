@@ -1,6 +1,6 @@
 module github.com/katallaxie/fiber-htmx
 
-go 1.24.0
+go 1.25
 
 tool (
 	github.com/golangci/golangci-lint/v2/cmd/golangci-lint
