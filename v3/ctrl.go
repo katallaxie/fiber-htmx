@@ -48,6 +48,10 @@ type Controller interface {
 	Reset()
 	// Ctx returns the fiber.Ctx.
 	Ctx() fiber.Ctx
+	// Context returns the context.
+	Context() context.Context
+	// Clone returns a new instance of the controller.
+	Clone() Controller
 }
 
 var _ Controller = (*UnimplementedController)(nil)
@@ -174,6 +178,11 @@ func (c *UnimplementedController) Context() context.Context {
 // Ctx returns the fiber.Ctx.
 func (c *UnimplementedController) Ctx() fiber.Ctx {
 	return c.ctx
+}
+
+// Clone returns a new instance of the controller.
+func (c *UnimplementedController) Clone() Controller {
+	return &UnimplementedController{ctx: c.ctx}
 }
 
 // IsDevelopment returns true if the environment is development.

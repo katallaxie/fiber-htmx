@@ -270,6 +270,83 @@ func NewCompFuncHandler(handler CompFunc, config ...Config) fiber.Handler {
 	}
 }
 
+// NewControllerHandler returns a new htmx controller handler.
+func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
+	cfg := configDefault(config...)
+
+	return func(c fiber.Ctx) (err error) {
+		if cfg.Next != nil && cfg.Next(c) {
+			return c.Next()
+		}
+
+		i := ctrl.Clone()
+
+		// Initialize the controller
+		err = i.Init(c)
+		if err != nil {
+			return cfg.ErrorHandler(c, err)
+		}
+
+		// Recover from panic if controller is initialized
+		defer func() {
+			if r := recover(); r != nil {
+				var ok bool
+				err, ok = r.(error)
+				if !ok {
+					err = fiber.NewError(fiber.StatusInternalServerError, fmt.Sprintf("%v", r))
+				}
+				err = ctrl.Error(err)
+			}
+		}()
+
+		c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
+
+		for _, f := range cfg.Filters {
+			err = f(c)
+			if err != nil {
+				return ctrl.Error(err)
+			}
+		}
+
+		err = ctrl.Prepare()
+		if err != nil {
+			return ctrl.Error(err)
+		}
+
+		switch c.Method() {
+		case fiber.MethodGet:
+			err = ctrl.Get()
+		case fiber.MethodPost:
+			err = ctrl.Post()
+		case fiber.MethodPut:
+			err = ctrl.Put()
+		case fiber.MethodPatch:
+			err = ctrl.Patch()
+		case fiber.MethodDelete:
+			err = ctrl.Delete()
+		case fiber.MethodOptions:
+			err = ctrl.Options()
+		case fiber.MethodTrace:
+			err = ctrl.Trace()
+		case fiber.MethodHead:
+			err = ctrl.Head()
+		default:
+			err = fiber.ErrMethodNotAllowed
+		}
+
+		if err != nil {
+			return ctrl.Error(err)
+		}
+
+		err = ctrl.Finalize()
+		if err != nil {
+			return ctrl.Error(err)
+		}
+
+		return nil
+	}
+}
+
 // NewMessageHandler is a helper function to handle htmx messages.
 func NewMessageHandler(config ...Config) fiber.Handler {
 	cfg := configDefault(config...)
