@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gofiber/fiber/v3"
-
 	"github.com/katallaxie/htmx"
+
+	"github.com/gofiber/fiber/v3"
 	"github.com/katallaxie/pkg/conv"
 )
 

@@ -4,30 +4,34 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/gofiber/fiber/v3"
 	"github.com/katallaxie/htmx"
+
+	"github.com/gofiber/fiber/v3"
 )
+
+// ErrToastsUnexpectedError is returned when there is an unexpected error.
+var ErrToastsUnexpectedError = Error("there has been an unexpected error")
 
 // ToastsErrorHandler is the default error handler for toasts.
 var ToastsErrorHandler = func(c fiber.Ctx, err error) error {
 	code := fiber.StatusInternalServerError
 
-	var te Toast
-	if !errors.As(err, &te) {
-		te = Error("there has been an unexpected error")
+	var toast Toast
+	if !errors.As(err, &toast) {
+		toast = ErrToastsUnexpectedError
 	}
 
 	var e *fiber.Error // if this is not a toast then use the error message
 	if errors.As(err, &e) {
 		code = e.Code
-		te = Error(e.Message)
+		toast = Error(e.Message)
 	}
 
-	if te.Level != SUCCESS {
+	if toast.Level != SUCCESS {
 		ReSwap(c, "none")
 	}
 
-	err = te.SetHXTriggerHeader(c)
+	err = toast.SetHXTriggerHeader(c)
 	if err != nil {
 		return err
 	}
@@ -127,12 +131,6 @@ func (t Toast) SetHXTriggerHeader(c fiber.Ctx) error {
 	Trigger(c, jsonData)
 
 	return nil
-}
-
-// ToasterProps is the properties for the Toaster component.
-type ToasterProps struct {
-	// ClassNames are the class names for the toast.
-	ClassNames htmx.ClassNames
 }
 
 // Toast is the toast component.
