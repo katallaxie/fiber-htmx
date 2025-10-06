@@ -10,6 +10,7 @@ import (
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/katallaxie/pkg/conv"
+	"github.com/katallaxie/pkg/slices"
 )
 
 // The contextKey type is unexported to prevent collisions with context keys defined in
@@ -301,11 +302,11 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 
 		c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
 
-		for _, f := range cfg.Filters {
-			err = f(c)
-			if err != nil {
-				return ctrl.Error(err)
-			}
+		err = slices.FailForEach(func(v FilterFunc, i int) error {
+			return v(c)
+		}, cfg.Filters...)
+		if err != nil {
+			return ctrl.Error(err)
 		}
 
 		err = ctrl.Prepare()
