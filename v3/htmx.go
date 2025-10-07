@@ -177,6 +177,8 @@ type Config struct {
 	Next func(c fiber.Ctx) bool
 	// Filters is a list of filters that filter the context.
 	Filters []FilterFunc
+	// ContentType returns the content type of the request.
+	ContentType string
 	// ErrorHandler is executed when an error is returned from fiber.Handler.
 	//
 	// Optional. Default: DefaultErrorHandler
@@ -189,6 +191,8 @@ var ConfigDefault = Config{
 	ErrorHandler: defaultErrorHandler,
 	// Filters is a list of filters that filter the context.
 	Filters: []FilterFunc{},
+	// ContentType returns the content type of the request.
+	ContentType: fiber.MIMETextHTML,
 }
 
 // default ErrorHandler that process return error from fiber.Handler.
@@ -280,6 +284,7 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 			return c.Next()
 		}
 
+		// Clone the controller to avoid spoiling data
 		i := ctrl.Clone()
 
 		// Initialize the controller
@@ -288,7 +293,7 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 			return cfg.ErrorHandler(c, err)
 		}
 
-		// Recover from panic if controller is initialized
+		// Recover from panic if controller is panicking.
 		defer func() {
 			if r := recover(); r != nil {
 				var ok bool
@@ -296,22 +301,21 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 				if !ok {
 					err = fiber.NewError(fiber.StatusInternalServerError, fmt.Sprintf("%v", r))
 				}
-				err = ctrl.Error(err)
 			}
 		}()
 
-		c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
+		c.Set(fiber.HeaderContentType, cfg.ContentType)
 
 		err = slices.FailForEach(func(v FilterFunc, i int) error {
 			return v(c)
 		}, cfg.Filters...)
 		if err != nil {
-			return ctrl.Error(err)
+			return cfg.ErrorHandler(c, err)
 		}
 
 		err = ctrl.Prepare()
 		if err != nil {
-			return ctrl.Error(err)
+			return cfg.ErrorHandler(c, err)
 		}
 
 		switch c.Method() {
@@ -336,12 +340,12 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 		}
 
 		if err != nil {
-			return ctrl.Error(err)
+			return cfg.ErrorHandler(c, err)
 		}
 
 		err = ctrl.Finalize()
 		if err != nil {
-			return ctrl.Error(err)
+			return cfg.ErrorHandler(c, err)
 		}
 
 		return nil

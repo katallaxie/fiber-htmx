@@ -42,14 +42,8 @@ type Controller interface {
 	Trace() error
 	// Head  is called when the controller is executed with the HEAD method.
 	Head() error
-	// Error is called when an error occurs.
-	Error(err error) error
 	// Reset resets the controller.
 	Reset()
-	// Ctx returns the fiber.Ctx.
-	Ctx() fiber.Ctx
-	// Context returns the context.
-	Context() context.Context
 	// Clone returns a new instance of the controller.
 	Clone() Controller
 }
@@ -106,11 +100,6 @@ func (c *UnimplementedController) Delete() error {
 
 // Options is called when the controller is executed with the OPTIONS method.
 func (c *UnimplementedController) Options() error {
-	return ErrUnimplemented
-}
-
-// Error is called when an error occurs.
-func (c *UnimplementedController) Error(_ error) error {
 	return ErrUnimplemented
 }
 
@@ -180,6 +169,11 @@ func (c *UnimplementedController) Ctx() fiber.Ctx {
 	return c.ctx
 }
 
+// Render is a helper function to render a component.
+func (c *UnimplementedController) Render(node htmx.Node, opt ...RenderOpt) error {
+	return RenderComp(c.ctx, node, opt...)
+}
+
 // Clone returns a new instance of the controller.
 func (c *UnimplementedController) Clone() Controller {
 	return &UnimplementedController{ctx: c.ctx}
@@ -198,11 +192,6 @@ func (c *UnimplementedController) IsProduction() bool {
 // Redirect redirects to the given path.
 func (c *UnimplementedController) Redirect(path string) {
 	Redirect(c.ctx, path)
-}
-
-// Render renders a component.
-func (c *UnimplementedController) Render(node htmx.Node, opt ...RenderOpt) error {
-	return RenderComp(c.ctx, node, opt...)
 }
 
 // Path returns the path.
