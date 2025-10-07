@@ -4,19 +4,31 @@ import (
 	"log"
 	"os"
 
-	handler "github.com/katallaxie/fiber-htmx"
+	handler "github.com/katallaxie/fiber-htmx/v3"
 
-	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/logger"
-	"github.com/gofiber/fiber/v2/middleware/recover"
-	"github.com/gofiber/fiber/v2/middleware/requestid"
-	reload "github.com/katallaxie/fiber-reload"
+	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v3/middleware/logger"
+	"github.com/gofiber/fiber/v3/middleware/recover"
+	"github.com/gofiber/fiber/v3/middleware/requestid"
+	reload "github.com/katallaxie/fiber-reload/v3"
 	htmx "github.com/katallaxie/htmx"
 	"github.com/katallaxie/htmx/buttons"
 	"github.com/spf13/pflag"
 )
 
 var addr = ":3000"
+
+type GetHelloWorldController struct {
+	handler.UnimplementedController
+}
+
+func (c *GetHelloWorldController) Get() error {
+	return c.Render(Demo())
+}
+
+func (c *GetHelloWorldController) Clone() handler.Controller {
+	return &GetHelloWorldController{}
+}
 
 func Demo() htmx.Node {
 	return htmx.HTML5(
@@ -49,7 +61,7 @@ func main() {
 	app.Use(reload.Environment(reload.Development))
 	reload.WithHotReload(app)
 
-	app.Get("/", handler.NewHandler(Demo()))
+	app.Get("/", handler.NewControllerHandler(&GetHelloWorldController{}))
 
 	err := app.Listen(addr)
 	if err != nil {

@@ -10,7 +10,7 @@ import (
 	"github.com/gofiber/fiber/v3"
 	goth "github.com/katallaxie/fiber-goth/v3"
 	"github.com/katallaxie/fiber-goth/v3/adapters"
-	reload "github.com/katallaxie/fiber-reload"
+	reload "github.com/katallaxie/fiber-reload/v3"
 	"github.com/katallaxie/pkg/conv"
 	"gorm.io/gorm"
 )
@@ -65,12 +65,12 @@ func (c *UnimplementedController) Init(ctx fiber.Ctx) error {
 
 // Prepare is called before the controller is executed.
 func (c *UnimplementedController) Prepare() error {
-	return ErrUnimplemented
+	return nil
 }
 
 // Finalize is called after the controller is executed.
 func (c *UnimplementedController) Finalize() error {
-	return ErrUnimplemented
+	return nil
 }
 
 // Get is called when the controller is executed with the GET method.
@@ -176,7 +176,10 @@ func (c *UnimplementedController) Render(node htmx.Node, opt ...RenderOpt) error
 
 // Clone returns a new instance of the controller.
 func (c *UnimplementedController) Clone() Controller {
-	return &UnimplementedController{ctx: c.ctx}
+	copy := *c
+	copy.Reset()
+
+	return &copy
 }
 
 // IsDevelopment returns true if the environment is development.

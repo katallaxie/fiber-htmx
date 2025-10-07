@@ -313,28 +313,28 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 			return cfg.ErrorHandler(c, err)
 		}
 
-		err = ctrl.Prepare()
+		err = i.Prepare()
 		if err != nil {
 			return cfg.ErrorHandler(c, err)
 		}
 
 		switch c.Method() {
 		case fiber.MethodGet:
-			err = ctrl.Get()
+			err = i.Get()
 		case fiber.MethodPost:
-			err = ctrl.Post()
+			err = i.Post()
 		case fiber.MethodPut:
-			err = ctrl.Put()
+			err = i.Put()
 		case fiber.MethodPatch:
-			err = ctrl.Patch()
+			err = i.Patch()
 		case fiber.MethodDelete:
-			err = ctrl.Delete()
+			err = i.Delete()
 		case fiber.MethodOptions:
-			err = ctrl.Options()
+			err = i.Options()
 		case fiber.MethodTrace:
-			err = ctrl.Trace()
+			err = i.Trace()
 		case fiber.MethodHead:
-			err = ctrl.Head()
+			err = i.Head()
 		default:
 			err = fiber.ErrMethodNotAllowed
 		}
@@ -343,7 +343,7 @@ func NewControllerHandler(ctrl Controller, config ...Config) fiber.Handler {
 			return cfg.ErrorHandler(c, err)
 		}
 
-		err = ctrl.Finalize()
+		err = i.Finalize()
 		if err != nil {
 			return cfg.ErrorHandler(c, err)
 		}
