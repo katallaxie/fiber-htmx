@@ -11,6 +11,7 @@ import (
 	"github.com/gofiber/fiber/v3"
 	"github.com/katallaxie/pkg/conv"
 	"github.com/katallaxie/pkg/slices"
+	"github.com/katallaxie/pkg/utilx"
 )
 
 // The contextKey type is unexported to prevent collisions with context keys defined in
@@ -437,6 +438,10 @@ func configDefault(config ...Config) Config {
 
 	if cfg.Filters == nil {
 		cfg.Filters = ConfigDefault.Filters
+	}
+
+	if utilx.Empty(cfg.ContentType) {
+		cfg.ContentType = ConfigDefault.ContentType
 	}
 
 	return cfg
