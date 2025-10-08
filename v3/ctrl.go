@@ -123,6 +123,11 @@ func (c *UnimplementedController) BindQuery(obj interface{}) error {
 	return c.ctx.Bind().Query(obj)
 }
 
+// BindAll binds the body and query to the given struct.
+func (c *UnimplementedController) BindAll(obj interface{}) error {
+	return c.ctx.Bind().All(obj)
+}
+
 // Values is a helper function to get the values from the context.
 func (c *UnimplementedController) Values(key any) (val any) {
 	return c.ctx.Value(key)
