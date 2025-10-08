@@ -11,7 +11,7 @@
 ## 🛸 Installation
 
 ```bash
-go get github.com/katallaxie/fiber-htmx
+go get github.com/katallaxie/fiber-htmx/v3
 ```
 
 # Example
