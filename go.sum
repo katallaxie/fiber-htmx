@@ -270,10 +270,8 @@ github.com/karamaru-alpha/copyloopvar v1.2.1 h1:wmZaZYIjnJ0b5UoKDjUHrikcV0zuPyyx
 github.com/karamaru-alpha/copyloopvar v1.2.1/go.mod h1:nFmMlFNlClC2BPvNaHMdkirmTJxVCY0lhxBtlfOypMM=
 github.com/katallaxie/fiber-goth/v3 v3.0.0-alpha.3 h1:c3HQEBbrkr6+utMZFZsLMcPT/funUoda5r7Cm04fgFE=
 github.com/katallaxie/fiber-goth/v3 v3.0.0-alpha.3/go.mod h1:gva6kJ9DctVNvc+seABKk3b4Wjp2IzcQjUvPVgaCXbo=
-github.com/katallaxie/fiber-htmx/v3 v3.0.0 h1:Eubh3wtiDm+Czg+MefHNay9urJZKfj5P1bUWmNsG91s=
-github.com/katallaxie/fiber-htmx/v3 v3.0.0/go.mod h1:M6cv+JkShokpQHSt3jzAh83/xCSjGKvE215Mjwpt2zs=
-github.com/katallaxie/fiber-reload v0.9.0 h1:sW6jcJQDh0A4XKts3nFjwQdpwAtNtdd4M64pLv3VAqA=
-github.com/katallaxie/fiber-reload v0.9.0/go.mod h1:ZO/tqorYK0FCKyHhLY7tLvavt9UQgN+QPbm7vYe0Rwk=
+github.com/katallaxie/fiber-htmx/v3 v3.0.2 h1:cr718t2pj5SsNy2tnDdaMYYqlDKZIywFRVgzPTl13gQ=
+github.com/katallaxie/fiber-htmx/v3 v3.0.2/go.mod h1:gcDZn1I3FvgqKkClIDSusaSFldUo6OF6qA/Ro3zOwVQ=
 github.com/katallaxie/fiber-reload/v3 v3.0.0 h1:S/9ak7QljOWG44Crz0xkAeyNC3st+2VrNHysPvbY2I4=
 github.com/katallaxie/fiber-reload/v3 v3.0.0/go.mod h1:F8sSIWV1+riFHEU8q7zCwbNtY/poNlNpiJommZzhavo=
 github.com/katallaxie/htmx v0.5.3 h1:xiHb7mFbA2OUc0BzJZDkuwCvj6SqXjUI2bM9VFoUB+M=

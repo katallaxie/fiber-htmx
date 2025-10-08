@@ -13,7 +13,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.52.9
 	github.com/gofiber/fiber/v3 v3.0.0-rc.2
 	github.com/google/uuid v1.6.0
-	github.com/katallaxie/fiber-htmx/v3 v3.0.0
+	github.com/katallaxie/fiber-htmx/v3 v3.0.2
 	github.com/katallaxie/fiber-reload/v3 v3.0.0
 	github.com/katallaxie/htmx v0.5.3
 	github.com/katallaxie/pkg v0.7.9
@@ -136,7 +136,6 @@ require (
 	github.com/julz/importas v0.2.0 // indirect
 	github.com/karamaru-alpha/copyloopvar v1.2.1 // indirect
 	github.com/katallaxie/fiber-goth/v3 v3.0.0-alpha.3 // indirect
-	github.com/katallaxie/fiber-reload v0.9.0 // indirect
 	github.com/kisielk/errcheck v1.9.0 // indirect
 	github.com/kkHAIKE/contextcheck v1.1.6 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
