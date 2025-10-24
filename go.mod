@@ -18,7 +18,7 @@ require (
 	github.com/katallaxie/htmx v0.5.3
 	github.com/katallaxie/pkg v0.7.10
 	github.com/spf13/pflag v1.0.10
-	github.com/valyala/fasthttp v1.67.0
+	github.com/valyala/fasthttp v1.68.0
 )
 
 require (
@@ -138,7 +138,7 @@ require (
 	github.com/katallaxie/fiber-goth/v3 v3.0.0-alpha.3 // indirect
 	github.com/kisielk/errcheck v1.9.0 // indirect
 	github.com/kkHAIKE/contextcheck v1.1.6 // indirect
-	github.com/klauspost/compress v1.18.0 // indirect
+	github.com/klauspost/compress v1.18.1 // indirect
 	github.com/kulti/thelper v0.7.1 // indirect
 	github.com/kunwardeep/paralleltest v1.0.14 // indirect
 	github.com/lasiar/canonicalheader v1.1.2 // indirect
@@ -237,7 +237,7 @@ require (
 	golang.org/x/crypto v0.43.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20250911091902-df9299821621 // indirect
 	golang.org/x/mod v0.29.0 // indirect
-	golang.org/x/net v0.45.0 // indirect
+	golang.org/x/net v0.46.0 // indirect
 	golang.org/x/sync v0.17.0 // indirect
 	golang.org/x/sys v0.37.0 // indirect
 	golang.org/x/term v0.36.0 // indirect
