@@ -274,8 +274,8 @@ github.com/katallaxie/fiber-htmx/v3 v3.0.2 h1:cr718t2pj5SsNy2tnDdaMYYqlDKZIywFRV
 github.com/katallaxie/fiber-htmx/v3 v3.0.2/go.mod h1:gcDZn1I3FvgqKkClIDSusaSFldUo6OF6qA/Ro3zOwVQ=
 github.com/katallaxie/fiber-reload/v3 v3.0.0 h1:S/9ak7QljOWG44Crz0xkAeyNC3st+2VrNHysPvbY2I4=
 github.com/katallaxie/fiber-reload/v3 v3.0.0/go.mod h1:F8sSIWV1+riFHEU8q7zCwbNtY/poNlNpiJommZzhavo=
-github.com/katallaxie/htmx v0.5.3 h1:xiHb7mFbA2OUc0BzJZDkuwCvj6SqXjUI2bM9VFoUB+M=
-github.com/katallaxie/htmx v0.5.3/go.mod h1:lga5AdRVvUJCvhC9ffWzPruHhbUTSiEO7xBK4G7NLx0=
+github.com/katallaxie/htmx v0.5.4 h1:R/2C1r8U6aCkNXzeLbIahkCvSV5OM6C2N1VfcftytBI=
+github.com/katallaxie/htmx v0.5.4/go.mod h1:9oE2ERUGzWwm++vrgo/YL72LtwG1VL1BxKBu2v0MeAc=
 github.com/katallaxie/pkg v0.7.10 h1:8+kIcJWWa//xqAypVT5b8OEUAWpziPS/73swu8CT7yo=
 github.com/katallaxie/pkg v0.7.10/go.mod h1:SNvshiWzWQuBCUkWAPm9gIQCEBm0mMGVsANFA3mteW4=
 github.com/kisielk/errcheck v1.9.0 h1:9xt1zI9EBfcYBvdU1nVrzMzzUPUtPKs9bVSIM3TAb3M=
@@ -514,8 +514,8 @@ github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9dec
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.1/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
-github.com/yuin/goldmark v1.7.12 h1:YwGP/rrea2/CnCtUHgjuolG/PnMxdQtPMO5PvaE2/nY=
-github.com/yuin/goldmark v1.7.12/go.mod h1:ip/1k0VRfGynBgxOz0yCqHrbZXhcjxyuS66Brc7iBKg=
+github.com/yuin/goldmark v1.7.13 h1:GPddIs617DnBLFFVJFgpo1aBfe/4xcvMc3SB5t/D0pA=
+github.com/yuin/goldmark v1.7.13/go.mod h1:ip/1k0VRfGynBgxOz0yCqHrbZXhcjxyuS66Brc7iBKg=
 gitlab.com/bosi/decorder v0.4.2 h1:qbQaV3zgwnBZ4zPMhGLW4KZe7A7NwxEhJx39R3shffo=
 gitlab.com/bosi/decorder v0.4.2/go.mod h1:muuhHoaJkA9QLcYHq4Mj8FJUwDZ+EirSHRiaTcTf6T8=
 go-simpler.org/assert v0.9.0 h1:PfpmcSvL7yAnWyChSjOz6Sp6m9j5lyK8Ok9pEL31YkQ=
