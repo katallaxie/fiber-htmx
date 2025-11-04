@@ -15,7 +15,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/katallaxie/fiber-htmx/v3 v3.0.2
 	github.com/katallaxie/fiber-reload/v3 v3.0.0
-	github.com/katallaxie/htmx v0.5.3
+	github.com/katallaxie/htmx v0.5.4
 	github.com/katallaxie/pkg v0.7.10
 	github.com/spf13/pflag v1.0.10
 	github.com/valyala/fasthttp v1.68.0
@@ -225,7 +225,7 @@ require (
 	github.com/yagipy/maintidx v1.0.0 // indirect
 	github.com/yeya24/promlinter v0.3.0 // indirect
 	github.com/ykadowak/zerologlint v0.1.5 // indirect
-	github.com/yuin/goldmark v1.7.12 // indirect
+	github.com/yuin/goldmark v1.7.13 // indirect
 	gitlab.com/bosi/decorder v0.4.2 // indirect
 	go-simpler.org/musttag v0.14.0 // indirect
 	go-simpler.org/sloglint v0.11.1 // indirect
