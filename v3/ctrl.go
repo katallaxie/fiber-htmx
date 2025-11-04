@@ -189,12 +189,12 @@ func (c *UnimplementedController) Clone() Controller {
 
 // IsDevelopment returns true if the environment is development.
 func (c *UnimplementedController) IsDevelopment() bool {
-	return reload.IsDevelopment(c.ctx)
+	return reload.IsDevelopment(c.ctx.Context())
 }
 
 // IsProduction returns true if the environment is production.
 func (c *UnimplementedController) IsProduction() bool {
-	return reload.IsProduction(c.ctx)
+	return reload.IsProduction(c.ctx.Context())
 }
 
 // Redirect redirects to the given path.
