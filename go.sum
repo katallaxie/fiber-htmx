@@ -178,8 +178,8 @@ github.com/godoc-lint/godoc-lint v0.10.0 h1:OcyrziBi18sQSEpib6NesVHEJ/Xcng97Nune
 github.com/godoc-lint/godoc-lint v0.10.0/go.mod h1:KleLcHu/CGSvkjUH2RvZyoK1MBC7pDQg4NxMYLcBBsw=
 github.com/gofiber/contrib/websocket v1.3.5-0.20250929063958-a5977f1db612 h1:603dSEIegA/dknWDdOrmFCyPpJ5WxMfAMBUID+/p9Dg=
 github.com/gofiber/contrib/websocket v1.3.5-0.20250929063958-a5977f1db612/go.mod h1:jsQeYq5KhQjhh93iXv8cuYwIOvVCjOlErDci7VUOWYg=
-github.com/gofiber/fiber/v2 v2.52.9 h1:YjKl5DOiyP3j0mO61u3NTmK7or8GzzWzCFzkboyP5cw=
-github.com/gofiber/fiber/v2 v2.52.9/go.mod h1:YEcBbO/FB+5M1IZNBP9FO3J9281zgPAreiI1oqg8nDw=
+github.com/gofiber/fiber/v2 v2.52.10 h1:jRHROi2BuNti6NYXmZ6gbNSfT3zj/8c0xy94GOU5elY=
+github.com/gofiber/fiber/v2 v2.52.10/go.mod h1:YEcBbO/FB+5M1IZNBP9FO3J9281zgPAreiI1oqg8nDw=
 github.com/gofiber/fiber/v3 v3.0.0-rc.3 h1:h0KXuRHbivSslIpoHD1R/XjUsjcGwt+2vK0avFiYonA=
 github.com/gofiber/fiber/v3 v3.0.0-rc.3/go.mod h1:LNBPuS/rGoUFlOyy03fXsWAeWfdGoT1QytwjRVNSVWo=
 github.com/gofiber/schema v1.6.0 h1:rAgVDFwhndtC+hgV7Vu5ItQCn7eC2mBA4Eu1/ZTiEYY=
