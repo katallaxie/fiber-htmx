@@ -30,7 +30,7 @@ jobs:
         path: .test/reports/**-test.xml
         reporter: java-junit
         fail-on-error: 'true'
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       if: success() || failure()
       with:
         name: Test Reports
