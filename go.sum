@@ -274,8 +274,8 @@ github.com/katallaxie/fiber-htmx/v3 v3.0.2 h1:cr718t2pj5SsNy2tnDdaMYYqlDKZIywFRV
 github.com/katallaxie/fiber-htmx/v3 v3.0.2/go.mod h1:gcDZn1I3FvgqKkClIDSusaSFldUo6OF6qA/Ro3zOwVQ=
 github.com/katallaxie/fiber-reload/v3 v3.0.0 h1:S/9ak7QljOWG44Crz0xkAeyNC3st+2VrNHysPvbY2I4=
 github.com/katallaxie/fiber-reload/v3 v3.0.0/go.mod h1:F8sSIWV1+riFHEU8q7zCwbNtY/poNlNpiJommZzhavo=
-github.com/katallaxie/htmx v0.5.5 h1:AvqajgBj95rQcvl1ixWyuGRmdzdhFNWsrv3ULG//eCw=
-github.com/katallaxie/htmx v0.5.5/go.mod h1:Hqu6ONqgXyTPHmgt3OncC+oMlrDxcpaf5dE8g1yi17o=
+github.com/katallaxie/htmx v0.5.9 h1:g59Ka2djvQsHicnZBTOIbirYgw+BxV1AyBJyYHvnaqc=
+github.com/katallaxie/htmx v0.5.9/go.mod h1:Hqu6ONqgXyTPHmgt3OncC+oMlrDxcpaf5dE8g1yi17o=
 github.com/katallaxie/pkg v0.7.10 h1:8+kIcJWWa//xqAypVT5b8OEUAWpziPS/73swu8CT7yo=
 github.com/katallaxie/pkg v0.7.10/go.mod h1:SNvshiWzWQuBCUkWAPm9gIQCEBm0mMGVsANFA3mteW4=
 github.com/kisielk/errcheck v1.9.0 h1:9xt1zI9EBfcYBvdU1nVrzMzzUPUtPKs9bVSIM3TAb3M=
