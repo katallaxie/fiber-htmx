@@ -15,7 +15,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/katallaxie/fiber-htmx/v3 v3.0.2
 	github.com/katallaxie/fiber-reload/v3 v3.0.0
-	github.com/katallaxie/htmx v0.5.5
+	github.com/katallaxie/htmx v0.5.9
 	github.com/katallaxie/pkg v0.7.10
 	github.com/spf13/pflag v1.0.10
 	github.com/valyala/fasthttp v1.68.0
