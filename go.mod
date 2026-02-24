@@ -10,7 +10,7 @@ tool (
 )
 
 require (
-	github.com/gofiber/fiber/v2 v2.52.11
+	github.com/gofiber/fiber/v2 v2.52.12
 	github.com/gofiber/fiber/v3 v3.1.0
 	github.com/google/uuid v1.6.0
 	github.com/katallaxie/fiber-htmx/v3 v3.0.2
