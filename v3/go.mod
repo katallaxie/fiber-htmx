@@ -16,7 +16,7 @@ require (
 	github.com/katallaxie/htmx v0.5.9
 	github.com/katallaxie/pkg v0.7.10
 	github.com/stretchr/testify v1.11.1
-	gorm.io/gorm v1.31.0
+	gorm.io/gorm v1.31.1
 )
 
 require (
